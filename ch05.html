@@ -95,13 +95,34 @@ opacity:0;pointer-events:none;transition:opacity .2s}
 .resume{display:block;text-align:center;margin:0 auto 1rem;max-width:22rem;border:1px solid var(--blue);border-radius:12px;
 padding:.55rem .8rem;color:var(--blue);text-decoration:none}
 html.big body{font-size:1.28rem}
+.qr-overlay{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:1rem}
+.qr-overlay.hidden{display:none}
+.qr-card{background:#fff;color:#1f1f1d;border-radius:16px;padding:1.1rem 1.2rem;width:min(92vw,30rem);text-align:center}
+.qr-title{font-size:1.25rem;font-weight:700;color:#0c447c}
+.qr-img svg{width:min(78vw,62vh,26rem);height:auto;display:block;margin:.6rem auto}
+.qr-label{font-weight:700;color:#0c447c}
+.qr-url{font-size:.85rem;color:#5f5e5a;word-break:break-all;margin:.2rem 0 .6rem}
+.qr-actions{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.qr-card .icon-btn{background:#fff;color:#1f1f1d;border-color:#d3d1c7}
+.qr-choice{display:inline-flex;border:1px solid #d3d1c7;border-radius:999px;overflow:hidden;margin-top:.5rem}
+.qr-choice button{font:inherit;font-size:.9rem;border:0;background:#fff;color:#185fa5;padding:.2rem .9rem;cursor:pointer}
+.qr-choice button.on{background:#185fa5;color:#fff}
+.all-search{text-decoration:none;white-space:nowrap;font-size:.85rem}
+.global-search{width:100%;font:inherit;padding:.55rem .8rem;border:1px solid var(--line);border-radius:10px;
+background:var(--bg);color:var(--ink);margin:.2rem 0 .4rem}
+ol.results{list-style:none;padding:0;margin:0 0 1rem}
+ol.results li a{display:block;border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;margin:.4rem 0;
+text-decoration:none;color:var(--ink)}
+ol.results b{color:var(--navy)}
+ol.results small{display:block;color:var(--muted);font-size:.9rem;line-height:1.5}
 </style></head>
 <body data-page="ch05.html">
 <div id="progress"></div>
 <header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
 <select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html" selected>บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
-<button class="icon-btn size-btn" type="button" aria-label="ขยาย/ย่อตัวอักษร">Aa</button></header>
-<main><div class="banner"><div class="n">5</div><div class="t"><small>บทที่ 5</small><span>เอกซ์โพเนนเชียลและลอการิทึม</span></div></div><div class="tools"><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"></div><div class="hits"></div><div class="toc-label">หัวข้อในบทนี้ (ปัดดูต่อ →)</div><nav class="toc"><a href="#s1">1. เลขยกกำลังและราก</a><a href="#s2">2. ฟังก์ชันเอกซ์โพเนนเชียล</a><a href="#s3">3. ลอการิทึมหมายถึงอะไร</a><a href="#s4">4. สมบัติของลอการิทึม</a><a href="#s5">5. กราฟลอการิทึม</a><a href="#s6">6. สมการและอสมการเอกซ์โพเนนเชียล–ลอการิทึม</a><a href="#s7">7. แนวที่เลือกฝึก: เปลี่ยนฐานและจัดรูปให้คำนวณได้ง่าย</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. เลขยกกำลังและราก</strong></h2></summary><div class="body">
+<button class="icon-btn size-btn" type="button" aria-label="ขยาย/ย่อตัวอักษร">Aa</button>
+<button class="icon-btn qr-btn" type="button" aria-label="แสดง QR code ของเว็บนี้">QR</button></header>
+<main><div class="banner"><div class="n">5</div><div class="t"><small>บทที่ 5</small><span>เอกซ์โพเนนเชียลและลอการิทึม</span></div></div><div class="tools"><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><a class="icon-btn all-search" href="index.html">ค้นทุกบท</a></div><div class="hits"></div><div class="toc-label">หัวข้อในบทนี้ (ปัดดูต่อ →)</div><nav class="toc"><a href="#s1">1. เลขยกกำลังและราก</a><a href="#s2">2. ฟังก์ชันเอกซ์โพเนนเชียล</a><a href="#s3">3. ลอการิทึมหมายถึงอะไร</a><a href="#s4">4. สมบัติของลอการิทึม</a><a href="#s5">5. กราฟลอการิทึม</a><a href="#s6">6. สมการและอสมการเอกซ์โพเนนเชียล–ลอการิทึม</a><a href="#s7">7. แนวที่เลือกฝึก: เปลี่ยนฐานและจัดรูปให้คำนวณได้ง่าย</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. เลขยกกำลังและราก</strong></h2></summary><div class="body">
 <p>เลขยกกำลังใช้เขียนการคูณจำนวนเดิมซ้ำ เช่น <math displaystyle="true"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mn>3</mn></mrow></msup><mo>=</mo><mn>2</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>8</mn></mrow></math> โดย <math displaystyle="true"><mrow><mn>2</mn></mrow></math> เป็น <strong>ฐาน</strong> และ <math displaystyle="true"><mrow><mn>3</mn></mrow></math> เป็น <strong>เลขชี้กำลัง</strong></p>
 <p>เมื่อฐาน <math displaystyle="true"><mrow><mi>a</mi></mrow></math> เป็นบวก สมบัติที่ใช้จัดรูปได้ ได้แก่</p>
 <ul class="formulas"><li><math displaystyle="true"><mrow><msup><mrow><mi>a</mi></mrow><mrow><mi>m</mi></mrow></msup><mo>×</mo><msup><mrow><mi>a</mi></mrow><mrow><mi>n</mi></mrow></msup><mo>=</mo><msup><mrow><mi>a</mi></mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></msup></mrow></math></li><li><math displaystyle="true"><mrow><mfrac><mrow><msup><mrow><mi>a</mi></mrow><mrow><mi>m</mi></mrow></msup></mrow><mrow><msup><mrow><mi>a</mi></mrow><mrow><mi>n</mi></mrow></msup></mrow></mfrac><mo>=</mo><msup><mrow><mi>a</mi></mrow><mrow><mi>m</mi><mo>−</mo><mi>n</mi></mrow></msup></mrow></math></li><li><math displaystyle="true"><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><msup><mrow><mi>a</mi></mrow><mrow><mi>m</mi></mrow></msup></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mi>n</mi></mrow></msup><mo>=</mo><msup><mrow><mi>a</mi></mrow><mrow><mi>m</mi><mi>n</mi></mrow></msup></mrow></math></li><li><math displaystyle="true"><mrow><msup><mrow><mi>a</mi></mrow><mrow><mn>0</mn></mrow></msup><mo>=</mo><mn>1</mn></mrow></math></li><li><math displaystyle="true"><mrow><msup><mrow><mi>a</mi></mrow><mrow><mo>−</mo><mi>n</mi></mrow></msup><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mrow><mi>a</mi></mrow><mrow><mi>n</mi></mrow></msup></mrow></mfrac></mrow></math></li></ul>
@@ -169,6 +190,7 @@ html.big body{font-size:1.28rem}
 <p>ตรวจฐาน/จำนวนใน <math displaystyle="true"><mrow><mi>log</mi></mrow></math> → เลือกแปลงเลขยกกำลัง รวม <math displaystyle="true"><mrow><mi>log</mi></mrow></math> หรือเปลี่ยนฐาน → คำนวณ</p>
 <p class="caution"><strong>ระวัง:</strong> การเปลี่ยนฐานไม่ได้แก้ข้อห้ามของนิพจน์เดิม ถ้าฐานมีตัวแปร ต้องตรวจว่าฐานเป็นบวกและไม่เท่ากับ <math displaystyle="true"><mrow><mn>1</mn></mrow></math> ด้วย และถ้ามี <math displaystyle="true"><mrow><mi>log</mi></mrow></math> เป็นตัวหาร ต้องตรวจว่าตัวหารไม่เป็นศูนย์</p>
 </div></details><div class="pager"><a class="prev" href="ch04.html"><small>← บทที่ 4</small>ความสัมพันธ์และฟังก์ชัน</a><a class="next" href="ch06.html"><small>บทที่ 6 →</small>เรขาคณิตวิเคราะห์</a><a class="home" href="index.html">สารบัญทุกบท</a></div></main>
+<div id="qr" class="qr-overlay hidden" role="dialog" aria-modal="true" aria-label="QR code ของเว็บนี้"><div class="qr-card"><div class="qr-title">สแกนเพื่อเปิดเว็บสรุป</div><div class="qr-choice" role="group" aria-label="QR พาไปที่"><button type="button" class="on" data-target="page">หน้านี้</button><button type="button" data-target="home">หน้าแรก</button></div><div class="qr-img" data-for="page" data-url="https://zenithjuno.github.io/alevel-math1-summary/ch05.html" data-label="บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges" role="img" aria-label="QR code"><path stroke="#000" d="M2 2.5h7m1 0h3m1 0h2m2 0h1m2 0h2m2 0h1m2 0h7m-33 1h1m5 0h1m1 0h2m3 0h1m2 0h2m4 0h2m2 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h4m2 0h1m3 0h1m4 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h1m2 0h4m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m5 0h1m1 0h1m2 0h5m2 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m2 0h1m1 0h1m1 0h1m2 0h1m1 0h2m2 0h1m1 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h2m7 0h1m2 0h1m2 0h2m-25 1h1m1 0h2m1 0h3m1 0h2m1 0h1m1 0h1m1 0h3m2 0h1m2 0h1m1 0h1m2 0h1m1 0h2m-33 1h1m3 0h2m1 0h1m1 0h2m1 0h1m5 0h3m2 0h1m2 0h2m1 0h2m1 0h1m-32 1h1m2 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h3m3 0h8m1 0h2m-30 1h1m1 0h1m2 0h1m2 0h5m2 0h1m1 0h1m4 0h1m1 0h1m1 0h1m1 0h2m-33 1h2m1 0h4m1 0h1m2 0h1m5 0h2m3 0h2m1 0h1m2 0h2m1 0h1m-32 1h1m3 0h1m2 0h1m1 0h1m1 0h3m5 0h1m1 0h1m2 0h1m2 0h1m3 0h1m-32 1h1m1 0h1m3 0h4m1 0h2m3 0h1m2 0h4m1 0h1m1 0h4m-30 1h2m1 0h1m4 0h1m4 0h1m1 0h2m1 0h2m1 0h1m1 0h5m1 0h2m-31 1h1m3 0h1m1 0h1m6 0h3m2 0h1m1 0h4m1 0h2m1 0h3m-31 1h3m2 0h1m1 0h2m2 0h2m2 0h1m1 0h2m1 0h1m2 0h2m1 0h1m1 0h2m2 0h1m-33 1h2m2 0h4m1 0h1m1 0h1m2 0h4m3 0h1m2 0h1m1 0h3m1 0h2m-32 1h5m3 0h2m7 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h2m-32 1h1m1 0h1m1 0h2m4 0h3m1 0h4m2 0h1m1 0h3m3 0h2m-31 1h2m1 0h1m4 0h2m2 0h2m2 0h1m1 0h6m1 0h2m2 0h1m2 0h1m-31 1h5m2 0h1m1 0h2m1 0h1m1 0h3m3 0h3m2 0h1m1 0h1m1 0h2m-32 1h1m1 0h2m4 0h2m2 0h1m4 0h1m1 0h1m3 0h4m4 0h1m-33 1h1m2 0h4m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m2 0h7m3 0h1m-25 1h1m3 0h2m1 0h2m2 0h2m2 0h2m3 0h2m-30 1h7m1 0h1m1 0h1m1 0h3m1 0h1m2 0h6m1 0h1m1 0h1m-29 1h1m5 0h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h4m1 0h2m3 0h3m-31 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h11m1 0h2m-32 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h2m2 0h1m2 0h1m1 0h1m3 0h1m1 0h2m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m1 0h2m1 0h1m1 0h3m1 0h2m1 0h2m-31 1h1m5 0h1m2 0h4m1 0h1m1 0h2m2 0h1m2 0h2m1 0h3m3 0h1m-33 1h7m1 0h1m1 0h2m4 0h2m3 0h1m6 0h1m1 0h1"/></svg></div><div class="qr-img hidden" data-for="home" data-url="https://zenithjuno.github.io/alevel-math1-summary/" data-label="หน้าแรก · สารบัญทุกบท"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges" role="img" aria-label="QR code"><path stroke="#000" d="M2 2.5h7m4 0h2m3 0h1m2 0h2m2 0h1m2 0h7m-33 1h1m5 0h1m8 0h2m1 0h1m1 0h3m1 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m4 0h2m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m2 0h1m5 0h2m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h3m3 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m1 0h1m1 0h1m6 0h1m1 0h1m4 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m2 0h1m2 0h1m1 0h1m1 0h4m-22 1h1m1 0h5m3 0h1m2 0h2m2 0h1m1 0h1m2 0h1m3 0h5m-22 1h1m2 0h2m3 0h4m2 0h1m2 0h2m1 0h2m1 0h1m-33 1h5m1 0h2m2 0h2m1 0h5m2 0h3m2 0h1m2 0h1m1 0h2m-30 1h1m10 0h1m2 0h7m1 0h1m3 0h3m1 0h1m-33 1h2m3 0h2m1 0h1m2 0h2m1 0h1m1 0h1m5 0h2m1 0h1m2 0h2m1 0h1m-32 1h2m2 0h1m2 0h3m2 0h1m2 0h1m1 0h2m4 0h1m2 0h1m2 0h4m-31 1h1m3 0h3m1 0h1m2 0h1m1 0h2m1 0h1m6 0h2m2 0h3m-32 1h1m3 0h1m2 0h4m1 0h1m1 0h2m2 0h1m2 0h1m1 0h5m1 0h2m-31 1h1m1 0h2m2 0h1m2 0h2m3 0h2m1 0h1m4 0h1m1 0h2m1 0h2m3 0h1m-32 1h1m3 0h1m4 0h1m1 0h1m3 0h1m2 0h5m1 0h3m1 0h4m-33 1h1m3 0h1m1 0h1m4 0h2m1 0h3m1 0h1m2 0h1m2 0h1m1 0h3m1 0h2m-32 1h1m2 0h1m1 0h1m3 0h1m3 0h3m3 0h5m3 0h5m-29 1h1m1 0h2m2 0h2m7 0h2m2 0h2m3 0h3m1 0h1m-32 1h1m1 0h4m1 0h1m1 0h1m2 0h2m1 0h2m4 0h3m1 0h2m2 0h1m2 0h1m-33 1h1m3 0h3m2 0h2m1 0h1m1 0h1m5 0h3m3 0h1m3 0h2m-32 1h1m1 0h1m1 0h2m2 0h1m7 0h1m2 0h4m3 0h1m1 0h1m1 0h1m1 0h1m-33 1h1m3 0h1m1 0h1m1 0h1m1 0h2m1 0h1m3 0h1m1 0h1m2 0h7m-21 1h4m4 0h4m1 0h1m2 0h1m3 0h1m1 0h1m1 0h1m-33 1h7m2 0h1m5 0h1m1 0h1m2 0h1m2 0h2m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m1 0h1m1 0h1m1 0h2m2 0h6m1 0h2m3 0h3m-31 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m2 0h1m2 0h1m1 0h6m1 0h2m-33 1h1m1 0h3m1 0h1m1 0h3m2 0h1m1 0h1m2 0h2m2 0h4m2 0h2m1 0h2m-33 1h1m1 0h3m1 0h1m1 0h3m2 0h1m1 0h4m1 0h1m1 0h3m1 0h2m1 0h2m-31 1h1m5 0h1m3 0h1m1 0h2m1 0h1m2 0h1m2 0h1m6 0h3m-31 1h7m1 0h1m3 0h2m1 0h1m1 0h3m2 0h1m1 0h2m1 0h1m3 0h1"/></svg></div><div class="qr-label">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</div><div class="qr-url">https://zenithjuno.github.io/alevel-math1-summary/ch05.html</div><div class="qr-actions"><button type="button" class="icon-btn qr-copy">คัดลอกลิงก์</button><button type="button" class="icon-btn qr-share hidden">แชร์</button><button type="button" class="icon-btn qr-close">ปิด</button></div></div></div>
 <button id="totop" type="button" aria-label="กลับขึ้นบน">↑</button>
 <script>(()=>{
 const box=document.querySelector('.search');
@@ -197,6 +219,43 @@ function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;co
  if(page){store.set('last',page);store.set('last-y',String(Math.round(y)));}}
 addEventListener('scroll',onScroll,{passive:true});
 if(toTop)toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const qr=document.getElementById('qr');
+if(qr){const show=v=>qr.classList.toggle('hidden',!v);
+ document.querySelectorAll('.qr-btn').forEach(b=>b.addEventListener('click',()=>show(true)));
+ qr.querySelector('.qr-close').addEventListener('click',()=>show(false));
+ qr.addEventListener('click',e=>{if(e.target===qr)show(false);});
+ addEventListener('keydown',e=>{if(e.key==='Escape')show(false);});
+ const current=()=>qr.querySelector('.qr-img:not(.hidden)');
+ const label=qr.querySelector('.qr-label'),url=qr.querySelector('.qr-url');
+ qr.querySelectorAll('.qr-choice button').forEach(btn=>btn.addEventListener('click',()=>{
+  qr.querySelectorAll('.qr-choice button').forEach(x=>x.classList.toggle('on',x===btn));
+  qr.querySelectorAll('.qr-img').forEach(img=>img.classList.toggle('hidden',img.dataset.for!==btn.dataset.target));
+  label.textContent=current().dataset.label;url.textContent=current().dataset.url;}));
+ const copy=qr.querySelector('.qr-copy');
+ copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(current().dataset.url);copy.textContent='คัดลอกแล้ว';}
+  catch(e){copy.textContent='คัดลอกไม่ได้';}setTimeout(()=>copy.textContent='คัดลอกลิงก์',1600);});
+ const share=qr.querySelector('.qr-share');
+ if(navigator.share){share.classList.remove('hidden');
+  share.addEventListener('click',()=>navigator.share({title:document.title,url:current().dataset.url}).catch(()=>{}));}}
+const params=new URLSearchParams(location.search);
+const allLink=document.querySelector('.all-search');
+if(allLink&&box)allLink.addEventListener('click',e=>{const q=box.value.trim();if(q){e.preventDefault();location.href='index.html?q='+encodeURIComponent(q);}});
+if(box&&params.get('q')){box.value=params.get('q');box.dispatchEvent(new Event('input'));}
+const gbox=document.querySelector('.global-search');
+if(gbox){let data=null;const out=document.querySelector('ol.results'),ghits=document.querySelector('.hits'),cardsEl=document.querySelector('.cards');
+ const load=async()=>{if(!data){try{data=await (await fetch('search-index.json')).json();}catch(e){data=[];}}return data;};
+ const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const run=async()=>{const q=gbox.value.trim();out.innerHTML='';
+  if(!q){ghits.textContent='';cardsEl.classList.remove('hidden');return;}
+  const rows=(await load()).filter(e=>e.h.includes(q)||e.x.includes(q)).slice(0,40);
+  ghits.textContent=rows.length?'พบใน '+rows.length+' หัวข้อ':'ไม่พบคำนี้';cardsEl.classList.toggle('hidden',rows.length>0);
+  out.innerHTML=rows.map(e=>{const i=e.x.indexOf(q);const snip=i<0?e.x.slice(0,90):e.x.slice(Math.max(0,i-40),i+q.length+50);
+   const mark=esc(snip).split(esc(q)).join('<mark>'+esc(q)+'</mark>');
+   const ch=String(e.c).padStart(2,'0');
+   return '<li><a href="ch'+ch+'.html?q='+encodeURIComponent(q)+'#'+e.a+'"><b>บทที่ '+e.c+' '+esc(e.t)+'</b> · '+esc(e.h)+
+    '<small>…'+mark+'…</small></a></li>';}).join('');};
+ gbox.addEventListener('input',run);gbox.addEventListener('focus',load,{once:true});
+ if(params.get('q')){gbox.value=params.get('q');run();}}
 const resume=document.querySelector('.resume');
 if(resume){const last=store.get('last');const name=last&&document.querySelector('.cards a[href="'+last+'"]');
  if(name){resume.href=last+'#resume';resume.textContent='อ่านต่อ: '+name.textContent.replace(/^\d+/,m=>'บทที่ '+m+' ');}

@@ -16,8 +16,7 @@ font-size:1.12rem;line-height:1.75}
 header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
 display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
 header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
-header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+header.top select{flex:1;min-width:0;font:inherit;font-size:.95rem;padding:.3rem .45rem;border-radius:8px;
 border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
@@ -27,14 +26,21 @@ main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner .t span{font-size:1.45rem;font-weight:700}
 .search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
 background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
-details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+nav.toc{display:flex;gap:.4rem;margin:0 -1rem 1rem;padding:0 1rem .3rem;overflow-x:auto;scrollbar-width:none;
+-webkit-overflow-scrolling:touch}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;white-space:nowrap;font-size:.9rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;
+color:var(--blue);text-decoration:none;background:var(--bg)}
+.toc-label{font-size:.85rem;color:var(--muted);margin:.2rem 0 .3rem}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1.4rem 0;padding:0 0 0 .9rem}
+@media (max-width:480px){details.section{padding-left:.6rem;border-left-width:3px}main{padding:.8rem .8rem 5rem}}
+details.section>summary h2{font-family:inherit}
 details.section>summary{cursor:pointer;list-style:none}
 details.section>summary::-webkit-details-marker{display:none}
 details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
-details.section>summary::after{content:" ▾";color:var(--muted)}
-details.section:not([open])>summary::after{content:" ▸"}
+details.section>summary{display:flex;align-items:baseline;gap:.4rem}
+details.section>summary::after{content:"▾";color:var(--muted);flex:none}
+details.section:not([open])>summary::after{content:"▸"}
 h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
 p{margin:.5rem 0}
 p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
@@ -62,7 +68,11 @@ figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
 math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
 math[display=block]{margin:.3rem 0}
 mark{background:#fac775;color:#412402;border-radius:3px}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:2.2rem}
+.pager a{display:block;border:1px solid var(--line);border-radius:12px;padding:.55rem .8rem;line-height:1.4}
+.pager a small{display:block;color:var(--muted);font-size:.8rem}
+.pager .next{text-align:right;grid-column:2}
+.pager .home{grid-column:1 / -1;text-align:center}
 .pager a,.cards a{color:var(--blue);text-decoration:none}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
 .cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
@@ -72,30 +82,44 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 .hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
 .hero p{color:var(--muted);margin:0}
 .hidden{display:none}
+.tools{display:flex;gap:.5rem;align-items:center;margin:.2rem 0 .4rem}
+.tools .search{flex:1;margin:0}
+.hits{font-size:.85rem;color:var(--muted);min-height:1.2em;margin:.1rem 0 .4rem}
+.icon-btn{flex:none;font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);
+border-radius:8px;padding:.25rem .55rem;cursor:pointer}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:6}
+#totop{position:fixed;right:1rem;bottom:1.2rem;z-index:6;width:2.8rem;height:2.8rem;border-radius:50%;
+border:1px solid var(--line);background:var(--bg);color:var(--blue);font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.15);
+opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.show{opacity:1;pointer-events:auto}
+.resume{display:block;text-align:center;margin:0 auto 1rem;max-width:22rem;border:1px solid var(--blue);border-radius:12px;
+padding:.55rem .8rem;color:var(--blue);text-decoration:none}
+html.big body{font-size:1.28rem}
 </style></head>
-<body>
+<body data-page="ch10.html">
+<div id="progress"></div>
 <header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
-<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
-<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html" selected>บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select></header>
-<main><div class="banner"><div class="n">10</div><div class="t"><small>บทที่ 10</small><span>เวกเตอร์</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. เวกเตอร์ พิกัด และขนาด</a><a href="#s2">2. การบวก ลบ คูณด้วยจำนวน และเวกเตอร์หนึ่งหน่วย</a><a href="#s3">3. ดอตโปรดักต์และมุมระหว่างเวกเตอร์</a><a href="#s4">4. ครอสโปรดักต์</a><a href="#s5">5. พื้นที่และปริมาตรจากเวกเตอร์</a><a href="#s6">6. แนวที่เลือกฝึก: แยกดอตกับครอสแล้วตรวจสมบัติ</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. เวกเตอร์ พิกัด และขนาด</strong></h2></summary><div class="body">
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html" selected>บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<button class="icon-btn size-btn" type="button" aria-label="ขยาย/ย่อตัวอักษร">Aa</button></header>
+<main><div class="banner"><div class="n">10</div><div class="t"><small>บทที่ 10</small><span>เวกเตอร์</span></div></div><div class="tools"><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"></div><div class="hits"></div><div class="toc-label">หัวข้อในบทนี้ (ปัดดูต่อ →)</div><nav class="toc"><a href="#s1">1. เวกเตอร์ พิกัด และขนาด</a><a href="#s2">2. การบวก ลบ คูณด้วยจำนวน และเวกเตอร์หนึ่งหน่วย</a><a href="#s3">3. ดอตโปรดักต์และมุมระหว่างเวกเตอร์</a><a href="#s4">4. ครอสโปรดักต์</a><a href="#s5">5. พื้นที่และปริมาตรจากเวกเตอร์</a><a href="#s6">6. แนวที่เลือกฝึก: แยกดอตกับครอสแล้วตรวจสมบัติ</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. เวกเตอร์ พิกัด และขนาด</strong></h2></summary><div class="body">
 <p>เวกเตอร์เป็นปริมาณที่มีทั้ง <strong>ขนาดและทิศทาง</strong> เช่น การกระจัด ต่างจากปริมาณที่บอกเพียงจำนวนหรือขนาด เช่น มวล</p>
 <p>ลูกศรแทนเวกเตอร์: ความยาวบอกขนาด หัวบอกทิศ เวกเตอร์เท่ากันเมื่อขนาดและทิศเดียวกัน แม้ต่างตำแหน่ง</p>
-<figure><img src="figures/fig-10-1.svg" alt="รูป 10.1" loading="lazy"><figcaption><strong>รูป 10.1</strong> ลูกศรบอกขนาดและทิศทาง เวกเตอร์เท่ากันได้แม้อยู่คนละตำแหน่ง</figcaption></figure>
+<figure><img src="figures/fig-10-1.svg" alt="รูป 10.1" width="603" height="248" loading="lazy"><figcaption><strong>รูป 10.1</strong> ลูกศรบอกขนาดและทิศทาง เวกเตอร์เท่ากันได้แม้อยู่คนละตำแหน่ง</figcaption></figure>
 <p>ในสรุปนี้ใช้ <math displaystyle="true"><mrow><mi>u</mi></mrow></math>, <math displaystyle="true"><mrow><mi>v</mi></mrow></math>, <math displaystyle="true"><mrow><mi>w</mi></mrow></math> แทนเวกเตอร์ และเขียนองค์ประกอบเป็น <strong>เมทริกซ์คอลัมน์</strong></p>
 <div class="display"><math display="block"><mrow><mi>u</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">[</mo><mtable><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">]</mo></mrow></mrow></math></div>
 <p>คอลัมน์เรียงองค์ประกอบ <math displaystyle="true"><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi></mrow></math> จากบนลงล่าง; สองมิติมีสองแถว</p>
-<figure><img src="figures/fig-10-2.svg" alt="รูป 10.2" loading="lazy"><figcaption><strong>รูป 10.2</strong> องค์ประกอบของเวกเตอร์บนแกนสองมิติและแกนสามมิติแบบมือขวา</figcaption></figure>
+<figure><img src="figures/fig-10-2.svg" alt="รูป 10.2" width="603" height="336" loading="lazy"><figcaption><strong>รูป 10.2</strong> องค์ประกอบของเวกเตอร์บนแกนสองมิติและแกนสามมิติแบบมือขวา</figcaption></figure>
 <p>เวกเตอร์จากจุด <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>z</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ไปจุด <math displaystyle="true"><mrow><mi>Q</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>z</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> หาได้จาก</p>
 <div class="display"><math display="block"><mrow><mi>P</mi><mi>Q</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">[</mo><mtable><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>z</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mrow><mi>z</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">]</mo></mrow></mrow></math></div>
 <p>ในที่นี้ <math displaystyle="true"><mrow><mi>P</mi><mi>Q</mi></mrow></math> หมายถึงเวกเตอร์จาก <math displaystyle="true"><mrow><mi>P</mi></mrow></math> ไป <math displaystyle="true"><mrow><mi>Q</mi></mrow></math></p>
 <p>คือ <strong>พิกัดปลายลบพิกัดต้น</strong> ถ้าสลับต้นกับปลาย เวกเตอร์จะเปลี่ยนเป็นทิศตรงข้าม</p>
-<figure><img src="figures/fig-10-3.svg" alt="รูป 10.3" loading="lazy"><figcaption><strong>รูป 10.3</strong> เวกเตอร์จาก <math displaystyle="true"><mrow><mi>P</mi></mrow></math> ไป <math displaystyle="true"><mrow><mi>Q</mi></mrow></math> ใช้พิกัดปลายลบพิกัดต้น</figcaption></figure>
+<figure><img src="figures/fig-10-3.svg" alt="รูป 10.3" width="427" height="267" loading="lazy"><figcaption><strong>รูป 10.3</strong> เวกเตอร์จาก <math displaystyle="true"><mrow><mi>P</mi></mrow></math> ไป <math displaystyle="true"><mrow><mi>Q</mi></mrow></math> ใช้พิกัดปลายลบพิกัดต้น</figcaption></figure>
 <p>ขนาดของเวกเตอร์คือ</p>
 <div class="formula"><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mo>=</mo><msqrt><mrow><msubsup><mrow><mi>u</mi></mrow><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msubsup><mo>+</mo><msubsup><mrow><mi>u</mi></mrow><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msubsup><mo>+</mo><msup><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></math></div>
 <p class="example">เช่น</p>
 <div class="display"><math display="block"><mrow><mi>u</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">[</mo><mtable><mtr><mtd columnalign="center"><mrow><mn>3</mn></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>4</mn></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">]</mo></mrow></mrow></math></div>
 <p>มีขนาด <math displaystyle="true"><mrow><msqrt><mrow><msup><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>4</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt><mo>=</mo><mn>5</mn></mrow></math></p>
-<figure><img src="figures/fig-10-4.svg" alt="รูป 10.4" loading="lazy"><figcaption><strong>รูป 10.4</strong> เวกเตอร์ที่มีองค์ประกอบ <math displaystyle="true"><mrow><mn>3</mn></mrow></math> และ <math displaystyle="true"><mrow><mn>4</mn></mrow></math> มีความยาว <math displaystyle="true"><mrow><mn>5</mn></mrow></math> จากทฤษฎีบทพีทาโกรัส</figcaption></figure>
+<figure><img src="figures/fig-10-4.svg" alt="รูป 10.4" width="400" height="296" loading="lazy"><figcaption><strong>รูป 10.4</strong> เวกเตอร์ที่มีองค์ประกอบ <math displaystyle="true"><mrow><mn>3</mn></mrow></math> และ <math displaystyle="true"><mrow><mn>4</mn></mrow></math> มีความยาว <math displaystyle="true"><mrow><mn>5</mn></mrow></math> จากทฤษฎีบทพีทาโกรัส</figcaption></figure>
 <p>เวกเตอร์ศูนย์มีทุกพิกัดเป็นศูนย์และมีขนาด <math displaystyle="true"><mrow><mn>0</mn></mrow></math> แต่ไม่มีทิศทาง จึงใช้กำหนดมุมกับเวกเตอร์อื่นไม่ได้</p>
 </div></details>
 <details class="section" id="s2" open><summary><h2><math displaystyle="true"><mrow><mn>2</mn></mrow></math><strong>. การบวก ลบ คูณด้วยจำนวน และเวกเตอร์หนึ่งหน่วย</strong></h2></summary><div class="body">
@@ -105,15 +129,15 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <div class="display"><math display="block"><mrow><mi>t</mi><mi>u</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">[</mo><mtable><mtr><mtd columnalign="center"><mrow><mi>t</mi><msub><mrow><mi>u</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mi>t</mi><msub><mrow><mi>u</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mi>t</mi><msub><mrow><mi>u</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">]</mo></mrow></mrow></math></div>
 <p>และ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>t</mi><mi>u</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mo>=</mo><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>t</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math></p>
 <p>ถ้า <math displaystyle="true"><mrow><mi>u</mi></mrow></math> ไม่เป็นเวกเตอร์ศูนย์ เมื่อ <math displaystyle="true"><mrow><mi>t</mi><mo>&gt;</mo><mn>0</mn></mrow></math> เวกเตอร์ <math displaystyle="true"><mrow><mi>t</mi><mi>u</mi></mrow></math> มีทิศเดียวกับ <math displaystyle="true"><mrow><mi>u</mi></mrow></math> เมื่อ <math displaystyle="true"><mrow><mi>t</mi><mo>&lt;</mo><mn>0</mn></mrow></math> มีทิศตรงข้าม และเมื่อ <math displaystyle="true"><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow></math> ได้เวกเตอร์ศูนย์</p>
-<figure><img src="figures/fig-10-5.svg" alt="รูป 10.5" loading="lazy"><figcaption><strong>รูป 10.5</strong> สเกลาร์บวกคงทิศเดิม สเกลาร์ลบกลับทิศเวกเตอร์</figcaption></figure>
+<figure><img src="figures/fig-10-5.svg" alt="รูป 10.5" width="603" height="200" loading="lazy"><figcaption><strong>รูป 10.5</strong> สเกลาร์บวกคงทิศเดิม สเกลาร์ลบกลับทิศเวกเตอร์</figcaption></figure>
 <p>บวกแบบต่อหัวต่อหาง: ต่อเวกเตอร์ตัวหลังจากปลายตัวหน้า แล้วลากจากต้นแรกถึงปลายสุด; แบบต้นร่วม: สร้างสี่เหลี่ยมด้านขนาน ผลบวกคือทแยงจากต้นร่วมถึงมุมตรงข้าม</p>
-<figure><img src="figures/fig-10-6.svg" alt="รูป 10.6" loading="lazy"><figcaption><strong>รูป 10.6</strong> การบวกแบบต่อหัวต่อหางและสี่เหลี่ยมด้านขนานให้เวกเตอร์ผลบวกเดียวกัน</figcaption></figure>
+<figure><img src="figures/fig-10-6.svg" alt="รูป 10.6" width="603" height="235" loading="lazy"><figcaption><strong>รูป 10.6</strong> การบวกแบบต่อหัวต่อหางและสี่เหลี่ยมด้านขนานให้เวกเตอร์ผลบวกเดียวกัน</figcaption></figure>
 <p>การหา <math displaystyle="true"><mrow><mi>u</mi><mo>−</mo><mi>v</mi></mrow></math> ให้เลื่อนเวกเตอร์โดยคงขนาดและทิศทางเดิมจน <strong>หางของ </strong><math displaystyle="true"><mrow><mi>u</mi></mrow></math><strong> กับ </strong><math displaystyle="true"><mrow><mi>v</mi></mrow></math><strong> อยู่ที่จุดเดียวกัน</strong> แล้วลากลูกศร <strong>จากหัว </strong><math displaystyle="true"><mrow><mi>v</mi></mrow></math><strong> ไปหัว </strong><math displaystyle="true"><mrow><mi>u</mi></mrow></math> จะได้เวกเตอร์ <math displaystyle="true"><mrow><mi>u</mi><mo>−</mo><mi>v</mi></mrow></math></p>
 <p>จำทิศจากลำดับการลบ: <strong>หัวตัวที่ถูกลบ → หัวตัวตั้ง</strong> ถ้าลากกลับจากหัว <math displaystyle="true"><mrow><mi>u</mi></mrow></math> ไปหัว <math displaystyle="true"><mrow><mi>v</mi></mrow></math> จะได้ <math displaystyle="true"><mrow><mi>v</mi><mo>−</mo><mi>u</mi></mrow></math></p>
-<figure><img src="figures/fig-10-7.svg" alt="รูป 10.7" loading="lazy"><figcaption><strong>รูป 10.7</strong> วางหางร่วมกันแล้วลากจากหัว <math displaystyle="true"><mrow><mi>v</mi></mrow></math> ไปหัว <math displaystyle="true"><mrow><mi>u</mi></mrow></math> จะได้ <math displaystyle="true"><mrow><mi>u</mi><mo>−</mo><mi>v</mi></mrow></math></figcaption></figure>
+<figure><img src="figures/fig-10-7.svg" alt="รูป 10.7" width="603" height="248" loading="lazy"><figcaption><strong>รูป 10.7</strong> วางหางร่วมกันแล้วลากจากหัว <math displaystyle="true"><mrow><mi>v</mi></mrow></math> ไปหัว <math displaystyle="true"><mrow><mi>u</mi></mrow></math> จะได้ <math displaystyle="true"><mrow><mi>u</mi><mo>−</mo><mi>v</mi></mrow></math></figcaption></figure>
 <p><strong>เวกเตอร์หนึ่งหน่วย</strong> มีขนาด <math displaystyle="true"><mrow><mn>1</mn></mrow></math> ถ้าต้องการเวกเตอร์หนึ่งหน่วยทิศเดียวกับ <math displaystyle="true"><mrow><mi>u</mi></mrow></math> ให้หารด้วยขนาดของ <math displaystyle="true"><mrow><mi>u</mi></mrow></math></p>
 <p><math displaystyle="true"><mrow><mfrac><mrow><mi>u</mi></mrow><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></mfrac></mrow></math> เมื่อ <math displaystyle="true"><mrow><mi>u</mi><mo>≠</mo><mn>0</mn></mrow></math></p>
-<figure><img src="figures/fig-10-8.svg" alt="รูป 10.8" loading="lazy"><figcaption><strong>รูป 10.8</strong> หารด้วยขนาดเพื่อให้ได้เวกเตอร์หนึ่งหน่วยในทิศเดิม</figcaption></figure>
+<figure><img src="figures/fig-10-8.svg" alt="รูป 10.8" width="603" height="200" loading="lazy"><figcaption><strong>รูป 10.8</strong> หารด้วยขนาดเพื่อให้ได้เวกเตอร์หนึ่งหน่วยในทิศเดิม</figcaption></figure>
 <p>เวกเตอร์หนึ่งหน่วยตามแกนพิกัดคือ</p>
 <div class="display"><math display="block"><mrow><mi>i</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">[</mo><mtable><mtr><mtd columnalign="center"><mrow><mn>1</mn></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">]</mo></mrow><mtext>   </mtext><mi>j</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">[</mo><mtable><mtr><mtd columnalign="center"><mrow><mn>0</mn></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>1</mn></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">]</mo></mrow><mtext>   </mtext><mi>k</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">[</mo><mtable><mtr><mtd columnalign="center"><mrow><mn>0</mn></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>0</mn></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mn>1</mn></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">]</mo></mrow></mrow></math></div>
 <p>จึงเขียนเวกเตอร์ที่มีองค์ประกอบ <math displaystyle="true"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow></math>, <math displaystyle="true"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow></math>, <math displaystyle="true"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow></math> เป็น <math displaystyle="true"><mrow><mi>u</mi><mo>=</mo><msub><mrow><mi>u</mi></mrow><mrow><mi>x</mi></mrow></msub><mi>i</mi><mo>+</mo><msub><mrow><mi>u</mi></mrow><mrow><mi>y</mi></mrow></msub><mi>j</mi><mo>+</mo><msub><mrow><mi>u</mi></mrow><mrow><mi>z</mi></mrow></msub><mi>k</mi></mrow></math> ได้</p>
@@ -121,7 +145,7 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p><strong>จุดแบ่งส่วนของเส้นตรง</strong> ถ้าวัดทุกจุดจากจุด <math displaystyle="true"><mrow><mi>O</mi></mrow></math> และให้ <math displaystyle="true"><mrow><mi>p</mi></mrow></math>, <math displaystyle="true"><mrow><mi>q</mi></mrow></math>, <math displaystyle="true"><mrow><mi>r</mi></mrow></math> เป็นเวกเตอร์จาก <math displaystyle="true"><mrow><mi>O</mi></mrow></math> ไปยังจุด <math displaystyle="true"><mrow><mi>P</mi></mrow></math>, <math displaystyle="true"><mrow><mi>Q</mi></mrow></math>, <math displaystyle="true"><mrow><mi>R</mi></mrow></math> ตามลำดับ ถ้า <math displaystyle="true"><mrow><mi>R</mi></mrow></math> แบ่ง <math displaystyle="true"><mrow><mi>P</mi><mi>Q</mi></mrow></math> ภายในโดย <math displaystyle="true"><mrow><mi>P</mi><mi>R</mi><mo>:</mo><mi>R</mi><mi>Q</mi><mo>=</mo><mi>m</mi><mo>:</mo><mi>n</mi></mrow></math> เมื่อ <math displaystyle="true"><mrow><mi>m</mi><mo separator="true">,</mo><mi>n</mi><mo>&gt;</mo><mn>0</mn></mrow></math> จะได้</p>
 <div class="formula"><math displaystyle="true"><mrow><mi>r</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mi>p</mi><mo>+</mo><mi>m</mi><mi>q</mi></mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></mfrac></mrow></math></div>
 <p>ตัวคูณสลับกันแบบไขว้ เหมือนสูตรจุดแบ่งในบทเรขาคณิตวิเคราะห์: <math displaystyle="true"><mrow><mi>p</mi></mrow></math> คูณด้วย <math displaystyle="true"><mrow><mi>n</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> คูณด้วย <math displaystyle="true"><mrow><mi>m</mi></mrow></math> เพราะ <math displaystyle="true"><mrow><mi>R</mi></mrow></math> อยู่ใกล้จุดที่ส่วนของเส้นสั้นกว่า ถ้าเป็นจุดกึ่งกลาง (<math displaystyle="true"><mrow><mi>m</mi><mo>=</mo><mi>n</mi></mrow></math>) จะได้ <math displaystyle="true"><mrow><mi>r</mi><mo>=</mo><mfrac><mrow><mi>p</mi><mo>+</mo><mi>q</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math></p>
-<figure><img src="figures/fig-10-16.svg" alt="รูป 10.16" loading="lazy"><figcaption><strong>รูป 10.16</strong> <math displaystyle="true"><mrow><mi>R</mi></mrow></math> แบ่ง <math displaystyle="true"><mrow><mi>P</mi><mi>Q</mi></mrow></math> ด้วยอัตราส่วน <math displaystyle="true"><mrow><mi>m</mi><mo>:</mo><mi>n</mi></mrow></math> โดย <math displaystyle="true"><mrow><mi>p</mi></mrow></math> คูณ <math displaystyle="true"><mrow><mi>n</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> คูณ <math displaystyle="true"><mrow><mi>m</mi></mrow></math> แบบไขว้</figcaption></figure>
+<figure><img src="figures/fig-10-16.svg" alt="รูป 10.16" width="603" height="336" loading="lazy"><figcaption><strong>รูป 10.16</strong> <math displaystyle="true"><mrow><mi>R</mi></mrow></math> แบ่ง <math displaystyle="true"><mrow><mi>P</mi><mi>Q</mi></mrow></math> ด้วยอัตราส่วน <math displaystyle="true"><mrow><mi>m</mi><mo>:</mo><mi>n</mi></mrow></math> โดย <math displaystyle="true"><mrow><mi>p</mi></mrow></math> คูณ <math displaystyle="true"><mrow><mi>n</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> คูณ <math displaystyle="true"><mrow><mi>m</mi></mrow></math> แบบไขว้</figcaption></figure>
 </div></details>
 <details class="section" id="s3" open><summary><h2><math displaystyle="true"><mrow><mn>3</mn></mrow></math><strong>. ดอตโปรดักต์และมุมระหว่างเวกเตอร์</strong></h2></summary><div class="body">
 <p>ดอตโปรดักต์เขียนเป็น <math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mi>v</mi></mrow></math> ผลที่ได้เป็น <strong>จำนวน</strong></p>
@@ -131,7 +155,7 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <div class="formula"><math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mi>v</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>v</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mrow><mspace width="0.12em"/><mi>cos</mi><mo>&#x2061;</mo><mspace width="0.17em"/><mrow><mi>θ</mi></mrow></mrow></mrow></math></div>
 <p>จึงหามุมได้จาก <math displaystyle="true"><mrow><mrow><mspace width="0.12em"/><mi>cos</mi><mo>&#x2061;</mo><mspace width="0.17em"/><mrow><mi>θ</mi></mrow></mrow><mo>=</mo><mfrac><mrow><mi>u</mi><mo>·</mo><mi>v</mi></mrow><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>v</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></mfrac></mrow></math> และอ่านลักษณะมุมได้ว่า</p>
 <div class="table-wrap"><table><thead><tr><th>ค่า <math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mi>v</mi></mrow></math></th><th>มุมระหว่างเวกเตอร์</th></tr></thead><tbody><tr><td><math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mi>v</mi><mo>&gt;</mo><mn>0</mn></mrow></math></td><td>มุมแหลม หรือมุม <math displaystyle="true"><mrow><mn>0</mn></mrow></math></td></tr><tr><td><math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mi>v</mi><mo>=</mo><mn>0</mn></mrow></math></td><td>มุมฉาก</td></tr><tr><td><math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mi>v</mi><mo>&lt;</mo><mn>0</mn></mrow></math></td><td>มุมป้าน หรือมุม <math displaystyle="true"><mrow><mi>π</mi></mrow></math></td></tr></tbody></table></div>
-<figure><img src="figures/fig-10-9.svg" alt="รูป 10.9" loading="lazy"><figcaption><strong>รูป 10.9</strong> มุมแหลมให้ดอตเป็นบวก มุมฉากให้ศูนย์ และมุมป้านให้ค่าลบ</figcaption></figure>
+<figure><img src="figures/fig-10-9.svg" alt="รูป 10.9" width="603" height="200" loading="lazy"><figcaption><strong>รูป 10.9</strong> มุมแหลมให้ดอตเป็นบวก มุมฉากให้ศูนย์ และมุมป้านให้ค่าลบ</figcaption></figure>
 <p>สมบัติสำคัญ ได้แก่</p>
 <ul class="formulas"><li><math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mi>v</mi><mo>=</mo><mi>v</mi><mo>·</mo><mi>u</mi></mrow></math></li><li><math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>v</mi><mo>+</mo><mi>w</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>u</mi><mo>·</mo><mi>v</mi><mo>+</mo><mi>u</mi><mo>·</mo><mi>w</mi></mrow></math></li><li><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mi>u</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>·</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>b</mi><mi>v</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>a</mi><mi>b</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>u</mi><mo>·</mo><mi>v</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math><span class="cond"> เมื่อ <math displaystyle="true"><mrow><mi>a</mi></mrow></math>, <math displaystyle="true"><mrow><mi>b</mi></mrow></math> เป็นจำนวนจริง</span></li><li><math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mi>u</mi><mo>=</mo><msup><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow></math></li></ul>
 <p>จากการกระจายดอตโปรดักต์ ยังได้</p>
@@ -149,11 +173,11 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p>นำผลทั้งสามมาเรียงในเมทริกซ์คอลัมน์</p>
 <div class="display"><math display="block"><mrow><mi>u</mi><mo>×</mo><mi>v</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">[</mo><mtable><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>y</mi></mrow></msub><msub><mrow><mi>v</mi></mrow><mrow><mi>z</mi></mrow></msub><mo>−</mo><msub><mrow><mi>u</mi></mrow><mrow><mi>z</mi></mrow></msub><msub><mrow><mi>v</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>z</mi></mrow></msub><msub><mrow><mi>v</mi></mrow><mrow><mi>x</mi></mrow></msub><mo>−</mo><msub><mrow><mi>u</mi></mrow><mrow><mi>x</mi></mrow></msub><msub><mrow><mi>v</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><msub><mrow><mi>u</mi></mrow><mrow><mi>x</mi></mrow></msub><msub><mrow><mi>v</mi></mrow><mrow><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mi>u</mi></mrow><mrow><mi>y</mi></mrow></msub><msub><mrow><mi>v</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">]</mo></mrow></mrow></math></div>
 <p>ผลครอสไม่เป็นศูนย์ → ตั้งฉากกับ <math displaystyle="true"><mrow><mi>u</mi><mo separator="true">,</mo><mi>v</mi></mrow></math> ทิศตามกฎมือขวา เรียงจาก <math displaystyle="true"><mrow><mi>u</mi></mrow></math> ไป <math displaystyle="true"><mrow><mi>v</mi></mrow></math></p>
-<figure><img src="figures/fig-10-10.svg" alt="รูป 10.10" loading="lazy"><figcaption><strong>รูป 10.10</strong> ครอสตั้งฉากกับเวกเตอร์ทั้งสองและเลือกทิศตามกฎมือขวา</figcaption></figure>
+<figure><img src="figures/fig-10-10.svg" alt="รูป 10.10" width="603" height="325" loading="lazy"><figcaption><strong>รูป 10.10</strong> ครอสตั้งฉากกับเวกเตอร์ทั้งสองและเลือกทิศตามกฎมือขวา</figcaption></figure>
 <p><strong>ตรวจคำตอบ:</strong> นำผลครอสไปดอตกับ <math displaystyle="true"><mrow><mi>u</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>v</mi></mrow></math> ต้องได้ <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ทั้งคู่ เพราะครอสตั้งฉากกับเวกเตอร์ตั้งต้น ถ้ามีค่าใดไม่เป็น <math displaystyle="true"><mrow><mn>0</mn></mrow></math> แสดงว่าคำนวณผิด แต่ได้ <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ทั้งคู่ยังต้องตรวจขนาดและทิศของผลครอสด้วย</p>
 <p>สำหรับ <math displaystyle="true"><mrow><mi>u</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>v</mi></mrow></math> ที่ไม่เป็นศูนย์ ขนาดของครอสโปรดักต์คือ</p>
 <div class="formula"><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi><mo>×</mo><mi>v</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mo>=</mo><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>v</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mrow><mspace width="0.12em"/><mi>sin</mi><mo>&#x2061;</mo><mspace width="0.17em"/><mrow><mi>θ</mi></mrow></mrow></mrow></math></div>
-<figure><img src="figures/fig-10-11.svg" alt="รูป 10.11" loading="lazy"><figcaption><strong>รูป 10.11</strong> ขนาดครอสเท่ากับพื้นที่สี่เหลี่ยมด้านขนานที่สร้างจาก <math displaystyle="true"><mrow><mi>u</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>v</mi></mrow></math></figcaption></figure>
+<figure><img src="figures/fig-10-11.svg" alt="รูป 10.11" width="453" height="253" loading="lazy"><figcaption><strong>รูป 10.11</strong> ขนาดครอสเท่ากับพื้นที่สี่เหลี่ยมด้านขนานที่สร้างจาก <math displaystyle="true"><mrow><mi>u</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>v</mi></mrow></math></figcaption></figure>
 <p>สมบัติสำคัญ ได้แก่</p>
 <ul class="formulas"><li><math displaystyle="true"><mrow><mi>u</mi><mo>×</mo><mi>v</mi><mo>=</mo><mo>−</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>v</mi><mo>×</mo><mi>u</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li><li><math displaystyle="true"><mrow><mi>u</mi><mo>×</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>v</mi><mo>+</mo><mi>w</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>u</mi><mo>×</mo><mi>v</mi><mo>+</mo><mi>u</mi><mo>×</mo><mi>w</mi></mrow></math></li><li><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mi>u</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>×</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>b</mi><mi>v</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>a</mi><mi>b</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>u</mi><mo>×</mo><mi>v</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math><span class="cond"> เมื่อ <math displaystyle="true"><mrow><mi>a</mi></mrow></math>, <math displaystyle="true"><mrow><mi>b</mi></mrow></math> เป็นจำนวนจริง</span></li></ul>
 <ul class="points"><li><math displaystyle="true"><mrow><mi>u</mi><mo>×</mo><mi>u</mi><mo>=</mo><mn>0</mn></mrow></math> ซึ่งผลเป็นเวกเตอร์ศูนย์</li></ul>
@@ -165,37 +189,58 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p>ถ้า <math displaystyle="true"><mrow><mi>u</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>v</mi></mrow></math> เป็นเวกเตอร์ของด้านที่ออกจากจุดเดียวกัน</p>
 <div class="table-wrap"><table><thead><tr><th>รูปเรขาคณิต</th><th>พื้นที่</th></tr></thead><tbody><tr><td>พื้นที่สี่เหลี่ยมด้านขนาน</td><td><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi><mo>×</mo><mi>v</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math></td></tr><tr><td>พื้นที่สามเหลี่ยม</td><td><math displaystyle="true"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi><mo>×</mo><mi>v</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math></td></tr></tbody></table></div>
 <p>สูตรนี้เชื่อมกับฐานคูณสูง เพราะ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>v</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mrow><mspace width="0.12em"/><mi>sin</mi><mo>&#x2061;</mo><mspace width="0.17em"/><mrow><mi>θ</mi></mrow></mrow></mrow></math> คือความสูงเมื่อใช้ <math displaystyle="true"><mrow><mi>u</mi></mrow></math> เป็นฐาน</p>
-<figure><img src="figures/fig-10-13.svg" alt="รูป 10.13" loading="lazy"><figcaption><strong>รูป 10.13</strong> สามเหลี่ยมมีพื้นที่ครึ่งหนึ่งของสี่เหลี่ยมด้านขนานบนด้านเดียวกัน</figcaption></figure>
+<figure><img src="figures/fig-10-13.svg" alt="รูป 10.13" width="603" height="227" loading="lazy"><figcaption><strong>รูป 10.13</strong> สามเหลี่ยมมีพื้นที่ครึ่งหนึ่งของสี่เหลี่ยมด้านขนานบนด้านเดียวกัน</figcaption></figure>
 <p>ถ้ามีเวกเตอร์สามตัว <math displaystyle="true"><mrow><mi>u</mi></mrow></math>, <math displaystyle="true"><mrow><mi>v</mi></mrow></math>, <math displaystyle="true"><mrow><mi>w</mi></mrow></math> เป็นขอบที่ออกจากจุดเดียวกัน ปริมาตรทรงสี่เหลี่ยมด้านขนานคือ</p>
 <div class="formula"><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>u</mi><mo>·</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>v</mi><mo>×</mo><mi>w</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math></div>
 <p>ต้องมีค่าสัมบูรณ์ เพราะปริมาตรไม่ติดลบ ถ้าค่านี้เป็นศูนย์ เวกเตอร์ทั้งสามไม่สร้างปริมาตรสามมิติ เช่น อยู่ในระนาบเดียวกัน</p>
 <p><math displaystyle="true"><mrow><mi>v</mi><mo separator="true">,</mo><mi>w</mi></mrow></math> เป็นด้านฐาน <math displaystyle="true"><mrow><mi>u</mi></mrow></math> เป็นขอบเอียง ความสูงวัดตั้งฉากฐาน ไม่ใช่ความยาว <math displaystyle="true"><mrow><mi>u</mi></mrow></math></p>
-<figure><img src="figures/fig-10-14.svg" alt="รูป 10.14" loading="lazy"><figcaption><strong>รูป 10.14</strong> ปริมาตรคือพื้นที่ฐานจาก <math displaystyle="true"><mrow><mi>v</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>w</mi></mrow></math> คูณความสูงตามแนวตั้งฉาก</figcaption></figure>
+<figure><img src="figures/fig-10-14.svg" alt="รูป 10.14" width="507" height="360" loading="lazy"><figcaption><strong>รูป 10.14</strong> ปริมาตรคือพื้นที่ฐานจาก <math displaystyle="true"><mrow><mi>v</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>w</mi></mrow></math> คูณความสูงตามแนวตั้งฉาก</figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> ถ้าโจทย์ให้พิกัดจุด ต้องสร้างเวกเตอร์ของด้านจากจุดร่วมเดียวกันก่อน ไม่ใช้พิกัดจุดแทนเวกเตอร์ของด้านทันที</p>
 </div></details>
 <details class="section" id="s6" open><summary><h2><math displaystyle="true"><mrow><mn>6</mn></mrow></math><strong>. แนวที่เลือกฝึก: แยกดอตกับครอสแล้วตรวจสมบัติ</strong></h2></summary><div class="body">
 <p>ดูดอต/ครอสก่อนคำนวณ เพราะชนิดผลลัพธ์ต่างกัน</p>
 <div class="table-wrap"><table><thead><tr><th>สิ่งที่พิจารณา</th><th>ดอตโปรดักต์</th><th>ครอสโปรดักต์</th></tr></thead><tbody><tr><td>ผลลัพธ์</td><td>จำนวน</td><td>เวกเตอร์</td></tr><tr><td>สลับลำดับ</td><td>ค่าเดิม</td><td>เปลี่ยนเครื่องหมาย</td></tr><tr><td>ใช้ตรวจเวกเตอร์ไม่เป็นศูนย์</td><td>ตั้งฉากเมื่อดอตได้ <math displaystyle="true"><mrow><mn>0</mn></mrow></math></td><td>ขนานเมื่อครอสได้เวกเตอร์ศูนย์</td></tr></tbody></table></div>
-<figure><img src="figures/fig-10-15.svg" alt="รูป 10.15" loading="lazy"><figcaption><strong>รูป 10.15</strong> ดอตให้ผลเป็นจำนวน ส่วนครอสให้เวกเตอร์ตั้งฉากเมื่อผลไม่เป็นศูนย์</figcaption></figure>
+<figure><img src="figures/fig-10-15.svg" alt="รูป 10.15" width="603" height="285" loading="lazy"><figcaption><strong>รูป 10.15</strong> ดอตให้ผลเป็นจำนวน ส่วนครอสให้เวกเตอร์ตั้งฉากเมื่อผลไม่เป็นศูนย์</figcaption></figure>
 <p>ตรวจตั้งฉาก → ใช้ดอต; ตรวจขนานในสามมิติ → ใช้ครอสหรือดูว่าเวกเตอร์หนึ่งเป็นจำนวนคูณอีกเวกเตอร์หรือไม่</p>
 <p>เมื่อมีผลบวกหรือจำนวนคูณเวกเตอร์ → กระจายด้วยสมบัติ → ตรวจพจน์ที่เป็นศูนย์หรือหักล้างกัน</p>
 <p>เมื่อพบ <math displaystyle="true"><mrow><mi>u</mi><mo>×</mo><mi>v</mi></mrow></math> ที่ไม่เป็นศูนย์ เรารู้ว่าเวกเตอร์นี้ตั้งฉากกับทั้ง <math displaystyle="true"><mrow><mi>u</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>v</mi></mrow></math> จึงมี</p>
 <p><math displaystyle="true"><mrow><mi>u</mi><mo>·</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>u</mi><mo>×</mo><mi>v</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math> และ <math displaystyle="true"><mrow><mi>v</mi><mo>·</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>u</mi><mo>×</mo><mi>v</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></p>
 <p>สองสมการนี้ยังคงให้ค่า <math displaystyle="true"><mrow><mn>0</mn></mrow></math> แม้ครอสโปรดักต์จะเป็นเวกเตอร์ศูนย์ แต่ในกรณีนั้นใช้กล่าวถึงทิศทางหรือมุมของผลครอสไม่ได้</p>
 <p class="caution"><strong>ระวัง:</strong> อย่าสลับเงื่อนไข “ดอตเป็นศูนย์” กับ “ครอสเป็นศูนย์” และก่อนสรุปความสัมพันธ์เรื่องมุมหรือทิศทาง ต้องตรวจว่าเวกเตอร์ที่เกี่ยวข้องไม่เป็นศูนย์</p>
-</div></details><div class="pager"><a href="ch09.html">← บทที่ 9</a><a href="index.html">สารบัญ</a><a href="ch11.html">บทที่ 11 →</a></div></main>
-<script>
+</div></details><div class="pager"><a class="prev" href="ch09.html"><small>← บทที่ 9</small>เมทริกซ์</a><a class="next" href="ch11.html"><small>บทที่ 11 →</small>จำนวนเชิงซ้อน</a><a class="home" href="index.html">สารบัญทุกบท</a></div></main>
+<button id="totop" type="button" aria-label="กลับขึ้นบน">↑</button>
+<script>(()=>{
 const box=document.querySelector('.search');
-if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+const hits=document.querySelector('.hits');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();let count=0,first=null;
 document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
 document.querySelectorAll('details.section').forEach(d=>{
  const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
  if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
   while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
   nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
-   const m=document.createElement('mark');r.surroundContents(m);});}
-});});}
+   const m=document.createElement('mark');r.surroundContents(m);count++;if(!first)first=m;});}
+});
+ if(hits)hits.textContent=q?(count?'พบ '+count+' ที่':'ไม่พบคำนี้ในบทนี้'):'';
+ if(first)first.scrollIntoView({block:'center'});});}
 const sel=document.querySelector('header.top select');
 if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
-</script>
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+if(store.get('big')==='1')document.documentElement.classList.add('big');
+document.querySelectorAll('.size-btn').forEach(b=>b.addEventListener('click',()=>{
+ const on=document.documentElement.classList.toggle('big');store.set('big',on?'1':'0');}));
+const bar=document.getElementById('progress'),toTop=document.getElementById('totop');
+const page=document.body.dataset.page;
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;const y=scrollY;
+ if(bar)bar.style.width=(h>0?Math.min(100,y/h*100):0)+'%';if(toTop)toTop.classList.toggle('show',y>innerHeight);
+ if(page){store.set('last',page);store.set('last-y',String(Math.round(y)));}}
+addEventListener('scroll',onScroll,{passive:true});
+if(toTop)toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const resume=document.querySelector('.resume');
+if(resume){const last=store.get('last');const name=last&&document.querySelector('.cards a[href="'+last+'"]');
+ if(name){resume.href=last+'#resume';resume.textContent='อ่านต่อ: '+name.textContent.replace(/^\d+/,m=>'บทที่ '+m+' ');}
+ else resume.remove();}
+if(page&&location.hash==='#resume'){const y=+store.get('last-y')||0;history.replaceState(null,'',location.pathname);
+ addEventListener('load',()=>scrollTo(0,y));}
+})();</script>
 </body></html>

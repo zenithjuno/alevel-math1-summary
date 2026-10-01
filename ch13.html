@@ -16,8 +16,7 @@ font-size:1.12rem;line-height:1.75}
 header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
 display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
 header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
-header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+header.top select{flex:1;min-width:0;font:inherit;font-size:.95rem;padding:.3rem .45rem;border-radius:8px;
 border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
@@ -27,14 +26,21 @@ main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner .t span{font-size:1.45rem;font-weight:700}
 .search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
 background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
-details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+nav.toc{display:flex;gap:.4rem;margin:0 -1rem 1rem;padding:0 1rem .3rem;overflow-x:auto;scrollbar-width:none;
+-webkit-overflow-scrolling:touch}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;white-space:nowrap;font-size:.9rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;
+color:var(--blue);text-decoration:none;background:var(--bg)}
+.toc-label{font-size:.85rem;color:var(--muted);margin:.2rem 0 .3rem}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1.4rem 0;padding:0 0 0 .9rem}
+@media (max-width:480px){details.section{padding-left:.6rem;border-left-width:3px}main{padding:.8rem .8rem 5rem}}
+details.section>summary h2{font-family:inherit}
 details.section>summary{cursor:pointer;list-style:none}
 details.section>summary::-webkit-details-marker{display:none}
 details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
-details.section>summary::after{content:" ▾";color:var(--muted)}
-details.section:not([open])>summary::after{content:" ▸"}
+details.section>summary{display:flex;align-items:baseline;gap:.4rem}
+details.section>summary::after{content:"▾";color:var(--muted);flex:none}
+details.section:not([open])>summary::after{content:"▸"}
 h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
 p{margin:.5rem 0}
 p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
@@ -62,7 +68,11 @@ figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
 math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
 math[display=block]{margin:.3rem 0}
 mark{background:#fac775;color:#412402;border-radius:3px}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:2.2rem}
+.pager a{display:block;border:1px solid var(--line);border-radius:12px;padding:.55rem .8rem;line-height:1.4}
+.pager a small{display:block;color:var(--muted);font-size:.8rem}
+.pager .next{text-align:right;grid-column:2}
+.pager .home{grid-column:1 / -1;text-align:center}
 .pager a,.cards a{color:var(--blue);text-decoration:none}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
 .cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
@@ -72,12 +82,26 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 .hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
 .hero p{color:var(--muted);margin:0}
 .hidden{display:none}
+.tools{display:flex;gap:.5rem;align-items:center;margin:.2rem 0 .4rem}
+.tools .search{flex:1;margin:0}
+.hits{font-size:.85rem;color:var(--muted);min-height:1.2em;margin:.1rem 0 .4rem}
+.icon-btn{flex:none;font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);
+border-radius:8px;padding:.25rem .55rem;cursor:pointer}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:6}
+#totop{position:fixed;right:1rem;bottom:1.2rem;z-index:6;width:2.8rem;height:2.8rem;border-radius:50%;
+border:1px solid var(--line);background:var(--bg);color:var(--blue);font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.15);
+opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.show{opacity:1;pointer-events:auto}
+.resume{display:block;text-align:center;margin:0 auto 1rem;max-width:22rem;border:1px solid var(--blue);border-radius:12px;
+padding:.55rem .8rem;color:var(--blue);text-decoration:none}
+html.big body{font-size:1.28rem}
 </style></head>
-<body>
+<body data-page="ch13.html">
+<div id="progress"></div>
 <header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
-<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
-<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html" selected>บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select></header>
-<main><div class="banner"><div class="n">13</div><div class="t"><small>บทที่ 13</small><span>ความน่าจะเป็น</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. การทดลองสุ่ม ปริภูมิตัวอย่าง และเหตุการณ์</a><a href="#s2">2. ความน่าจะเป็นกับการนับ</a><a href="#s3">3. ส่วนเติมเต็ม การรวม และการเกิดร่วม</a><a href="#s4">4. ใช้หลักการนับหาความน่าจะเป็นของการหยิบ</a><a href="#s5">5. แนวที่เลือกฝึก: อย่างน้อยหนึ่ง ใช้ส่วนเติมเต็ม</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. การทดลองสุ่ม ปริภูมิตัวอย่าง และเหตุการณ์</strong></h2></summary><div class="body">
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html" selected>บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<button class="icon-btn size-btn" type="button" aria-label="ขยาย/ย่อตัวอักษร">Aa</button></header>
+<main><div class="banner"><div class="n">13</div><div class="t"><small>บทที่ 13</small><span>ความน่าจะเป็น</span></div></div><div class="tools"><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"></div><div class="hits"></div><div class="toc-label">หัวข้อในบทนี้ (ปัดดูต่อ →)</div><nav class="toc"><a href="#s1">1. การทดลองสุ่ม ปริภูมิตัวอย่าง และเหตุการณ์</a><a href="#s2">2. ความน่าจะเป็นกับการนับ</a><a href="#s3">3. ส่วนเติมเต็ม การรวม และการเกิดร่วม</a><a href="#s4">4. ใช้หลักการนับหาความน่าจะเป็นของการหยิบ</a><a href="#s5">5. แนวที่เลือกฝึก: อย่างน้อยหนึ่ง ใช้ส่วนเติมเต็ม</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. การทดลองสุ่ม ปริภูมิตัวอย่าง และเหตุการณ์</strong></h2></summary><div class="body">
 <p>การทดลองสุ่มบอกผลแน่นอนล่วงหน้าไม่ได้ แต่ระบุผลที่เป็นไปได้ เช่น ทอดลูกเต๋าครั้งเดียว</p>
 <p class="definition"><strong>บทนิยาม:</strong> ปริภูมิตัวอย่าง <math displaystyle="true"><mrow><mi>S</mi></mrow></math> คือเซตของผลลัพธ์ที่เป็นไปได้ทั้งหมด ส่วนเหตุการณ์ <math displaystyle="true"><mrow><mi>A</mi></mrow></math> คือเซตของผลลัพธ์ที่ตรงเงื่อนไขที่สนใจ โดย <math displaystyle="true"><mrow><mi>A</mi><mo>⊆</mo><mi>S</mi></mrow></math></p>
 <p class="example">เช่น ทอดลูกเต๋าหนึ่งลูกหนึ่งครั้ง มี <math displaystyle="true"><mrow><mi>S</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">{</mo><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>6</mn></mrow><mo fence="true" stretchy="true">}</mo></mrow></mrow></math> เหตุการณ์ได้แต้มคู่คือ <math displaystyle="true"><mrow><mi>A</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">{</mo><mrow><mn>2</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>6</mn></mrow><mo fence="true" stretchy="true">}</mo></mrow></mrow></math> เหตุการณ์ไม่ได้เป็นผลลัพธ์เดียวเสมอไป</p>
@@ -101,7 +125,7 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p class="example">เช่น ลูกเต๋าเที่ยงตรง ให้ <math displaystyle="true"><mrow><mi>A</mi></mrow></math> เป็นแต้มคู่ และ <math displaystyle="true"><mrow><mi>B</mi></mrow></math> เป็นแต้มมากกว่า <math displaystyle="true"><mrow><mn>3</mn></mrow></math> จะมี <math displaystyle="true"><mrow><mi>A</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">{</mo><mrow><mn>2</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>6</mn></mrow><mo fence="true" stretchy="true">}</mo></mrow></mrow></math>, <math displaystyle="true"><mrow><mi>B</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">{</mo><mrow><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>6</mn></mrow><mo fence="true" stretchy="true">}</mo></mrow></mrow></math> จึง <math displaystyle="true"><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">{</mo><mrow><mn>4</mn><mo separator="true">,</mo><mn>6</mn></mrow><mo fence="true" stretchy="true">}</mo></mrow></mrow></math> และ <math displaystyle="true"><mrow><mi>A</mi><mo>∪</mo><mi>B</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">{</mo><mrow><mn>2</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mn>6</mn></mrow><mo fence="true" stretchy="true">}</mo></mrow></mrow></math> ดังนั้น</p>
 <div class="formula"><math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mn>6</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></math></div>
 <div class="formula"><math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>6</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>6</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mn>6</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>4</mn></mrow><mrow><mn>6</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></math></div>
-<figure><img src="figures/fig-13-1.svg" alt="รูป 13.1" loading="lazy"><figcaption><strong>รูป 13.1</strong> ส่วนร่วมถูกนับในทั้งสองเหตุการณ์ จึงต้องลบออกหนึ่งครั้ง</figcaption></figure>
+<figure><img src="figures/fig-13-1.svg" alt="รูป 13.1" width="603" height="315" loading="lazy"><figcaption><strong>รูป 13.1</strong> ส่วนร่วมถูกนับในทั้งสองเหตุการณ์ จึงต้องลบออกหนึ่งครั้ง</figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> คำว่า “หรือ” ใน <math displaystyle="true"><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow></math> รวมการเกิดทั้งสองด้วย ถ้าถาม “เพียงเหตุการณ์เดียว” ต้องตัดส่วนร่วมออกจากทั้งสองฝั่ง</p>
 </div></details>
 <details class="section" id="s4" open><summary><h2><math displaystyle="true"><mrow><mn>4</mn></mrow></math><strong>. ใช้หลักการนับหาความน่าจะเป็นของการหยิบ</strong></h2></summary><div class="body">
@@ -116,25 +140,46 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p class="example">เช่น โยนเหรียญสองครั้ง โดยหัว–หัว, หัว–ก้อย, ก้อย–หัว, ก้อย–ก้อยมีโอกาสเท่ากัน การไม่มีหัวมีเพียงก้อย–ก้อยหนึ่งแบบจากสี่แบบ จึงมีโอกาส <math displaystyle="true"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac></mrow></math> ดังนั้นได้หัวอย่างน้อยหนึ่งครั้ง <math displaystyle="true"><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>4</mn></mrow></mfrac></mrow></math></p>
 <p>เหตุการณ์ตรงข้ามของ “อย่างน้อยหนึ่งใน <math displaystyle="true"><mrow><mi>A</mi><mo separator="true">,</mo><mi>B</mi></mrow></math> เกิด” คือ “<math displaystyle="true"><mrow><mi>A</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>B</mi></mrow></math> ไม่เกิดทั้งคู่” จึง</p>
 <div class="formula"><math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi><mo>′</mo><mo>∩</mo><mi>B</mi><mo>′</mo></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></div>
-<figure><img src="figures/fig-13-4.svg" alt="รูป 13.4" loading="lazy"><figcaption><strong>รูป 13.4</strong> ส่วนตรงข้ามของเกิดอย่างน้อยหนึ่งเหตุการณ์ คือบริเวณนอกทั้งสองเหตุการณ์</figcaption></figure>
+<figure><img src="figures/fig-13-4.svg" alt="รูป 13.4" width="603" height="296" loading="lazy"><figcaption><strong>รูป 13.4</strong> ส่วนตรงข้ามของเกิดอย่างน้อยหนึ่งเหตุการณ์ คือบริเวณนอกทั้งสองเหตุการณ์</figcaption></figure>
 <p class="example">ตัวอย่าง ถุงมีลูกบอลแดง <math displaystyle="true"><mrow><mn>2</mn></mrow></math> ลูก น้ำเงิน <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ลูก สุ่มหยิบพร้อมกัน <math displaystyle="true"><mrow><mn>2</mn></mrow></math> ลูก โดยแต่ละคู่มีโอกาสเท่ากัน:</p>
 <ul class="points"><li>ทั้งหมด <math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>5</mn><mo separator="true">,</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>10</mn></mrow></math> คู่</li><li>ไม่มีแดงเลย คือเลือกน้ำเงินสองลูก มี <math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>3</mn><mo separator="true">,</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math> คู่</li><li>โอกาสมีแดงอย่างน้อยหนึ่งลูก <math displaystyle="true"><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>10</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>7</mn></mrow><mrow><mn>10</mn></mrow></mfrac></mrow></math></li></ul>
 <p>ตรวจด้วยการนับตรง: แดงหนึ่งลูกพอดีมี <math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>2</mn><mo separator="true">,</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>3</mn><mo separator="true">,</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>6</mn></mrow></math> คู่ และแดงสองลูกมี <math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>2</mn><mo separator="true">,</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math> คู่ รวม <math displaystyle="true"><mrow><mn>7</mn></mrow></math> คู่จากทั้งหมด <math displaystyle="true"><mrow><mn>10</mn></mrow></math> คู่ จึงได้ <math displaystyle="true"><mrow><mfrac><mrow><mn>7</mn></mrow><mrow><mn>10</mn></mrow></mfrac></mrow></math> เช่นกัน ส่วนโอกาสแดงหนึ่งลูกพอดีคือ <math displaystyle="true"><mrow><mfrac><mrow><mn>6</mn></mrow><mrow><mn>10</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>5</mn></mrow></mfrac></mrow></math> ซึ่งต่างจากอย่างน้อยหนึ่งลูก</p>
 <p><strong>วิธีเริ่มโจทย์:</strong> ระบุว่า “หนึ่ง” นับอะไร → เขียนเหตุการณ์ตรงข้ามเป็นคำ → นับกรณีของเหตุการณ์ตรงข้ามเทียบทั้งหมด → ลบออกจาก <math displaystyle="true"><mrow><mn>1</mn></mrow></math> → ตรวจว่าครอบคลุมจำนวนครั้งที่โจทย์ถาม</p>
 <p class="caution"><strong>ระวัง:</strong> ส่วนตรงข้ามของ “อย่างน้อยหนึ่ง” คือศูนย์ ไม่ใช่ “ไม่เกินหนึ่ง” ซึ่งรวมทั้งศูนย์และหนึ่ง ให้นับผลลัพธ์ที่ตรงเหตุการณ์นั้นก่อน ไม่คูณโอกาสแยกกันแทนการนับ</p>
-</div></details><div class="pager"><a href="ch12.html">← บทที่ 12</a><a href="index.html">สารบัญ</a><a href="ch14.html">บทที่ 14 →</a></div></main>
-<script>
+</div></details><div class="pager"><a class="prev" href="ch12.html"><small>← บทที่ 12</small>หลักการนับเบื้องต้น</a><a class="next" href="ch14.html"><small>บทที่ 14 →</small>ลำดับและอนุกรม</a><a class="home" href="index.html">สารบัญทุกบท</a></div></main>
+<button id="totop" type="button" aria-label="กลับขึ้นบน">↑</button>
+<script>(()=>{
 const box=document.querySelector('.search');
-if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+const hits=document.querySelector('.hits');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();let count=0,first=null;
 document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
 document.querySelectorAll('details.section').forEach(d=>{
  const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
  if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
   while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
   nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
-   const m=document.createElement('mark');r.surroundContents(m);});}
-});});}
+   const m=document.createElement('mark');r.surroundContents(m);count++;if(!first)first=m;});}
+});
+ if(hits)hits.textContent=q?(count?'พบ '+count+' ที่':'ไม่พบคำนี้ในบทนี้'):'';
+ if(first)first.scrollIntoView({block:'center'});});}
 const sel=document.querySelector('header.top select');
 if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
-</script>
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+if(store.get('big')==='1')document.documentElement.classList.add('big');
+document.querySelectorAll('.size-btn').forEach(b=>b.addEventListener('click',()=>{
+ const on=document.documentElement.classList.toggle('big');store.set('big',on?'1':'0');}));
+const bar=document.getElementById('progress'),toTop=document.getElementById('totop');
+const page=document.body.dataset.page;
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;const y=scrollY;
+ if(bar)bar.style.width=(h>0?Math.min(100,y/h*100):0)+'%';if(toTop)toTop.classList.toggle('show',y>innerHeight);
+ if(page){store.set('last',page);store.set('last-y',String(Math.round(y)));}}
+addEventListener('scroll',onScroll,{passive:true});
+if(toTop)toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const resume=document.querySelector('.resume');
+if(resume){const last=store.get('last');const name=last&&document.querySelector('.cards a[href="'+last+'"]');
+ if(name){resume.href=last+'#resume';resume.textContent='อ่านต่อ: '+name.textContent.replace(/^\d+/,m=>'บทที่ '+m+' ');}
+ else resume.remove();}
+if(page&&location.hash==='#resume'){const y=+store.get('last-y')||0;history.replaceState(null,'',location.pathname);
+ addEventListener('load',()=>scrollTo(0,y));}
+})();</script>
 </body></html>

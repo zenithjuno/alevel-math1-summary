@@ -16,8 +16,7 @@ font-size:1.12rem;line-height:1.75}
 header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
 display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
 header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
-header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+header.top select{flex:1;min-width:0;font:inherit;font-size:.95rem;padding:.3rem .45rem;border-radius:8px;
 border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
@@ -27,14 +26,21 @@ main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner .t span{font-size:1.45rem;font-weight:700}
 .search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
 background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
-details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+nav.toc{display:flex;gap:.4rem;margin:0 -1rem 1rem;padding:0 1rem .3rem;overflow-x:auto;scrollbar-width:none;
+-webkit-overflow-scrolling:touch}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;white-space:nowrap;font-size:.9rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;
+color:var(--blue);text-decoration:none;background:var(--bg)}
+.toc-label{font-size:.85rem;color:var(--muted);margin:.2rem 0 .3rem}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1.4rem 0;padding:0 0 0 .9rem}
+@media (max-width:480px){details.section{padding-left:.6rem;border-left-width:3px}main{padding:.8rem .8rem 5rem}}
+details.section>summary h2{font-family:inherit}
 details.section>summary{cursor:pointer;list-style:none}
 details.section>summary::-webkit-details-marker{display:none}
 details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
-details.section>summary::after{content:" ▾";color:var(--muted)}
-details.section:not([open])>summary::after{content:" ▸"}
+details.section>summary{display:flex;align-items:baseline;gap:.4rem}
+details.section>summary::after{content:"▾";color:var(--muted);flex:none}
+details.section:not([open])>summary::after{content:"▸"}
 h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
 p{margin:.5rem 0}
 p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
@@ -62,7 +68,11 @@ figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
 math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
 math[display=block]{margin:.3rem 0}
 mark{background:#fac775;color:#412402;border-radius:3px}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:2.2rem}
+.pager a{display:block;border:1px solid var(--line);border-radius:12px;padding:.55rem .8rem;line-height:1.4}
+.pager a small{display:block;color:var(--muted);font-size:.8rem}
+.pager .next{text-align:right;grid-column:2}
+.pager .home{grid-column:1 / -1;text-align:center}
 .pager a,.cards a{color:var(--blue);text-decoration:none}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
 .cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
@@ -72,12 +82,26 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 .hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
 .hero p{color:var(--muted);margin:0}
 .hidden{display:none}
+.tools{display:flex;gap:.5rem;align-items:center;margin:.2rem 0 .4rem}
+.tools .search{flex:1;margin:0}
+.hits{font-size:.85rem;color:var(--muted);min-height:1.2em;margin:.1rem 0 .4rem}
+.icon-btn{flex:none;font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);
+border-radius:8px;padding:.25rem .55rem;cursor:pointer}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:6}
+#totop{position:fixed;right:1rem;bottom:1.2rem;z-index:6;width:2.8rem;height:2.8rem;border-radius:50%;
+border:1px solid var(--line);background:var(--bg);color:var(--blue);font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.15);
+opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.show{opacity:1;pointer-events:auto}
+.resume{display:block;text-align:center;margin:0 auto 1rem;max-width:22rem;border:1px solid var(--blue);border-radius:12px;
+padding:.55rem .8rem;color:var(--blue);text-decoration:none}
+html.big body{font-size:1.28rem}
 </style></head>
-<body>
+<body data-page="ch17.html">
+<div id="progress"></div>
 <header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
-<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
-<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html" selected>บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select></header>
-<main><div class="banner"><div class="n">17</div><div class="t"><small>บทที่ 17</small><span>ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. ตัวแปรสุ่มและตารางแจกแจง</a><a href="#s2">2. ค่าคาดหมาย ความแปรปรวน และส่วนเบี่ยงเบนมาตรฐาน</a><a href="#s3">3. เอกรูปไม่ต่อเนื่อง</a><a href="#s4">4. ทวินาม <math displaystyle="true"><mrow><mi>B</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></a><a href="#s5">5. ปกติและการแปลงเป็น <math displaystyle="true"><mrow><mi>z</mi></mrow></math></a><a href="#s6">6. อ่านตารางปกติ: ดูพื้นที่ที่ตารางให้ก่อน</a><a href="#s7">7. แนวที่เน้น: ไม่เกินหนึ่ง</a><a href="#s8">8. แนวที่เน้น: หางขวาของปกติ</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. ตัวแปรสุ่มและตารางแจกแจง</strong></h2></summary><div class="body">
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html" selected>บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<button class="icon-btn size-btn" type="button" aria-label="ขยาย/ย่อตัวอักษร">Aa</button></header>
+<main><div class="banner"><div class="n">17</div><div class="t"><small>บทที่ 17</small><span>ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</span></div></div><div class="tools"><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"></div><div class="hits"></div><div class="toc-label">หัวข้อในบทนี้ (ปัดดูต่อ →)</div><nav class="toc"><a href="#s1">1. ตัวแปรสุ่มและตารางแจกแจง</a><a href="#s2">2. ค่าคาดหมาย ความแปรปรวน และส่วนเบี่ยงเบนมาตรฐาน</a><a href="#s3">3. เอกรูปไม่ต่อเนื่อง</a><a href="#s4">4. ทวินาม <math displaystyle="true"><mrow><mi>B</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></a><a href="#s5">5. ปกติและการแปลงเป็น <math displaystyle="true"><mrow><mi>z</mi></mrow></math></a><a href="#s6">6. อ่านตารางปกติ: ดูพื้นที่ที่ตารางให้ก่อน</a><a href="#s7">7. แนวที่เน้น: ไม่เกินหนึ่ง</a><a href="#s8">8. แนวที่เน้น: หางขวาของปกติ</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. ตัวแปรสุ่มและตารางแจกแจง</strong></h2></summary><div class="body">
 <p class="definition"><strong>บทนิยาม:</strong> ตัวแปรสุ่ม <math displaystyle="true"><mrow><mi>X</mi></mrow></math> กำหนดจำนวนให้ผลลัพธ์แต่ละแบบ เช่น <math displaystyle="true"><mrow><mi>X</mi><mo>=</mo></mrow></math>จำนวนหัวจากการโยนเหรียญสองครั้ง: หัว–หัวให้ <math displaystyle="true"><mrow><mn>2</mn></mrow></math>, หัว–ก้อยและก้อย–หัวให้ <math displaystyle="true"><mrow><mn>1</mn></mrow></math>, ก้อย–ก้อยให้ <math displaystyle="true"><mrow><mn>0</mn></mrow></math></p>
 <div class="table-wrap"><table><thead><tr><th>ชนิด</th><th>ค่าที่เป็นไปได้</th><th>ตัวอย่าง</th></tr></thead><tbody><tr><td>ไม่ต่อเนื่อง</td><td>แยกเป็นค่า ๆ นับได้</td><td>จำนวนหัว แต้มลูกเต๋า</td></tr><tr><td>ต่อเนื่อง</td><td>อยู่บนช่วง</td><td>เวลา น้ำหนัก</td></tr></tbody></table></div>
 <p>ตารางแจกแจงจับคู่ <math displaystyle="true"><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math> กับ <math displaystyle="true"><mrow><msub><mrow><mi>p</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>=</mo><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>X</mi><mo>=</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> โดย <math displaystyle="true"><mrow><msub><mrow><mi>p</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>≥</mo><mn>0</mn></mrow></math>, <math displaystyle="true"><mrow><mo largeop="false">∑</mo><msub><mrow><mi>p</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>=</mo><mn>1</mn></mrow></math>; ผลลัพธ์ต่างกันที่ให้ <math displaystyle="true"><mrow><mi>X</mi></mrow></math> เท่ากันต้องรวมโอกาส</p>
@@ -108,16 +132,16 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p><math displaystyle="true"><mrow><msup><mrow><mi>r</mi></mrow><mrow><mi>k</mi></mrow></msup><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup></mrow></math> ให้โอกาสของลำดับนั้น; <math displaystyle="true"><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow></math> ได้ <math displaystyle="true"><mrow><mi>X</mi><mo>=</mo><mn>0</mn></mrow></math> แน่นอน; <math displaystyle="true"><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow></math> ได้ <math displaystyle="true"><mrow><mi>X</mi><mo>=</mo><mi>n</mi></mrow></math> แน่นอน</p>
 <p class="example">เช่น <math displaystyle="true"><mrow><mi>X</mi><mo>∼</mo><mi>B</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>3</mn><mo separator="true">,</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> มี <math displaystyle="true"><mrow><mi>E</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>X</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math>, <math displaystyle="true"><mrow><mrow><mspace width="0.12em"/><mi>Var</mi><mo>&#x2061;</mo><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>X</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></mrow><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>4</mn></mrow></mfrac></mrow></math> และตาราง</p>
 <div class="table-wrap"><table><thead><tr><th><math displaystyle="true"><mrow><mi>k</mi></mrow></math></th><th><math displaystyle="true"><mrow><mn>0</mn></mrow></math></th><th><math displaystyle="true"><mrow><mn>1</mn></mrow></math></th><th><math displaystyle="true"><mrow><mn>2</mn></mrow></math></th><th><math displaystyle="true"><mrow><mn>3</mn></mrow></math></th></tr></thead><tbody><tr><td><math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>X</mi><mo>=</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td><td><math displaystyle="true"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>8</mn></mrow></mfrac></mrow></math></td><td><math displaystyle="true"><mrow><mfrac><mrow><mn>3</mn></mrow><mrow><mn>8</mn></mrow></mfrac></mrow></math></td><td><math displaystyle="true"><mrow><mfrac><mrow><mn>3</mn></mrow><mrow><mn>8</mn></mrow></mfrac></mrow></math></td><td><math displaystyle="true"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>8</mn></mrow></mfrac></mrow></math></td></tr></tbody></table></div>
-<figure><img src="figures/fig-17-1.svg" alt="รูป 17.1" loading="lazy"><figcaption><strong>รูป 17.1</strong> จำนวนครั้งสำเร็จมีค่าทีละจำนวนเต็ม และความสูงแท่งบอกโอกาสแต่ละค่า</figcaption></figure>
+<figure><img src="figures/fig-17-1.svg" alt="รูป 17.1" width="427" height="307" loading="lazy"><figcaption><strong>รูป 17.1</strong> จำนวนครั้งสำเร็จมีค่าทีละจำนวนเต็ม และความสูงแท่งบอกโอกาสแต่ละค่า</figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> หยิบไม่คืนอาจทำให้โอกาสเปลี่ยน ต้องตรวจเงื่อนไขก่อนใช้สูตร</p>
 </div></details>
 <details class="section" id="s5" open><summary><h2><math displaystyle="true"><mrow><mn>5</mn></mrow></math><strong>. ปกติและการแปลงเป็น </strong><math displaystyle="true"><mrow><mi>z</mi></mrow></math></h2></summary><div class="body">
 <p><math displaystyle="true"><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>μ</mi><mo separator="true">,</mo><msup><mrow><mi>σ</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> มี <strong>โค้งระฆังคว่ำ</strong> สมมาตรที่ <math displaystyle="true"><mrow><mi>μ</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>σ</mi><mo>&gt;</mo><mn>0</mn></mrow></math>; ค่าเฉลี่ย มัธยฐาน ฐานนิยมอยู่ที่ <math displaystyle="true"><mrow><mi>μ</mi></mrow></math> ส่วน <math displaystyle="true"><mrow><mi>σ</mi></mrow></math> มากทำให้โค้งกว้างขึ้น</p>
 <p>โอกาสคือพื้นที่ใต้โค้ง รวมทั้งหมด <math displaystyle="true"><mrow><mn>1</mn></mrow></math> โดยพื้นที่ใน <math displaystyle="true"><mrow><mi>μ</mi><mo>±</mo><mi>σ</mi></mrow></math>, <math displaystyle="true"><mrow><mi>μ</mi><mo>±</mo><mn>2</mn><mi>σ</mi></mrow></math>, <math displaystyle="true"><mrow><mi>μ</mi><mo>±</mo><mn>3</mn><mi>σ</mi></mrow></math> ประมาณ <math displaystyle="true"><mrow><mn>68</mn><mo>%</mo></mrow></math>, <math displaystyle="true"><mrow><mn>95</mn><mo>%</mo></mrow></math>, <math displaystyle="true"><mrow><mn>99.7</mn><mo>%</mo></mrow></math> ตามลำดับ</p>
-<figure><img src="figures/fig-17-2.svg" alt="รูป 17.2" loading="lazy"><figcaption><strong>รูป 17.2</strong> ค่าเฉลี่ยอยู่กลางโค้ง และส่วนเบี่ยงเบนมาตรฐานกำหนดความกว้าง</figcaption></figure>
+<figure><img src="figures/fig-17-2.svg" alt="รูป 17.2" width="603" height="333" loading="lazy"><figcaption><strong>รูป 17.2</strong> ค่าเฉลี่ยอยู่กลางโค้ง และส่วนเบี่ยงเบนมาตรฐานกำหนดความกว้าง</figcaption></figure>
 <p><math displaystyle="true"><mrow><mi>Z</mi><mo>=</mo><mfrac><mrow><mi>X</mi><mo>−</mo><mi>μ</mi></mrow><mrow><mi>σ</mi></mrow></mfrac><mo>∼</mo><mi>N</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>0</mn><mo separator="true">,</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> จึงแปลงค่าข้อมูลด้วย <math displaystyle="true"><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mi>μ</mi></mrow><mrow><mi>σ</mi></mrow></mfrac></mrow></math></p>
 <p class="example">เช่น <math displaystyle="true"><mrow><mi>N</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>10</mn><mo separator="true">,</mo><msup><mrow><mn>2</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math>: <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mn>8</mn><mo separator="true">,</mo><mn>10</mn><mo separator="true">,</mo><mn>12</mn></mrow></math> ตรงกับ <math displaystyle="true"><mrow><mi>z</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn></mrow></math></p>
-<figure><img src="figures/fig-17-3.svg" alt="รูป 17.3" loading="lazy"><figcaption><strong>รูป 17.3</strong> แกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> กับแกน <math displaystyle="true"><mrow><mi>z</mi></mrow></math> ชี้ตำแหน่งเดียวกันหลังแปลงเป็นมาตรฐาน</figcaption></figure>
+<figure><img src="figures/fig-17-3.svg" alt="รูป 17.3" width="603" height="387" loading="lazy"><figcaption><strong>รูป 17.3</strong> แกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> กับแกน <math displaystyle="true"><mrow><mi>z</mi></mrow></math> ชี้ตำแหน่งเดียวกันหลังแปลงเป็นมาตรฐาน</figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> พารามิเตอร์ตัวที่สองคือ <math displaystyle="true"><mrow><msup><mrow><mi>σ</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> แต่การแปลง <math displaystyle="true"><mrow><mi>z</mi></mrow></math> หารด้วย <math displaystyle="true"><mrow><mi>σ</mi></mrow></math> สำหรับตัวแปรต่อเนื่อง <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>X</mi><mo>=</mo><mi>a</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math> จึงใช้ <math displaystyle="true"><mrow><mo>&gt;</mo></mrow></math> หรือ <math displaystyle="true"><mrow><mo>≥</mo></mrow></math> ให้โอกาสเท่ากัน</p>
 </div></details>
 <details class="section" id="s6" open><summary><h2><math displaystyle="true"><mrow><mn>6</mn></mrow></math><strong>. อ่านตารางปกติ: ดูพื้นที่ที่ตารางให้ก่อน</strong></h2></summary><div class="body">
@@ -127,9 +151,9 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <div class="formula"><math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>Z</mi><mo>≤</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0.5</mn><mo>+</mo><mn>0.3413</mn><mo>=</mo><mn>0.8413</mn></mrow></math></div>
 <div class="formula"><math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>Z</mi><mo>&gt;</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0.5</mn><mo>−</mo><mn>0.3413</mn><mo>=</mo><mn>0.1587</mn></mrow></math></div>
 <p>ถ้าตารางสะสมซ้ายให้ <math displaystyle="true"><mrow><mn>0.8413</mn></mrow></math> อยู่แล้ว ไม่บวก <math displaystyle="true"><mrow><mn>0.5</mn></mrow></math> ซ้ำ</p>
-<figure><img src="figures/fig-17-4.svg" alt="รูป 17.4" loading="lazy"><figcaption><strong>รูป 17.4</strong> ตารางพื้นที่จาก <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ถึง <math displaystyle="true"><mrow><mn>1</mn></mrow></math> ต้องรวมกับครึ่งโค้ง <math displaystyle="true"><mrow><mn>0.5</mn></mrow></math> ให้ตรงด้านที่ถาม</figcaption></figure>
+<figure><img src="figures/fig-17-4.svg" alt="รูป 17.4" width="603" height="333" loading="lazy"><figcaption><strong>รูป 17.4</strong> ตารางพื้นที่จาก <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ถึง <math displaystyle="true"><mrow><mn>1</mn></mrow></math> ต้องรวมกับครึ่งโค้ง <math displaystyle="true"><mrow><mn>0.5</mn></mrow></math> ให้ตรงด้านที่ถาม</figcaption></figure>
 <p><strong>เกณฑ์ลบใช้สมมาตร:</strong> <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mo>−</mo><mi>t</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>Z</mi><mo>&gt;</mo><mi>t</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> เมื่อ <math displaystyle="true"><mrow><mi>t</mi><mo>&gt;</mo><mn>0</mn></mrow></math> ดังนั้น <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0.1587</mn></mrow></math>, <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>Z</mi><mo>&gt;</mo><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0.8413</mn></mrow></math> และ <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>−</mo><mn>1</mn><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>2</mn><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>0.3413</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0.6826</mn></mrow></math></p>
-<figure><img src="figures/fig-17-5.svg" alt="รูป 17.5" loading="lazy"><figcaption><strong>รูป 17.5</strong> หางซ้ายกับหางขวาที่ห่างศูนย์เท่ากันมีพื้นที่เท่ากัน</figcaption></figure>
+<figure><img src="figures/fig-17-5.svg" alt="รูป 17.5" width="603" height="261" loading="lazy"><figcaption><strong>รูป 17.5</strong> หางซ้ายกับหางขวาที่ห่างศูนย์เท่ากันมีพื้นที่เท่ากัน</figcaption></figure>
 <p>ตารางสะสมซ้าย ถาม <math displaystyle="true"><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow></math>: <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>Z</mi><mo>≤</mo><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>Z</mi><mo>≤</mo><mi>a</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ค่าตารางเป็นค่าประมาณ ปัดตามโจทย์</p>
 </div></details>
 <details class="section" id="s7" open><summary><h2><math displaystyle="true"><mrow><mn>7</mn></mrow></math><strong>. แนวที่เน้น: ไม่เกินหนึ่ง</strong></h2></summary><div class="body">
@@ -145,19 +169,40 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p>ด้วยสมมาตร <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>8</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0.1587</mn></mrow></math> และ <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>8</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>12</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>0.6826</mn></mrow></math></p>
 <p><math displaystyle="true"><mrow><mi>N</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>20</mn><mo separator="true">,</mo><mn>9</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ถาม <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>X</mi><mo>≥</mo><mn>26</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math>: ต้องใช้ <math displaystyle="true"><mrow><mi>σ</mi><mo>=</mo><msqrt><mrow><mn>9</mn></mrow></msqrt><mo>=</mo><mn>3</mn></mrow></math> จึง <math displaystyle="true"><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mn>26</mn><mo>−</mo><mn>20</mn></mrow><mrow><mn>3</mn></mrow></mfrac><mo>=</mo><mn>2</mn></mrow></math> ถ้าตารางสะสมซ้ายให้ <math displaystyle="true"><mrow><mn>0.9772</mn></mrow></math> โอกาสคือ <math displaystyle="true"><mrow><mn>1</mn><mo>−</mo><mn>0.9772</mn><mo>=</mo><mn>0.0228</mn></mrow></math></p>
 <p class="caution"><strong>ระวัง:</strong> <math displaystyle="true"><mrow><mi>z</mi></mrow></math> เป็นตำแหน่ง ไม่ใช่โอกาส และหางขวาต้องหาพื้นที่ขวาแม้ตารางให้พื้นที่ซ้าย</p>
-</div></details><div class="pager"><a href="ch16.html">← บทที่ 16</a><a href="index.html">สารบัญ</a><span></span></div></main>
-<script>
+</div></details><div class="pager"><a class="prev" href="ch16.html"><small>← บทที่ 16</small>สถิติ</a><a class="home" href="index.html">สารบัญทุกบท</a></div></main>
+<button id="totop" type="button" aria-label="กลับขึ้นบน">↑</button>
+<script>(()=>{
 const box=document.querySelector('.search');
-if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+const hits=document.querySelector('.hits');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();let count=0,first=null;
 document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
 document.querySelectorAll('details.section').forEach(d=>{
  const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
  if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
   while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
   nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
-   const m=document.createElement('mark');r.surroundContents(m);});}
-});});}
+   const m=document.createElement('mark');r.surroundContents(m);count++;if(!first)first=m;});}
+});
+ if(hits)hits.textContent=q?(count?'พบ '+count+' ที่':'ไม่พบคำนี้ในบทนี้'):'';
+ if(first)first.scrollIntoView({block:'center'});});}
 const sel=document.querySelector('header.top select');
 if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
-</script>
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+if(store.get('big')==='1')document.documentElement.classList.add('big');
+document.querySelectorAll('.size-btn').forEach(b=>b.addEventListener('click',()=>{
+ const on=document.documentElement.classList.toggle('big');store.set('big',on?'1':'0');}));
+const bar=document.getElementById('progress'),toTop=document.getElementById('totop');
+const page=document.body.dataset.page;
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;const y=scrollY;
+ if(bar)bar.style.width=(h>0?Math.min(100,y/h*100):0)+'%';if(toTop)toTop.classList.toggle('show',y>innerHeight);
+ if(page){store.set('last',page);store.set('last-y',String(Math.round(y)));}}
+addEventListener('scroll',onScroll,{passive:true});
+if(toTop)toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const resume=document.querySelector('.resume');
+if(resume){const last=store.get('last');const name=last&&document.querySelector('.cards a[href="'+last+'"]');
+ if(name){resume.href=last+'#resume';resume.textContent='อ่านต่อ: '+name.textContent.replace(/^\d+/,m=>'บทที่ '+m+' ');}
+ else resume.remove();}
+if(page&&location.hash==='#resume'){const y=+store.get('last-y')||0;history.replaceState(null,'',location.pathname);
+ addEventListener('load',()=>scrollTo(0,y));}
+})();</script>
 </body></html>

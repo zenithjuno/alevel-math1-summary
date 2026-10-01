@@ -16,8 +16,7 @@ font-size:1.12rem;line-height:1.75}
 header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
 display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
 header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
-header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+header.top select{flex:1;min-width:0;font:inherit;font-size:.95rem;padding:.3rem .45rem;border-radius:8px;
 border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
@@ -27,14 +26,21 @@ main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner .t span{font-size:1.45rem;font-weight:700}
 .search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
 background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
-details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+nav.toc{display:flex;gap:.4rem;margin:0 -1rem 1rem;padding:0 1rem .3rem;overflow-x:auto;scrollbar-width:none;
+-webkit-overflow-scrolling:touch}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;white-space:nowrap;font-size:.9rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;
+color:var(--blue);text-decoration:none;background:var(--bg)}
+.toc-label{font-size:.85rem;color:var(--muted);margin:.2rem 0 .3rem}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1.4rem 0;padding:0 0 0 .9rem}
+@media (max-width:480px){details.section{padding-left:.6rem;border-left-width:3px}main{padding:.8rem .8rem 5rem}}
+details.section>summary h2{font-family:inherit}
 details.section>summary{cursor:pointer;list-style:none}
 details.section>summary::-webkit-details-marker{display:none}
 details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
-details.section>summary::after{content:" ▾";color:var(--muted)}
-details.section:not([open])>summary::after{content:" ▸"}
+details.section>summary{display:flex;align-items:baseline;gap:.4rem}
+details.section>summary::after{content:"▾";color:var(--muted);flex:none}
+details.section:not([open])>summary::after{content:"▸"}
 h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
 p{margin:.5rem 0}
 p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
@@ -62,7 +68,11 @@ figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
 math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
 math[display=block]{margin:.3rem 0}
 mark{background:#fac775;color:#412402;border-radius:3px}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:2.2rem}
+.pager a{display:block;border:1px solid var(--line);border-radius:12px;padding:.55rem .8rem;line-height:1.4}
+.pager a small{display:block;color:var(--muted);font-size:.8rem}
+.pager .next{text-align:right;grid-column:2}
+.pager .home{grid-column:1 / -1;text-align:center}
 .pager a,.cards a{color:var(--blue);text-decoration:none}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
 .cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
@@ -72,12 +82,26 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 .hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
 .hero p{color:var(--muted);margin:0}
 .hidden{display:none}
+.tools{display:flex;gap:.5rem;align-items:center;margin:.2rem 0 .4rem}
+.tools .search{flex:1;margin:0}
+.hits{font-size:.85rem;color:var(--muted);min-height:1.2em;margin:.1rem 0 .4rem}
+.icon-btn{flex:none;font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);
+border-radius:8px;padding:.25rem .55rem;cursor:pointer}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:6}
+#totop{position:fixed;right:1rem;bottom:1.2rem;z-index:6;width:2.8rem;height:2.8rem;border-radius:50%;
+border:1px solid var(--line);background:var(--bg);color:var(--blue);font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.15);
+opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.show{opacity:1;pointer-events:auto}
+.resume{display:block;text-align:center;margin:0 auto 1rem;max-width:22rem;border:1px solid var(--blue);border-radius:12px;
+padding:.55rem .8rem;color:var(--blue);text-decoration:none}
+html.big body{font-size:1.28rem}
 </style></head>
-<body>
+<body data-page="ch12.html">
+<div id="progress"></div>
 <header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
-<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
-<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html" selected>บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select></header>
-<main><div class="banner"><div class="n">12</div><div class="t"><small>บทที่ 12</small><span>หลักการนับเบื้องต้น</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. ก่อนนับ ต้องรู้ว่าอะไรถือเป็นหนึ่งแบบ</a><a href="#s2">2. หลักการคูณกับหลักการบวก</a><a href="#s3">3. แฟกทอเรียลและการเรียงของต่างกัน</a><a href="#s4">4. การเรียงของที่มีของเหมือนกัน</a><a href="#s5">5. การเรียงรอบวง</a><a href="#s6">6. การเลือกแบบไม่สนลำดับ</a><a href="#s7">7. เครื่องมือเมื่อมีเงื่อนไข</a><a href="#s8">8. แนวที่เลือกฝึก: รหัสที่มีเลขบังคับ</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. ก่อนนับ ต้องรู้ว่าอะไรถือเป็นหนึ่งแบบ</strong></h2></summary><div class="body">
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html" selected>บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<button class="icon-btn size-btn" type="button" aria-label="ขยาย/ย่อตัวอักษร">Aa</button></header>
+<main><div class="banner"><div class="n">12</div><div class="t"><small>บทที่ 12</small><span>หลักการนับเบื้องต้น</span></div></div><div class="tools"><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"></div><div class="hits"></div><div class="toc-label">หัวข้อในบทนี้ (ปัดดูต่อ →)</div><nav class="toc"><a href="#s1">1. ก่อนนับ ต้องรู้ว่าอะไรถือเป็นหนึ่งแบบ</a><a href="#s2">2. หลักการคูณกับหลักการบวก</a><a href="#s3">3. แฟกทอเรียลและการเรียงของต่างกัน</a><a href="#s4">4. การเรียงของที่มีของเหมือนกัน</a><a href="#s5">5. การเรียงรอบวง</a><a href="#s6">6. การเลือกแบบไม่สนลำดับ</a><a href="#s7">7. เครื่องมือเมื่อมีเงื่อนไข</a><a href="#s8">8. แนวที่เลือกฝึก: รหัสที่มีเลขบังคับ</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. ก่อนนับ ต้องรู้ว่าอะไรถือเป็นหนึ่งแบบ</strong></h2></summary><div class="body">
 <p>หลักการนับหาจำนวนผลลัพธ์โดยไม่แจงทุกแบบ ก่อนคำนวณตอบสามเรื่อง:</p>
 <ul class="points"><li>กำลังสร้างอะไร เช่น รหัส จำนวนเต็ม แถวคน หรือกลุ่มคน</li><li>ใช้สิ่งเดิมซ้ำได้หรือไม่ และมีตำแหน่งใดถูกจำกัด</li><li>ถ้าสลับลำดับ หมุน หรือเปลี่ยนตำแหน่ง ยังถือว่าเป็นแบบเดิมหรือไม่</li></ul>
 <p class="example">เช่น คนสองคนสลับหน้าที่หัวหน้ากับรอง จะได้การมอบหน้าที่คนละแบบ แต่ถ้าเลือกเป็นทีมสองคน ทีมเดิมยังเป็นทีมเดิมแม้เขียนชื่อสลับกัน</p>
@@ -85,11 +109,11 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <details class="section" id="s2" open><summary><h2><math displaystyle="true"><mrow><mn>2</mn></mrow></math><strong>. หลักการคูณกับหลักการบวก</strong></h2></summary><div class="body">
 <p><strong>หลักการคูณ:</strong> ถ้าทำงานให้เสร็จต้องผ่านหลายขั้น และสำหรับทุกทางเลือกในขั้นก่อนหน้า ขั้นถัดไปมีจำนวนทางเลือกตามที่กำหนด ให้นำจำนวนทางเลือกแต่ละขั้นมาคูณกัน</p>
 <p class="example">เช่น เลือกเสื้อ <math displaystyle="true"><mrow><mn>2</mn></mrow></math> แบบ แล้วเลือกกางเกง <math displaystyle="true"><mrow><mn>3</mn></mrow></math> แบบ โดยจับคู่ได้ทุกแบบ จะได้ <math displaystyle="true"><mrow><mn>2</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>6</mn></mrow></math> ชุด แต่ละชุดต้องมีทั้งเสื้อและกางเกง</p>
-<figure><img src="figures/fig-12-1.svg" alt="รูป 12.1" loading="lazy"><figcaption><strong>รูป 12.1</strong> แต่ละทางเลือกของเสื้อแตกต่อเป็นกางเกง <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ทาง จึงได้ <math displaystyle="true"><mrow><mn>6</mn></mrow></math> ชุด</figcaption></figure>
+<figure><img src="figures/fig-12-1.svg" alt="รูป 12.1" width="603" height="275" loading="lazy"><figcaption><strong>รูป 12.1</strong> แต่ละทางเลือกของเสื้อแตกต่อเป็นกางเกง <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ทาง จึงได้ <math displaystyle="true"><mrow><mn>6</mn></mrow></math> ชุด</figcaption></figure>
 <p>ห้ามใช้ซ้ำ → จำนวนตัวเลือกขั้นต่อไปลดลงได้ คูณจำนวนที่เหลือให้ถูก ไม่จำเป็นต้องเท่ากันทุกขั้น</p>
 <p><strong>หลักการบวก:</strong> ถ้างานสำเร็จได้ด้วยกรณีใดกรณีหนึ่ง และกรณีเหล่านั้นไม่ซ้ำกัน ให้นับแต่ละกรณีแล้วบวก</p>
 <p>ของขวัญ <math displaystyle="true"><mrow><mn>1</mn></mrow></math> ชิ้น เลือกจากเสื้อ <math displaystyle="true"><mrow><mn>2</mn></mrow></math> แบบหรือกางเกง <math displaystyle="true"><mrow><mn>3</mn></mrow></math> แบบ กรณีไม่ซ้ำ จึง <math displaystyle="true"><mrow><mn>2</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>5</mn></mrow></math> แบบ ต่างจากชุดแต่งตัวที่ต้องใช้ทั้งสองชิ้น</p>
-<figure><img src="figures/fig-12-3.svg" alt="รูป 12.3" loading="lazy"><figcaption><strong>รูป 12.3</strong> ต้องผ่านทุกขั้นให้คูณ ส่วนใช้เพียงกรณีเดียวจากกรณีที่ไม่ซ้ำกันให้บวก</figcaption></figure>
+<figure><img src="figures/fig-12-3.svg" alt="รูป 12.3" width="603" height="379" loading="lazy"><figcaption><strong>รูป 12.3</strong> ต้องผ่านทุกขั้นให้คูณ ส่วนใช้เพียงกรณีเดียวจากกรณีที่ไม่ซ้ำกันให้บวก</figcaption></figure>
 <p>ถ้ากรณีทับกัน การบวกตรง ๆ จะนับบางผลลัพธ์ซ้ำ ต้องแยกกรณีใหม่ให้ไม่ทับกัน หรือหักส่วนที่นับซ้ำออก เช่น เมื่อ <math displaystyle="true"><mrow><mi>A</mi><mo separator="true">,</mo><mi>B</mi></mrow></math> เป็นเซตจำกัด <math displaystyle="true"><mrow><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>+</mo><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>−</mo><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></p>
 <p>ขั้นต่อไปมีตัวเลือกต่างกันตามทางก่อนหน้า → แยกกรณี → คูณภายใน → บวกแต่ละกรณี</p>
 <p class="caution"><strong>ระวัง:</strong> อย่าตัดสินจากคำว่า “และ” หรือ “หรือ” เพียงคำเดียว ให้ดูว่าผลลัพธ์หนึ่งแบบต้องผ่านกี่ขั้น และแต่ละกรณีซ้ำกันหรือไม่</p>
@@ -114,7 +138,7 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p>เมื่อเรียงของต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ชิ้นรอบวง โดย <math displaystyle="true"><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></math> และการหมุนทั้งวงถือเป็นแบบเดิม แต่ภาพสะท้อนยังถือเป็นคนละแบบ จะมี <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>!</mo></mrow></math> แบบ</p>
 <p>ตรึงหนึ่งชิ้นเป็นจุดอ้างอิง แล้วเรียงอีก <math displaystyle="true"><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></math> ชิ้น เพราะการหมุนทั้งวงไม่ได้เปลี่ยนว่าใครอยู่ข้างใคร</p>
 <p class="example">เช่น คนต่างกัน <math displaystyle="true"><mrow><mn>4</mn></mrow></math> คนรอบโต๊ะ เมื่อหมุนทั้งวงถือเป็นแบบเดิม ตรึงหนึ่งคนแล้วเรียงอีกสามคนได้ <math displaystyle="true"><mrow><mn>3</mn><mo>!</mo><mo>=</mo><mn>6</mn></mrow></math> แบบ</p>
-<figure><img src="figures/fig-12-2.svg" alt="รูป 12.2" loading="lazy"><figcaption><strong>รูป 12.2</strong> การหมุนทั้งวงยังเป็นแบบเดิม จึงตรึงหนึ่งคนแล้วเรียงคนที่เหลือ</figcaption></figure>
+<figure><img src="figures/fig-12-2.svg" alt="รูป 12.2" width="603" height="261" loading="lazy"><figcaption><strong>รูป 12.2</strong> การหมุนทั้งวงยังเป็นแบบเดิม จึงตรึงหนึ่งคนแล้วเรียงคนที่เหลือ</figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> ถ้าเก้าอี้มีหมายเลขกำกับและตำแหน่งที่นั่งถือว่าต่างกัน จะนับเหมือนตำแหน่งต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ตำแหน่ง จึงได้ <math displaystyle="true"><mrow><mi>n</mi><mo>!</mo></mrow></math> สำหรับคนต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> คน ไม่ใช้ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>!</mo></mrow></math> และไม่หาร <math displaystyle="true"><mrow><mn>2</mn></mrow></math> เพิ่มถ้าโจทย์ไม่ได้ถือว่าภาพสะท้อนเหมือนกัน</p>
 </div></details>
 <details class="section" id="s6" open><summary><h2><math displaystyle="true"><mrow><mn>6</mn></mrow></math><strong>. การเลือกแบบไม่สนลำดับ</strong></h2></summary><div class="body">
@@ -139,19 +163,40 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p>ถ้าเปลี่ยนเป็น <strong>จำนวนสามหลัก</strong> ที่ต้องมี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> และไม่ซ้ำ เลข <math displaystyle="true"><mrow><mn>0</mn></mrow></math> อยู่ได้เฉพาะหลักสิบหรือหลักหน่วย จึงเหลือ <math displaystyle="true"><mrow><mn>2</mn><mo>×</mo><mn>4</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>24</mn></mrow></math> จำนวน</p>
 <p>หากอนุญาตให้เลขซ้ำและต้องมี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> <strong>อย่างน้อยหนึ่งตัว</strong> วิธีเลือกตำแหน่งของ <math displaystyle="true"><mrow><mn>0</mn></mrow></math> หนึ่งตำแหน่งแล้วเติมทุกเลขจะนับรหัสที่มี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> หลายตัวซ้ำ ให้ใช้ส่วนเติมเต็มแทน เช่น รหัส <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ตำแหน่งจากเลข <math displaystyle="true"><mrow><mn>0</mn><mo>–</mo><mn>4</mn></mrow></math> ที่ซ้ำได้และเริ่ม <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ได้ มีทั้งหมด <math displaystyle="true"><mrow><msup><mrow><mn>5</mn></mrow><mrow><mn>3</mn></mrow></msup></mrow></math> รหัส และไม่มี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> เลย <math displaystyle="true"><mrow><msup><mrow><mn>4</mn></mrow><mrow><mn>3</mn></mrow></msup></mrow></math> รหัส จึงมี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> อย่างน้อยหนึ่งตัว <math displaystyle="true"><mrow><msup><mrow><mn>5</mn></mrow><mrow><mn>3</mn></mrow></msup><mo>−</mo><msup><mrow><mn>4</mn></mrow><mrow><mn>3</mn></mrow></msup><mo>=</mo><mn>61</mn></mrow></math> รหัส</p>
 <p class="caution"><strong>ระวัง:</strong> “มีหนึ่งตัวพอดี” ต่างจาก “มีอย่างน้อยหนึ่งตัว” และการเลือกตำแหน่งที่จำกัดก่อนทำได้เมื่อยังตามข้อจำกัดของตำแหน่งอื่นครบ</p>
-</div></details><div class="pager"><a href="ch11.html">← บทที่ 11</a><a href="index.html">สารบัญ</a><a href="ch13.html">บทที่ 13 →</a></div></main>
-<script>
+</div></details><div class="pager"><a class="prev" href="ch11.html"><small>← บทที่ 11</small>จำนวนเชิงซ้อน</a><a class="next" href="ch13.html"><small>บทที่ 13 →</small>ความน่าจะเป็น</a><a class="home" href="index.html">สารบัญทุกบท</a></div></main>
+<button id="totop" type="button" aria-label="กลับขึ้นบน">↑</button>
+<script>(()=>{
 const box=document.querySelector('.search');
-if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+const hits=document.querySelector('.hits');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();let count=0,first=null;
 document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
 document.querySelectorAll('details.section').forEach(d=>{
  const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
  if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
   while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
   nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
-   const m=document.createElement('mark');r.surroundContents(m);});}
-});});}
+   const m=document.createElement('mark');r.surroundContents(m);count++;if(!first)first=m;});}
+});
+ if(hits)hits.textContent=q?(count?'พบ '+count+' ที่':'ไม่พบคำนี้ในบทนี้'):'';
+ if(first)first.scrollIntoView({block:'center'});});}
 const sel=document.querySelector('header.top select');
 if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
-</script>
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+if(store.get('big')==='1')document.documentElement.classList.add('big');
+document.querySelectorAll('.size-btn').forEach(b=>b.addEventListener('click',()=>{
+ const on=document.documentElement.classList.toggle('big');store.set('big',on?'1':'0');}));
+const bar=document.getElementById('progress'),toTop=document.getElementById('totop');
+const page=document.body.dataset.page;
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;const y=scrollY;
+ if(bar)bar.style.width=(h>0?Math.min(100,y/h*100):0)+'%';if(toTop)toTop.classList.toggle('show',y>innerHeight);
+ if(page){store.set('last',page);store.set('last-y',String(Math.round(y)));}}
+addEventListener('scroll',onScroll,{passive:true});
+if(toTop)toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const resume=document.querySelector('.resume');
+if(resume){const last=store.get('last');const name=last&&document.querySelector('.cards a[href="'+last+'"]');
+ if(name){resume.href=last+'#resume';resume.textContent='อ่านต่อ: '+name.textContent.replace(/^\d+/,m=>'บทที่ '+m+' ');}
+ else resume.remove();}
+if(page&&location.hash==='#resume'){const y=+store.get('last-y')||0;history.replaceState(null,'',location.pathname);
+ addEventListener('load',()=>scrollTo(0,y));}
+})();</script>
 </body></html>

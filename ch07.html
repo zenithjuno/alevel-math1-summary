@@ -16,8 +16,7 @@ font-size:1.12rem;line-height:1.75}
 header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
 display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
 header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
-header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+header.top select{flex:1;min-width:0;font:inherit;font-size:.95rem;padding:.3rem .45rem;border-radius:8px;
 border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
@@ -27,14 +26,21 @@ main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner .t span{font-size:1.45rem;font-weight:700}
 .search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
 background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
-details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+nav.toc{display:flex;gap:.4rem;margin:0 -1rem 1rem;padding:0 1rem .3rem;overflow-x:auto;scrollbar-width:none;
+-webkit-overflow-scrolling:touch}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;white-space:nowrap;font-size:.9rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;
+color:var(--blue);text-decoration:none;background:var(--bg)}
+.toc-label{font-size:.85rem;color:var(--muted);margin:.2rem 0 .3rem}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1.4rem 0;padding:0 0 0 .9rem}
+@media (max-width:480px){details.section{padding-left:.6rem;border-left-width:3px}main{padding:.8rem .8rem 5rem}}
+details.section>summary h2{font-family:inherit}
 details.section>summary{cursor:pointer;list-style:none}
 details.section>summary::-webkit-details-marker{display:none}
 details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
-details.section>summary::after{content:" ▾";color:var(--muted)}
-details.section:not([open])>summary::after{content:" ▸"}
+details.section>summary{display:flex;align-items:baseline;gap:.4rem}
+details.section>summary::after{content:"▾";color:var(--muted);flex:none}
+details.section:not([open])>summary::after{content:"▸"}
 h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
 p{margin:.5rem 0}
 p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
@@ -62,7 +68,11 @@ figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
 math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
 math[display=block]{margin:.3rem 0}
 mark{background:#fac775;color:#412402;border-radius:3px}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:2.2rem}
+.pager a{display:block;border:1px solid var(--line);border-radius:12px;padding:.55rem .8rem;line-height:1.4}
+.pager a small{display:block;color:var(--muted);font-size:.8rem}
+.pager .next{text-align:right;grid-column:2}
+.pager .home{grid-column:1 / -1;text-align:center}
 .pager a,.cards a{color:var(--blue);text-decoration:none}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
 .cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
@@ -72,16 +82,30 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 .hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
 .hero p{color:var(--muted);margin:0}
 .hidden{display:none}
+.tools{display:flex;gap:.5rem;align-items:center;margin:.2rem 0 .4rem}
+.tools .search{flex:1;margin:0}
+.hits{font-size:.85rem;color:var(--muted);min-height:1.2em;margin:.1rem 0 .4rem}
+.icon-btn{flex:none;font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);
+border-radius:8px;padding:.25rem .55rem;cursor:pointer}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:6}
+#totop{position:fixed;right:1rem;bottom:1.2rem;z-index:6;width:2.8rem;height:2.8rem;border-radius:50%;
+border:1px solid var(--line);background:var(--bg);color:var(--blue);font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.15);
+opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.show{opacity:1;pointer-events:auto}
+.resume{display:block;text-align:center;margin:0 auto 1rem;max-width:22rem;border:1px solid var(--blue);border-radius:12px;
+padding:.55rem .8rem;color:var(--blue);text-decoration:none}
+html.big body{font-size:1.28rem}
 </style></head>
-<body>
+<body data-page="ch07.html">
+<div id="progress"></div>
 <header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
-<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
-<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html" selected>บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select></header>
-<main><div class="banner"><div class="n">7</div><div class="t"><small>บทที่ 7</small><span>ภาคตัดกรวย</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. มองสมการให้เห็นรูปกราฟ</a><a href="#s2">2. วงกลม</a><a href="#s3">3. พาราโบลา</a><a href="#s4">4. วงรี</a><a href="#s5">5. ไฮเพอร์โบลา</a><a href="#s6">6. เปรียบเทียบรูปมาตรฐาน</a><a href="#s7">7. จัดกำลังสองสมบูรณ์เพื่อหารูปมาตรฐาน</a><a href="#s8">8. แนวข้อสอบที่เน้น: อ่านไฮเพอร์โบลาหลังจัดรูป</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. มองสมการให้เห็นรูปกราฟ</strong></h2></summary><div class="body">
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html" selected>บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<button class="icon-btn size-btn" type="button" aria-label="ขยาย/ย่อตัวอักษร">Aa</button></header>
+<main><div class="banner"><div class="n">7</div><div class="t"><small>บทที่ 7</small><span>ภาคตัดกรวย</span></div></div><div class="tools"><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"></div><div class="hits"></div><div class="toc-label">หัวข้อในบทนี้ (ปัดดูต่อ →)</div><nav class="toc"><a href="#s1">1. มองสมการให้เห็นรูปกราฟ</a><a href="#s2">2. วงกลม</a><a href="#s3">3. พาราโบลา</a><a href="#s4">4. วงรี</a><a href="#s5">5. ไฮเพอร์โบลา</a><a href="#s6">6. เปรียบเทียบรูปมาตรฐาน</a><a href="#s7">7. จัดกำลังสองสมบูรณ์เพื่อหารูปมาตรฐาน</a><a href="#s8">8. แนวข้อสอบที่เน้น: อ่านไฮเพอร์โบลาหลังจัดรูป</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. มองสมการให้เห็นรูปกราฟ</strong></h2></summary><div class="body">
 <p>ภาคตัดกรวยสี่รูป: <strong>วงกลม พาราโบลา วงรี ไฮเพอร์โบลา</strong> เงื่อนไขระยะต่างกัน จึงได้สมการและกราฟต่างกัน</p>
 <p>เมื่อจัดสมการเป็นรูปมาตรฐาน เราจะอ่านตำแหน่ง ขนาด และทิศทางของกราฟได้ง่ายขึ้น โดย <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> เป็นศูนย์กลางของวงกลม วงรี และไฮเพอร์โบลา แต่เป็นจุดยอดของพาราโบลา</p>
 <p><strong>โฟกัส</strong> คือจุดอ้างอิงในเงื่อนไขระยะ; <strong>จุดยอด</strong> คือจุดสำคัญที่บอกตำแหน่ง/ทิศกราฟ</p>
-<figure><img src="figures/fig-7-1.svg" alt="รูป 7.1" loading="lazy"><figcaption><strong>รูป 7.1</strong> ภาคตัดกรวยสี่รูป</figcaption></figure>
+<figure><img src="figures/fig-7-1.svg" alt="รูป 7.1" width="603" height="171" loading="lazy"><figcaption><strong>รูป 7.1</strong> ภาคตัดกรวยสี่รูป</figcaption></figure>
 </div></details>
 <details class="section" id="s2" open><summary><h2><math displaystyle="true"><mrow><mn>2</mn></mrow></math><strong>. วงกลม</strong></h2></summary><div class="body">
 <p>วงกลมคือเซตของจุดที่อยู่ห่างจากศูนย์กลางเท่ากันทุกจุด ระยะคงที่นี้คือรัศมี</p>
@@ -90,13 +114,13 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p>ถ้าหารด้วย <math displaystyle="true"><mrow><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> จะเขียนได้เป็น</p>
 <div class="formula"><math displaystyle="true"><mrow><mfrac><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>y</mi><mo>−</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>1</mn></mrow></math></div>
 <p>เทียบกับวงรี: วงกลมมีระยะศูนย์กลางถึงขอบแนวนอน/ตั้งเท่ากัน ตัวส่วนจึงเท่ากัน</p>
-<figure><img src="figures/fig-7-2.svg" alt="รูป 7.2" loading="lazy"><figcaption><strong>รูป 7.2</strong> วงกลมมีระยะจากศูนย์กลางถึงขอบเท่ากันทุกทิศ</figcaption></figure>
+<figure><img src="figures/fig-7-2.svg" alt="รูป 7.2" width="267" height="240" loading="lazy"><figcaption><strong>รูป 7.2</strong> วงกลมมีระยะจากศูนย์กลางถึงขอบเท่ากันทุกทิศ</figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> ด้านขวาของสมการรูปแรกคือ <math displaystyle="true"><mrow><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> ไม่ใช่ <math displaystyle="true"><mrow><mi>r</mi></mrow></math> และเครื่องหมายในวงเล็บตรงข้ามกับพิกัดศูนย์กลาง เช่น <math displaystyle="true"><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> ให้พิกัด <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ของศูนย์กลางเป็น <math displaystyle="true"><mrow><mo>−</mo><mn>2</mn></mrow></math></p>
 </div></details>
 <details class="section" id="s3" open><summary><h2><math displaystyle="true"><mrow><mn>3</mn></mrow></math><strong>. พาราโบลา</strong></h2></summary><div class="body">
 <p>พาราโบลาคือเซตของจุดที่อยู่ห่างจากจุดคงที่หนึ่งจุด เรียกว่า <strong>โฟกัส</strong> เท่ากับระยะจากเส้นตรงคงที่ เรียกว่า <strong>ไดเรกตริกซ์</strong></p>
 <p>เส้นที่ผ่านจุดยอดและโฟกัสเป็นแกนสมมาตรของพาราโบลา</p>
-<figure><img src="figures/fig-7-3.svg" alt="รูป 7.3" loading="lazy"><figcaption><strong>รูป 7.3</strong> จุดบนพาราโบลาห่างจากโฟกัสเท่ากับห่างจากไดเรกตริกซ์</figcaption></figure>
+<figure><img src="figures/fig-7-3.svg" alt="รูป 7.3" width="400" height="307" loading="lazy"><figcaption><strong>รูป 7.3</strong> จุดบนพาราโบลาห่างจากโฟกัสเท่ากับห่างจากไดเรกตริกซ์</figcaption></figure>
 <p>ให้จุดยอดเป็น <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> และ <math displaystyle="true"><mrow><mi>p</mi><mo>≠</mo><mn>0</mn></mrow></math> โดย <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>p</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math> เป็นระยะจากจุดยอดถึงโฟกัส เครื่องหมายของ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> บอกทิศที่กราฟเปิด</p>
 <h3>แกนสมมาตรแนวตั้ง</h3>
 <div class="formula"><math displaystyle="true"><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>4</mn><mi>p</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>y</mi><mo>−</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></div>
@@ -104,7 +128,7 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <h3>แกนสมมาตรแนวนอน</h3>
 <div class="formula"><math displaystyle="true"><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>y</mi><mo>−</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>4</mn><mi>p</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></div>
 <ul class="points"><li>จุดยอด: <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li><li>โฟกัส: <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo>+</mo><mi>p</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li><li>ไดเรกตริกซ์: <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mi>h</mi><mo>−</mo><mi>p</mi></mrow></math></li><li>แกนสมมาตร: <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>k</mi></mrow></math></li><li><math displaystyle="true"><mrow><mi>p</mi><mo>&gt;</mo><mn>0</mn></mrow></math> เปิดขวา; <math displaystyle="true"><mrow><mi>p</mi><mo>&lt;</mo><mn>0</mn></mrow></math> เปิดซ้าย</li></ul>
-<figure><img src="figures/fig-7-4.svg" alt="รูป 7.4" loading="lazy"><figcaption><strong>รูป 7.4</strong> พาราโบลาแกนสมมาตรแนวตั้งและแนวนอน</figcaption></figure>
+<figure><img src="figures/fig-7-4.svg" alt="รูป 7.4" width="603" height="357" loading="lazy"><figcaption><strong>รูป 7.4</strong> พาราโบลาแกนสมมาตรแนวตั้งและแนวนอน</figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> ตัวแปรที่ยกกำลังสองไม่ได้บอกทิศเปิดโดยตรง เช่น <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ยกกำลังสองในรูปมาตรฐานข้างต้น แต่กราฟเปิดขึ้นหรือลงตามแนว <math displaystyle="true"><mrow><mi>y</mi></mrow></math> และสัมประสิทธิ์ด้านขวาคือ <math displaystyle="true"><mrow><mn>4</mn><mi>p</mi></mrow></math> ไม่ใช่ <math displaystyle="true"><mrow><mi>p</mi></mrow></math></p>
 </div></details>
 <details class="section" id="s4" open><summary><h2><math displaystyle="true"><mrow><mn>4</mn></mrow></math><strong>. วงรี</strong></h2></summary><div class="body">
@@ -112,7 +136,7 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p>ให้ศูนย์กลางเป็น <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> และ <math displaystyle="true"><mrow><mi>a</mi><mo>&gt;</mo><mi>b</mi><mo>&gt;</mo><mn>0</mn></mrow></math> โดย <math displaystyle="true"><mrow><mi>a</mi></mrow></math> คือครึ่งความยาวแกนเอก และ <math displaystyle="true"><mrow><mi>b</mi></mrow></math> คือครึ่งความยาวแกนโท</p>
 <div class="table-wrap"><table><thead><tr><th>จุดสำคัญ/สมการ</th><th>แกนเอกแนวนอน</th><th>แกนเอกแนวตั้ง</th></tr></thead><tbody><tr><td>สมการ</td><td><math displaystyle="true"><mrow><mfrac><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>a</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>y</mi><mo>−</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>b</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>1</mn></mrow></math></td><td><math displaystyle="true"><mrow><mfrac><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>b</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>y</mi><mo>−</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>a</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>1</mn></mrow></math></td></tr><tr><td>จุดยอดบนแกนเอก</td><td><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo>±</mo><mi>a</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td><td><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi><mo>±</mo><mi>a</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td></tr><tr><td>ปลายแกนโท</td><td><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi><mo>±</mo><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td><td><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo>±</mo><mi>b</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td></tr><tr><td>โฟกัส</td><td><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo>±</mo><mi>c</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td><td><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi><mo>±</mo><mi>c</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td></tr></tbody></table></div>
 <p>ทั้งสองรูปใช้ <math displaystyle="true"><mrow><msup><mrow><mi>c</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mi>a</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><msup><mrow><mi>b</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> โดย <math displaystyle="true"><mrow><mi>c</mi></mrow></math> เป็นระยะจากศูนย์กลางถึงโฟกัส แกนเอกยาว <math displaystyle="true"><mrow><mn>2</mn><mi>a</mi></mrow></math> แกนโทยาว <math displaystyle="true"><mrow><mn>2</mn><mi>b</mi></mrow></math> และผลบวกของระยะจากจุดบนวงรีถึงโฟกัสทั้งสองเท่ากับ <math displaystyle="true"><mrow><mn>2</mn><mi>a</mi></mrow></math></p>
-<figure><img src="figures/fig-7-5.svg" alt="รูป 7.5" loading="lazy"><figcaption><strong>รูป 7.5</strong> ส่วนประกอบของวงรีทั้งสองแนว</figcaption></figure>
+<figure><img src="figures/fig-7-5.svg" alt="รูป 7.5" width="627" height="349" loading="lazy"><figcaption><strong>รูป 7.5</strong> ส่วนประกอบของวงรีทั้งสองแนว</figcaption></figure>
 <p><strong>วิธีอ่านทิศ:</strong> ดูตัวส่วนที่ใหญ่กว่า ถ้าอยู่ใต้พจน์ <math displaystyle="true"><mrow><mi>x</mi></mrow></math> แกนเอกเป็นแนวนอน ถ้าอยู่ใต้พจน์ <math displaystyle="true"><mrow><mi>y</mi></mrow></math> แกนเอกเป็นแนวตั้ง</p>
 <p class="caution"><strong>ระวัง:</strong> ตัวส่วนในสมการคือ <math displaystyle="true"><mrow><msup><mrow><mi>a</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> และ <math displaystyle="true"><mrow><msup><mrow><mi>b</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> ต้องถอดรากก่อนใช้เป็นระยะ และโฟกัสของวงรีอยู่ระหว่างศูนย์กลางกับจุดยอด เพราะ <math displaystyle="true"><mrow><mi>c</mi><mo>&lt;</mo><mi>a</mi></mrow></math></p>
 </div></details>
@@ -127,7 +151,7 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <ul class="points"><li>กราฟเปิดขึ้นและลง</li><li>จุดยอด: <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi><mo>±</mo><mi>a</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li><li>โฟกัส: <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi><mo>±</mo><mi>c</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li><li>เส้นกำกับ: <math displaystyle="true"><mrow><mi>y</mi><mo>−</mo><mi>k</mi><mo>=</mo><mo>±</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mfrac><mrow><mi>a</mi></mrow><mrow><mi>b</mi></mrow></mfrac></mrow><mo fence="true" stretchy="true">)</mo></mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li></ul>
 <p>ทั้งสองรูปใช้ <math displaystyle="true"><mrow><msup><mrow><mi>c</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mi>a</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mi>b</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> และค่าสัมบูรณ์ของผลต่างของระยะจากจุดบนกราฟถึงโฟกัสทั้งสองเท่ากับ <math displaystyle="true"><mrow><mn>2</mn><mi>a</mi></mrow></math></p>
 <p><strong>เส้นกำกับ</strong> คือเส้นตรงที่แขนของกราฟเข้าใกล้เมื่อห่างออกไป เส้นกำกับทั้งสองผ่านศูนย์กลาง และช่วยร่างทิศทางของกราฟได้</p>
-<figure><img src="figures/fig-7-6.svg" alt="รูป 7.6" loading="lazy"><figcaption><strong>รูป 7.6</strong> ไฮเพอร์โบลาทั้งสองแนว กรอบ <math displaystyle="true"><mrow><mn>2</mn><mi>a</mi><mo>×</mo><mn>2</mn><mi>b</mi></mrow></math> และเส้นกำกับ</figcaption></figure>
+<figure><img src="figures/fig-7-6.svg" alt="รูป 7.6" width="627" height="376" loading="lazy"><figcaption><strong>รูป 7.6</strong> ไฮเพอร์โบลาทั้งสองแนว กรอบ <math displaystyle="true"><mrow><mn>2</mn><mi>a</mi><mo>×</mo><mn>2</mn><mi>b</mi></mrow></math> และเส้นกำกับ</figcaption></figure>
 <p><strong>วิธีอ่านทิศ:</strong> เมื่อด้านขวาเป็น <math displaystyle="true"><mrow><mn>1</mn></mrow></math> ให้ดูพจน์ที่เป็นบวก ถ้าพจน์ <math displaystyle="true"><mrow><mi>x</mi></mrow></math> เป็นบวก กราฟเปิดซ้าย–ขวา ถ้าพจน์ <math displaystyle="true"><mrow><mi>y</mi></mrow></math> เป็นบวก กราฟเปิดขึ้น–ลง</p>
 <p class="caution"><strong>ระวัง:</strong> ไฮเพอร์โบลาไม่จำเป็นต้องมี <math displaystyle="true"><mrow><mi>a</mi><mo>&gt;</mo><mi>b</mi></mrow></math> ตัวส่วนของพจน์บวกคือ <math displaystyle="true"><mrow><msup><mrow><mi>a</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> แม้จะเล็กกว่าตัวส่วนอีกพจน์ และใช้ <math displaystyle="true"><mrow><msup><mrow><mi>c</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mi>a</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mi>b</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> ต่างจากวงรีที่เป็นการลบ</p>
 </div></details>
@@ -162,21 +186,42 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p><math displaystyle="true"><mrow><mn>4</mn></mrow></math>. ระยะถึงโฟกัส: ใช้ <math displaystyle="true"><mrow><msup><mrow><mi>c</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mi>a</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mi>b</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math></p>
 <p><math displaystyle="true"><mrow><mn>5</mn></mrow></math>. เส้นกำกับ: เลือกสูตรตามแนวแกนตามขวาง แล้วใส่ตำแหน่งศูนย์กลาง</p>
 <p>ถ้าโจทย์ถามจุดยอดหรือโฟกัส ให้เริ่มจากศูนย์กลางแล้วขยับไปตามแกนตามขวาง เช่น แกนแนวนอนเปลี่ยนพิกัด <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ส่วนพิกัด <math displaystyle="true"><mrow><mi>y</mi></mrow></math> คงเดิม</p>
-<figure><img src="figures/fig-7-7.svg" alt="รูป 7.7" loading="lazy"><figcaption><strong>รูป 7.7</strong> เริ่มจากศูนย์กลาง แล้วขยับตามแกนตามขวางเป็นระยะ <math displaystyle="true"><mrow><mi>a</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>c</mi></mrow></math></figcaption></figure>
+<figure><img src="figures/fig-7-7.svg" alt="รูป 7.7" width="507" height="285" loading="lazy"><figcaption><strong>รูป 7.7</strong> เริ่มจากศูนย์กลาง แล้วขยับตามแกนตามขวางเป็นระยะ <math displaystyle="true"><mrow><mi>a</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>c</mi></mrow></math></figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> <math displaystyle="true"><mrow><mi>a</mi></mrow></math> เป็นระยะ ไม่ใช่พิกัดของจุดยอดทันที ต้องนำไปบวกหรือลบจากพิกัดศูนย์กลาง และไม่เลือก <math displaystyle="true"><mrow><mi>a</mi></mrow></math> จากตัวส่วนที่ใหญ่กว่าเหมือนวงรี</p>
-</div></details><div class="pager"><a href="ch06.html">← บทที่ 6</a><a href="index.html">สารบัญ</a><a href="ch08.html">บทที่ 8 →</a></div></main>
-<script>
+</div></details><div class="pager"><a class="prev" href="ch06.html"><small>← บทที่ 6</small>เรขาคณิตวิเคราะห์</a><a class="next" href="ch08.html"><small>บทที่ 8 →</small>ฟังก์ชันตรีโกณมิติ</a><a class="home" href="index.html">สารบัญทุกบท</a></div></main>
+<button id="totop" type="button" aria-label="กลับขึ้นบน">↑</button>
+<script>(()=>{
 const box=document.querySelector('.search');
-if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+const hits=document.querySelector('.hits');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();let count=0,first=null;
 document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
 document.querySelectorAll('details.section').forEach(d=>{
  const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
  if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
   while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
   nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
-   const m=document.createElement('mark');r.surroundContents(m);});}
-});});}
+   const m=document.createElement('mark');r.surroundContents(m);count++;if(!first)first=m;});}
+});
+ if(hits)hits.textContent=q?(count?'พบ '+count+' ที่':'ไม่พบคำนี้ในบทนี้'):'';
+ if(first)first.scrollIntoView({block:'center'});});}
 const sel=document.querySelector('header.top select');
 if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
-</script>
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+if(store.get('big')==='1')document.documentElement.classList.add('big');
+document.querySelectorAll('.size-btn').forEach(b=>b.addEventListener('click',()=>{
+ const on=document.documentElement.classList.toggle('big');store.set('big',on?'1':'0');}));
+const bar=document.getElementById('progress'),toTop=document.getElementById('totop');
+const page=document.body.dataset.page;
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;const y=scrollY;
+ if(bar)bar.style.width=(h>0?Math.min(100,y/h*100):0)+'%';if(toTop)toTop.classList.toggle('show',y>innerHeight);
+ if(page){store.set('last',page);store.set('last-y',String(Math.round(y)));}}
+addEventListener('scroll',onScroll,{passive:true});
+if(toTop)toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const resume=document.querySelector('.resume');
+if(resume){const last=store.get('last');const name=last&&document.querySelector('.cards a[href="'+last+'"]');
+ if(name){resume.href=last+'#resume';resume.textContent='อ่านต่อ: '+name.textContent.replace(/^\d+/,m=>'บทที่ '+m+' ');}
+ else resume.remove();}
+if(page&&location.hash==='#resume'){const y=+store.get('last-y')||0;history.replaceState(null,'',location.pathname);
+ addEventListener('load',()=>scrollTo(0,y));}
+})();</script>
 </body></html>

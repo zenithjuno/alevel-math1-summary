@@ -16,8 +16,7 @@ font-size:1.12rem;line-height:1.75}
 header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
 display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
 header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
-header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+header.top select{flex:1;min-width:0;font:inherit;font-size:.95rem;padding:.3rem .45rem;border-radius:8px;
 border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
@@ -27,14 +26,21 @@ main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
 .banner .t span{font-size:1.45rem;font-weight:700}
 .search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
 background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
-nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
-details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+nav.toc{display:flex;gap:.4rem;margin:0 -1rem 1rem;padding:0 1rem .3rem;overflow-x:auto;scrollbar-width:none;
+-webkit-overflow-scrolling:touch}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;white-space:nowrap;font-size:.9rem;padding:.2rem .7rem;border:1px solid var(--line);border-radius:999px;
+color:var(--blue);text-decoration:none;background:var(--bg)}
+.toc-label{font-size:.85rem;color:var(--muted);margin:.2rem 0 .3rem}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1.4rem 0;padding:0 0 0 .9rem}
+@media (max-width:480px){details.section{padding-left:.6rem;border-left-width:3px}main{padding:.8rem .8rem 5rem}}
+details.section>summary h2{font-family:inherit}
 details.section>summary{cursor:pointer;list-style:none}
 details.section>summary::-webkit-details-marker{display:none}
 details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
-details.section>summary::after{content:" ▾";color:var(--muted)}
-details.section:not([open])>summary::after{content:" ▸"}
+details.section>summary{display:flex;align-items:baseline;gap:.4rem}
+details.section>summary::after{content:"▾";color:var(--muted);flex:none}
+details.section:not([open])>summary::after{content:"▸"}
 h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
 p{margin:.5rem 0}
 p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
@@ -62,7 +68,11 @@ figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
 math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
 math[display=block]{margin:.3rem 0}
 mark{background:#fac775;color:#412402;border-radius:3px}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:2.2rem}
+.pager a{display:block;border:1px solid var(--line);border-radius:12px;padding:.55rem .8rem;line-height:1.4}
+.pager a small{display:block;color:var(--muted);font-size:.8rem}
+.pager .next{text-align:right;grid-column:2}
+.pager .home{grid-column:1 / -1;text-align:center}
 .pager a,.cards a{color:var(--blue);text-decoration:none}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
 .cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
@@ -72,12 +82,26 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 .hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
 .hero p{color:var(--muted);margin:0}
 .hidden{display:none}
+.tools{display:flex;gap:.5rem;align-items:center;margin:.2rem 0 .4rem}
+.tools .search{flex:1;margin:0}
+.hits{font-size:.85rem;color:var(--muted);min-height:1.2em;margin:.1rem 0 .4rem}
+.icon-btn{flex:none;font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);
+border-radius:8px;padding:.25rem .55rem;cursor:pointer}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue);z-index:6}
+#totop{position:fixed;right:1rem;bottom:1.2rem;z-index:6;width:2.8rem;height:2.8rem;border-radius:50%;
+border:1px solid var(--line);background:var(--bg);color:var(--blue);font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.15);
+opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.show{opacity:1;pointer-events:auto}
+.resume{display:block;text-align:center;margin:0 auto 1rem;max-width:22rem;border:1px solid var(--blue);border-radius:12px;
+padding:.55rem .8rem;color:var(--blue);text-decoration:none}
+html.big body{font-size:1.28rem}
 </style></head>
-<body>
+<body data-page="ch04.html">
+<div id="progress"></div>
 <header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
-<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
-<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html" selected>บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select></header>
-<main><div class="banner"><div class="n">4</div><div class="t"><small>บทที่ 4</small><span>ความสัมพันธ์และฟังก์ชัน</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. ความสัมพันธ์และคู่อันดับ</a><a href="#s2">2. ความสัมพันธ์แบบใดเป็นฟังก์ชัน</a><a href="#s3">3. การหาโดเมนและเรนจ์</a><a href="#s4">4. การดำเนินการและฟังก์ชันประกอบ</a><a href="#s5">5. ฟังก์ชันหนึ่งต่อหนึ่ง ทั่วถึง และฟังก์ชันผกผัน</a><a href="#s6">6. กราฟพื้นฐานและค่าสูงสุด–ต่ำสุด</a><a href="#s7">7. แนวข้อสอบที่เน้น: การเลื่อนกราฟ</a><a href="#s8">8. แนวข้อสอบที่เน้น: สร้างฟังก์ชันรายได้แล้วหาค่าสูงสุด</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. ความสัมพันธ์และคู่อันดับ</strong></h2></summary><div class="body">
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html" selected>บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<button class="icon-btn size-btn" type="button" aria-label="ขยาย/ย่อตัวอักษร">Aa</button></header>
+<main><div class="banner"><div class="n">4</div><div class="t"><small>บทที่ 4</small><span>ความสัมพันธ์และฟังก์ชัน</span></div></div><div class="tools"><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"></div><div class="hits"></div><div class="toc-label">หัวข้อในบทนี้ (ปัดดูต่อ →)</div><nav class="toc"><a href="#s1">1. ความสัมพันธ์และคู่อันดับ</a><a href="#s2">2. ความสัมพันธ์แบบใดเป็นฟังก์ชัน</a><a href="#s3">3. การหาโดเมนและเรนจ์</a><a href="#s4">4. การดำเนินการและฟังก์ชันประกอบ</a><a href="#s5">5. ฟังก์ชันหนึ่งต่อหนึ่ง ทั่วถึง และฟังก์ชันผกผัน</a><a href="#s6">6. กราฟพื้นฐานและค่าสูงสุด–ต่ำสุด</a><a href="#s7">7. แนวข้อสอบที่เน้น: การเลื่อนกราฟ</a><a href="#s8">8. แนวข้อสอบที่เน้น: สร้างฟังก์ชันรายได้แล้วหาค่าสูงสุด</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. ความสัมพันธ์และคู่อันดับ</strong></h2></summary><div class="body">
 <p>ความสัมพันธ์จับคู่สิ่งที่เกี่ยวข้อง เช่น นักเรียน–คะแนน หรือราคา–จำนวนขาย เขียนเป็น <strong>คู่อันดับ </strong><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></p>
 <p>ลำดับของคู่อันดับมีความหมาย โดยทั่วไป <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> กับ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>y</mi><mo separator="true">,</mo><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ไม่ใช่คู่อันดับเดียวกัน</p>
 <p><strong>ผลคูณคาร์ทีเซียน </strong><math displaystyle="true"><mrow><mi>A</mi><mo>×</mo><mi>B</mi></mrow></math> คือเซตของคู่อันดับทั้งหมดที่ตัวหน้าเป็นสมาชิกของ <math displaystyle="true"><mrow><mi>A</mi></mrow></math> และตัวหลังเป็นสมาชิกของ <math displaystyle="true"><mrow><mi>B</mi></mrow></math> ความสัมพันธ์จาก <math displaystyle="true"><mrow><mi>A</mi></mrow></math> ไป <math displaystyle="true"><mrow><mi>B</mi></mrow></math> คือสับเซตของ <math displaystyle="true"><mrow><mi>A</mi><mo>×</mo><mi>B</mi></mrow></math></p>
@@ -90,7 +114,7 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p><math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> หมายถึงค่าของฟังก์ชันเมื่อใส่ <math displaystyle="true"><mrow><mi>x</mi></mrow></math> เช่น ถ้า <math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math> จะได้ <math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>3</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>7</mn></mrow></math></p>
 <p class="caution"><strong>ระวัง:</strong> <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ต่างกันให้ค่า <math displaystyle="true"><mrow><mi>y</mi></mrow></math> เท่ากันได้ เช่น <math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> มี <math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>4</mn></mrow></math> แต่ยังเป็นฟังก์ชัน เพราะ <math displaystyle="true"><mrow><mi>x</mi></mrow></math> แต่ละค่าให้ผลลัพธ์เพียงค่าเดียว</p>
 <p>ตรวจฟังก์ชันด้วยเส้นแนวตั้ง: ตัดเกินหนึ่งจุดหมายถึง <math displaystyle="true"><mrow><mi>x</mi></mrow></math> เดียวให้หลาย <math displaystyle="true"><mrow><mi>y</mi></mrow></math> จึงไม่เป็นฟังก์ชัน</p>
-<figure><img src="figures/fig-4-1.svg" alt="รูป 4.1" loading="lazy"><figcaption><strong>รูป 4.1</strong> เส้นแนวตั้งตัดกราฟของฟังก์ชันได้ไม่เกินหนึ่งจุด</figcaption></figure>
+<figure><img src="figures/fig-4-1.svg" alt="รูป 4.1" width="560" height="285" loading="lazy"><figcaption><strong>รูป 4.1</strong> เส้นแนวตั้งตัดกราฟของฟังก์ชันได้ไม่เกินหนึ่งจุด</figcaption></figure>
 </div></details>
 <details class="section" id="s3" open><summary><h2><math displaystyle="true"><mrow><mn>3</mn></mrow></math><strong>. การหาโดเมนและเรนจ์</strong></h2></summary><div class="body">
 <p>เมื่อฟังก์ชันให้มาเป็นสูตรและไม่ได้ระบุโดเมน ให้หาค่า <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ที่แทนแล้วนิพจน์มีความหมายในระบบจำนวนจริง</p>
@@ -114,24 +138,24 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <details class="section" id="s5" open><summary><h2><math displaystyle="true"><mrow><mn>5</mn></mrow></math><strong>. ฟังก์ชันหนึ่งต่อหนึ่ง ทั่วถึง และฟังก์ชันผกผัน</strong></h2></summary><div class="body">
 <p><strong>ฟังก์ชันหนึ่งต่อหนึ่ง</strong> คือฟังก์ชันที่ <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ต่างกันให้ผลลัพธ์ต่างกัน จึงไม่มีค่า <math displaystyle="true"><mrow><mi>y</mi></mrow></math> เดียวกันที่มาจาก <math displaystyle="true"><mrow><mi>x</mi></mrow></math> หลายค่า</p>
 <p>ตรวจหนึ่งต่อหนึ่งด้วยเส้นแนวนอน: แต่ละเส้นตัดกราฟไม่เกินหนึ่งจุด</p>
-<figure><img src="figures/fig-4-2.svg" alt="รูป 4.2" loading="lazy"><figcaption><strong>รูป 4.2</strong> เส้นแนวนอนใช้ตรวจการเป็นฟังก์ชันหนึ่งต่อหนึ่ง</figcaption></figure>
+<figure><img src="figures/fig-4-2.svg" alt="รูป 4.2" width="560" height="285" loading="lazy"><figcaption><strong>รูป 4.2</strong> เส้นแนวนอนใช้ตรวจการเป็นฟังก์ชันหนึ่งต่อหนึ่ง</figcaption></figure>
 <p><strong>ฟังก์ชันทั่วถึง</strong> สำหรับ <math displaystyle="true"><mrow><mi>f</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi>B</mi></mrow></math> หมายถึงทุกสมาชิกของ <math displaystyle="true"><mrow><mi>B</mi></mrow></math> เกิดเป็นผลลัพธ์ได้ หรือเรนจ์เท่ากับ <math displaystyle="true"><mrow><mi>B</mi></mrow></math></p>
 <p><strong>ฟังก์ชันผกผัน </strong><math displaystyle="true"><mrow><msup><mrow><mi>f</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math> ทำงานย้อนกลับจากผลลัพธ์ไปหาค่าตั้งต้น ถ้า <math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>b</mi></mrow></math> แล้ว <math displaystyle="true"><mrow><msup><mrow><mi>f</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>a</mi></mrow></math></p>
 <p><math displaystyle="true"><mrow><mi>f</mi></mrow></math> ต้องเป็นหนึ่งต่อหนึ่งจึงจะมีฟังก์ชันผกผันจากเรนจ์กลับไปยังโดเมนได้ ถ้าต้องการผกผันจาก <math displaystyle="true"><mrow><mi>B</mi></mrow></math> กลับไป <math displaystyle="true"><mrow><mi>A</mi></mrow></math> สำหรับ <math displaystyle="true"><mrow><mi>f</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi>B</mi></mrow></math> ต้องเป็นทั้งหนึ่งต่อหนึ่งและทั่วถึง</p>
 <p>การหาสูตรผกผันทำได้โดยเขียน <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> สลับ <math displaystyle="true"><mrow><mi>x</mi></mrow></math> กับ <math displaystyle="true"><mrow><mi>y</mi></mrow></math> แล้วแก้สมการหา <math displaystyle="true"><mrow><mi>y</mi></mrow></math> เช่น <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math> สลับเป็น <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>1</mn></mrow></math> จึงได้ <math displaystyle="true"><mrow><msup><mrow><mi>f</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math></p>
 <p>โดเมนกับเรนจ์ของฟังก์ชันผกผันสลับจากฟังก์ชันเดิม และกราฟสะท้อนกันผ่านเส้น <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math></p>
-<figure><img src="figures/fig-4-3.svg" alt="รูป 4.3" loading="lazy"><figcaption><strong>รูป 4.3</strong> กราฟของ <math displaystyle="true"><mrow><mi>f</mi></mrow></math> และ <math displaystyle="true"><mrow><msup><mrow><mi>f</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math> สะท้อนกันผ่านเส้น <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math></figcaption></figure>
+<figure><img src="figures/fig-4-3.svg" alt="รูป 4.3" width="347" height="333" loading="lazy"><figcaption><strong>รูป 4.3</strong> กราฟของ <math displaystyle="true"><mrow><mi>f</mi></mrow></math> และ <math displaystyle="true"><mrow><msup><mrow><mi>f</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math> สะท้อนกันผ่านเส้น <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math></figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> <math displaystyle="true"><mrow><msup><mrow><mi>f</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ไม่ได้หมายถึง <math displaystyle="true"><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></mfrac></mrow></math> และบางฟังก์ชันต้องจำกัดโดเมนก่อนจึงจะเป็นหนึ่งต่อหนึ่ง</p>
 </div></details>
 <details class="section" id="s6" open><summary><h2><math displaystyle="true"><mrow><mn>6</mn></mrow></math><strong>. กราฟพื้นฐานและค่าสูงสุด–ต่ำสุด</strong></h2></summary><div class="body">
 <p>กราฟพื้นฐานที่ควรรู้จัก ได้แก่</p>
 <div class="table-wrap"><table><thead><tr><th>สมการ</th><th>ลักษณะกราฟ</th></tr></thead><tbody><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow></math></td><td>เส้นตรงที่มีความชัน <math displaystyle="true"><mrow><mi>m</mi></mrow></math> และตัดแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math> ที่ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>0</mn><mo separator="true">,</mo><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td></tr><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>a</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow></math> เมื่อ <math displaystyle="true"><mrow><mi>a</mi><mo>≠</mo><mn>0</mn></mrow></math></td><td>พาราโบลา หงายเมื่อ <math displaystyle="true"><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow></math> และคว่ำเมื่อ <math displaystyle="true"><mrow><mi>a</mi><mo>&lt;</mo><mn>0</mn></mrow></math></td></tr><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math></td><td>กราฟรูปตัว <math displaystyle="true"><mrow><mi>V</mi></mrow></math> มีจุดต่ำสุดที่ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>0</mn><mo separator="true">,</mo><mn>0</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td></tr><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><msqrt><mrow><mi>x</mi></mrow></msqrt></mrow></math></td><td>เริ่มที่ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>0</mn><mo separator="true">,</mo><mn>0</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ใช้ได้เมื่อ <math displaystyle="true"><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow></math> และมี <math displaystyle="true"><mrow><mi>y</mi><mo>≥</mo><mn>0</mn></mrow></math></td></tr><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>x</mi></mrow></mfrac></mrow></math></td><td>ใช้ <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> ไม่ได้ และค่า <math displaystyle="true"><mrow><mi>y</mi></mrow></math> ไม่เป็นศูนย์</td></tr></tbody></table></div>
-<figure><img src="figures/fig-4-4.svg" alt="รูป 4.4" loading="lazy"><figcaption><strong>รูป 4.4</strong> รูปร่างของกราฟพื้นฐาน</figcaption></figure>
+<figure><img src="figures/fig-4-4.svg" alt="รูป 4.4" width="603" height="360" loading="lazy"><figcaption><strong>รูป 4.4</strong> รูปร่างของกราฟพื้นฐาน</figcaption></figure>
 <p>สำหรับพาราโบลา <math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>a</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow></math> ตำแหน่ง <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ของจุดยอดคือ</p>
 <div class="formula"><math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi>b</mi></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math></div>
 <p>แทน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ของจุดยอดใน <math displaystyle="true"><mrow><mi>f</mi></mrow></math> เพื่อหา <math displaystyle="true"><mrow><mi>y</mi></mrow></math> เมื่อโดเมนเป็น <math displaystyle="true"><mrow><mi mathvariant="normal">ℝ</mi></mrow></math> พาราโบลาหงายให้ต่ำสุด คว่ำให้สูงสุดที่จุดยอด</p>
 <p>ถ้าเขียนเป็น <math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>a</mi><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mi>k</mi></mrow></math> จะเห็นจุดยอด <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ได้ทันที</p>
-<figure><img src="figures/fig-4-5.svg" alt="รูป 4.5" loading="lazy"><figcaption><strong>รูป 4.5</strong> จุดยอดของพาราโบลาให้ค่าต่ำสุดหรือสูงสุด</figcaption></figure>
+<figure><img src="figures/fig-4-5.svg" alt="รูป 4.5" width="560" height="285" loading="lazy"><figcaption><strong>รูป 4.5</strong> จุดยอดของพาราโบลาให้ค่าต่ำสุดหรือสูงสุด</figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> ถ้าโจทย์จำกัดโดเมน ต้องตรวจว่าจุดยอดอยู่ในโดเมนหรือไม่ ถ้าหาค่าสูงสุดหรือต่ำสุดบนช่วงปิด ต้องพิจารณาค่าที่ปลายช่วงด้วย</p>
 </div></details>
 <details class="section" id="s7" open><summary><h2><math displaystyle="true"><mrow><mn>7</mn></mrow></math><strong>. แนวข้อสอบที่เน้น: การเลื่อนกราฟ</strong></h2></summary><div class="body">
@@ -140,10 +164,10 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <div class="table-wrap"><table><thead><tr><th>สมการ</th><th>การเลื่อน</th></tr></thead><tbody><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>+</mo><mi>k</mi></mrow></math></td><td>เลื่อนขึ้น <math displaystyle="true"><mrow><mi>k</mi></mrow></math> หน่วย</td></tr><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>−</mo><mi>k</mi></mrow></math></td><td>เลื่อนลง <math displaystyle="true"><mrow><mi>k</mi></mrow></math> หน่วย</td></tr><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td><td>เลื่อนไปทางขวา <math displaystyle="true"><mrow><mi>h</mi></mrow></math> หน่วย</td></tr><tr><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td><td>เลื่อนไปทางซ้าย <math displaystyle="true"><mrow><mi>h</mi></mrow></math> หน่วย</td></tr></tbody></table></div>
 <p>การเลื่อนในแนวนอนดูจากค่าที่ทำให้ <math displaystyle="true"><mrow><mi>f</mi></mrow></math> ได้รับค่าเดิม เช่น จุดเดิมใช้ <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mi>a</mi></mrow></math> ถ้าสูตรใหม่เป็น <math displaystyle="true"><mrow><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ต้องมี <math displaystyle="true"><mrow><mi>x</mi><mo>−</mo><mi>h</mi><mo>=</mo><mi>a</mi></mrow></math> จึงได้ <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>h</mi></mrow></math> จุดจึงเลื่อนไปทางขวา</p>
 <p>โดยทั่วไป จุด <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> บน <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> จะย้ายเป็น <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mo>+</mo><mi>h</mi><mo separator="true">,</mo><mi>b</mi><mo>+</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> บน <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>+</mo><mi>k</mi></mrow></math></p>
-<figure><img src="figures/fig-4-6.svg" alt="รูป 4.6" loading="lazy"><figcaption><strong>รูป 4.6</strong> จุด <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ย้ายไป <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mo>+</mo><mi>h</mi><mo separator="true">,</mo><mi>b</mi><mo>+</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> เมื่อเลื่อนกราฟ</figcaption></figure>
+<figure><img src="figures/fig-4-6.svg" alt="รูป 4.6" width="467" height="309" loading="lazy"><figcaption><strong>รูป 4.6</strong> จุด <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ย้ายไป <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>a</mi><mo>+</mo><mi>h</mi><mo separator="true">,</mo><mi>b</mi><mo>+</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> เมื่อเลื่อนกราฟ</figcaption></figure>
 <p>ถ้าโจทย์ให้กราฟมา ให้ดูจุดเด่น เช่น จุดยอดหรือจุดตัดแกน แล้วเทียบตำแหน่งเดิมกับตำแหน่งใหม่ก่อนเขียนสูตร</p>
 <p>การเปลี่ยนกราฟที่ควรแยกจากการเลื่อน ได้แก่ <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mo>−</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ซึ่งสะท้อนผ่านแกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>−</mo><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ซึ่งสะท้อนผ่านแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math></p>
-<figure><img src="figures/fig-4-7.svg" alt="รูป 4.7" loading="lazy"><figcaption><strong>รูป 4.7</strong> การสะท้อนผ่านแกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> และแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math></figcaption></figure>
+<figure><img src="figures/fig-4-7.svg" alt="รูป 4.7" width="560" height="285" loading="lazy"><figcaption><strong>รูป 4.7</strong> การสะท้อนผ่านแกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> และแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math></figcaption></figure>
 <p class="caution"><strong>ระวัง:</strong> เครื่องหมายที่เปลี่ยนภายใน <math displaystyle="true"><mrow><mi>f</mi></mrow></math> กับภายนอก <math displaystyle="true"><mrow><mi>f</mi></mrow></math> มีผลคนละอย่าง อย่าตัดสินทิศทางจากเครื่องหมายเพียงอย่างเดียว</p>
 </div></details>
 <details class="section" id="s8" open><summary><h2><math displaystyle="true"><mrow><mn>8</mn></mrow></math><strong>. แนวข้อสอบที่เน้น: สร้างฟังก์ชันรายได้แล้วหาค่าสูงสุด</strong></h2></summary><div class="body">
@@ -153,23 +177,44 @@ mark{background:#fac775;color:#412402;border-radius:3px}
 <p>ถ้าราคาเดิมคือ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> บาท ขายได้ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> ชิ้น และเพิ่มราคาครั้งละ <math displaystyle="true"><mrow><mi>a</mi></mrow></math> บาทแล้วขายลดครั้งละ <math displaystyle="true"><mrow><mi>b</mi></mrow></math> ชิ้น จะได้</p>
 <ul class="points"><li>ราคาใหม่: <math displaystyle="true"><mrow><mi>p</mi><mo>+</mo><mi>a</mi><mi>t</mi></mrow></math></li><li>จำนวนขายใหม่: <math displaystyle="true"><mrow><mi>q</mi><mo>−</mo><mi>b</mi><mi>t</mi></mrow></math></li><li>รายได้: <math displaystyle="true"><mrow><mi>R</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>t</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>+</mo><mi>a</mi><mi>t</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>q</mi><mo>−</mo><mi>b</mi><mi>t</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li></ul>
 <p>เมื่อ <math displaystyle="true"><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow></math> และ <math displaystyle="true"><mrow><mi>b</mi><mo>&gt;</mo><mn>0</mn></mrow></math> กระจายแล้วจะได้ฟังก์ชันกำลังสองที่มีสัมประสิทธิ์ของ <math displaystyle="true"><mrow><msup><mrow><mi>t</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math> เป็นลบ กราฟจึงเป็นพาราโบลาคว่ำ ใช้จุดยอดช่วยหาค่าสูงสุดได้</p>
-<figure><img src="figures/fig-4-8.svg" alt="รูป 4.8" loading="lazy"><figcaption><strong>รูป 4.8</strong> รายได้สูงสุดอยู่ที่จุดยอดของพาราโบลาคว่ำ</figcaption></figure>
+<figure><img src="figures/fig-4-8.svg" alt="รูป 4.8" width="440" height="307" loading="lazy"><figcaption><strong>รูป 4.8</strong> รายได้สูงสุดอยู่ที่จุดยอดของพาราโบลาคว่ำ</figcaption></figure>
 <p>กำหนดตัวแปร → เขียนราคา/จำนวนขายด้วยตัวแปรเดียว → คูณเป็นรายได้ → ตรวจโดเมน → หาค่าสูงสุด</p>
 <p class="caution"><strong>ระวัง:</strong> ค่าตัวแปรที่จุดยอดอาจยังไม่ใช่สิ่งที่โจทย์ถาม ถ้าถามราคา ต้องนำกลับไปหาราคา ถ้าถามรายได้ ต้องแทนในฟังก์ชันรายได้</p>
 <p>ตรวจจำนวนขายไม่ติดลบ; ถ้าจำนวนครั้งเพิ่มราคาเป็นจำนวนเต็ม ให้เทียบค่าที่ใช้ได้ใกล้จุดยอดและขอบเขต</p>
-</div></details><div class="pager"><a href="ch03.html">← บทที่ 3</a><a href="index.html">สารบัญ</a><a href="ch05.html">บทที่ 5 →</a></div></main>
-<script>
+</div></details><div class="pager"><a class="prev" href="ch03.html"><small>← บทที่ 3</small>จำนวนจริง</a><a class="next" href="ch05.html"><small>บทที่ 5 →</small>เอกซ์โพเนนเชียลและลอการิทึม</a><a class="home" href="index.html">สารบัญทุกบท</a></div></main>
+<button id="totop" type="button" aria-label="กลับขึ้นบน">↑</button>
+<script>(()=>{
 const box=document.querySelector('.search');
-if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+const hits=document.querySelector('.hits');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();let count=0,first=null;
 document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
 document.querySelectorAll('details.section').forEach(d=>{
  const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
  if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
   while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
   nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
-   const m=document.createElement('mark');r.surroundContents(m);});}
-});});}
+   const m=document.createElement('mark');r.surroundContents(m);count++;if(!first)first=m;});}
+});
+ if(hits)hits.textContent=q?(count?'พบ '+count+' ที่':'ไม่พบคำนี้ในบทนี้'):'';
+ if(first)first.scrollIntoView({block:'center'});});}
 const sel=document.querySelector('header.top select');
 if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
-</script>
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+if(store.get('big')==='1')document.documentElement.classList.add('big');
+document.querySelectorAll('.size-btn').forEach(b=>b.addEventListener('click',()=>{
+ const on=document.documentElement.classList.toggle('big');store.set('big',on?'1':'0');}));
+const bar=document.getElementById('progress'),toTop=document.getElementById('totop');
+const page=document.body.dataset.page;
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;const y=scrollY;
+ if(bar)bar.style.width=(h>0?Math.min(100,y/h*100):0)+'%';if(toTop)toTop.classList.toggle('show',y>innerHeight);
+ if(page){store.set('last',page);store.set('last-y',String(Math.round(y)));}}
+addEventListener('scroll',onScroll,{passive:true});
+if(toTop)toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const resume=document.querySelector('.resume');
+if(resume){const last=store.get('last');const name=last&&document.querySelector('.cards a[href="'+last+'"]');
+ if(name){resume.href=last+'#resume';resume.textContent='อ่านต่อ: '+name.textContent.replace(/^\d+/,m=>'บทที่ '+m+' ');}
+ else resume.remove();}
+if(page&&location.hash==='#resume'){const y=+store.get('last-y')||0;history.replaceState(null,'',location.pathname);
+ addEventListener('load',()=>scrollTo(0,y));}
+})();</script>
 </body></html>

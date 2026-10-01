@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="236.0pt" viewBox="0 0 452.0 236.0">
+<line x1="8.00" y1="168.57" x2="209.00" y2="168.57" stroke="#000000" stroke-width="0.9"/>
+<polygon points="214.00,168.57 208.47,170.91 208.47,166.23" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="33.75" y1="190.00" x2="33.75" y2="15.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="33.75,10.00 36.09,15.53 31.41,15.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="208.00" y="183.57" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="39.75" y="19.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="22.75" y="181.57" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<line x1="162.50" y1="168.57" x2="162.50" y2="74.29" stroke="#000000" stroke-width="0.8" stroke-dasharray="3,2"/>
+<line x1="33.75" y1="168.57" x2="156.05" y2="79.01" stroke="#000000" stroke-width="1.7"/>
+<polygon points="162.50,74.29 156.78,82.49 152.95,77.26" fill="#000000" stroke="none" stroke-width="0"/>
+<path d="M 57.75 168.57 A 24.00 24.00 0 0 0 53.11 154.39" fill="none" stroke="#000000" stroke-width="0.9"/>
+<text x="64.61" y="161.38" font-family="Cambria Math" font-size="12pt" font-style="italic">θ</text>
+<circle cx="162.50" cy="74.29" r="2.4" fill="#000000" stroke="none"/>
+<text x="168.50" y="74.29" font-family="Cambria Math" font-size="12pt" font-style="italic">z</text>
+<text x="86.13" y="119.43" font-family="Cambria Math" font-size="12pt" font-style="italic">r</text>
+<text x="72.13" y="184.57" font-family="Cambria Math" font-size="12pt">a=r cosθ</text>
+<text x="168.50" y="125.43" font-family="Cambria Math" font-size="12pt">b=r sinθ</text>
+<text x="73.60" y="226.00" font-family="TH Sarabun New" font-size="16pt">(ก) รูปเชิงขั้ว</text>
+<line x1="240.00" y1="100.00" x2="441.00" y2="100.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="446.00,100.00 440.47,102.34 440.47,97.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="343.00" y1="190.00" x2="343.00" y2="15.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="343.00,10.00 345.34,15.53 340.66,15.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="440.00" y="115.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="349.00" y="19.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="379.10" y="52.00" font-family="Cambria Math" font-size="11pt">(+,+)</text>
+<text x="372.10" y="68.00" font-family="Cambria Math" font-size="10pt">0°&lt;θ&lt;90°</text>
+<text x="276.10" y="52.00" font-family="Cambria Math" font-size="11pt">(−,+)</text>
+<text x="263.50" y="68.00" font-family="Cambria Math" font-size="10pt">90°&lt;θ&lt;180°</text>
+<text x="276.10" y="137.26" font-family="Cambria Math" font-size="11pt">(−,−)</text>
+<text x="260.70" y="153.26" font-family="Cambria Math" font-size="10pt">180°&lt;θ&lt;270°</text>
+<text x="379.10" y="137.26" font-family="Cambria Math" font-size="11pt">(+,−)</text>
+<text x="363.70" y="153.26" font-family="Cambria Math" font-size="10pt">270°&lt;θ&lt;360°</text>
+<text x="424.00" y="94.00" font-family="Cambria Math" font-size="10pt">0°</text>
+<text x="348.00" y="22.00" font-family="Cambria Math" font-size="10pt">90°</text>
+<text x="240.00" y="94.00" font-family="Cambria Math" font-size="10pt">180°</text>
+<text x="348.00" y="190.00" font-family="Cambria Math" font-size="10pt">270°</text>
+<text x="296.28" y="226.00" font-family="TH Sarabun New" font-size="16pt">(ข) มุมตามจตุภาค</text>
+</svg>

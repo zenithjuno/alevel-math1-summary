@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="232.0pt" viewBox="0 0 452.0 232.0">
+<line x1="10.00" y1="108.00" x2="215.00" y2="108.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="220.00,108.00 214.47,110.34 214.47,105.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="110.00" y1="208.00" x2="110.00" y2="13.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="110.00,8.00 112.34,13.53 107.66,13.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="214.00" y="123.00" font-family="Cambria Math" font-size="12pt" font-style="italic">x</text>
+<text x="116.00" y="17.00" font-family="Cambria Math" font-size="12pt" font-style="italic">y</text>
+<circle cx="110.00" cy="108.00" r="82.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<text x="123.37" y="77.56" font-family="TH Sarabun New" font-size="14pt">บวกทุกตัว</text>
+<text x="54.45" y="77.56" font-family="Cambria Math" font-size="12pt">sin</text>
+<text x="78.61" y="77.56" font-family="TH Sarabun New" font-size="14pt">บวก</text>
+<text x="54.45" y="146.44" font-family="Cambria Math" font-size="12pt">tan</text>
+<text x="78.61" y="146.44" font-family="TH Sarabun New" font-size="14pt">บวก</text>
+<text x="123.33" y="146.44" font-family="Cambria Math" font-size="12pt">cos</text>
+<text x="147.49" y="146.44" font-family="TH Sarabun New" font-size="14pt">บวก</text>
+<text x="49.52" y="226.00" font-family="TH Sarabun New" font-size="16pt">(ก) อัตราส่วนที่เป็นบวก</text>
+<line x1="240.00" y1="108.00" x2="445.00" y2="108.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="450.00,108.00 444.47,110.34 444.47,105.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="340.00" y1="208.00" x2="340.00" y2="13.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="340.00,8.00 342.34,13.53 337.66,13.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="444.00" y="123.00" font-family="Cambria Math" font-size="12pt" font-style="italic">x</text>
+<text x="346.00" y="17.00" font-family="Cambria Math" font-size="12pt" font-style="italic">y</text>
+<circle cx="340.00" cy="108.00" r="82.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<line x1="340.00" y1="108.00" x2="268.99" y2="67.00" stroke="#000000" stroke-width="1.6"/>
+<line x1="268.99" y1="67.00" x2="268.99" y2="108.00" stroke="#000000" stroke-width="0.8" stroke-dasharray="3,2"/>
+<path d="M 356.00 108.00 A 16 16 0 0 0 326.14 100.00" fill="none" stroke="#000000" stroke-width="0.9"/>
+<text x="346.00" y="88.00" font-family="Cambria Math" font-size="11pt">150°</text>
+<path d="M 340.00 108.00 L 310.56 91.00 A 34.00 34.00 0 0 0 306.00 108.00 Z" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<path d="M 310.56 91.00 A 34.00 34.00 0 0 0 306.00 108.00" fill="none" stroke="#000000" stroke-width="0.9"/>
+<text x="284.40" y="99.58" font-family="Cambria Math" font-size="11pt">30°</text>
+<circle cx="268.99" cy="67.00" r="2.6" fill="#000000" stroke="none"/>
+<line x1="265.99" y1="64.00" x2="254.99" y2="51.00" stroke="#000000" stroke-width="0.6"/>
+<text x="182.99" y="47.00" font-family="Cambria Math" font-size="12pt">(−√3⁄2, 1⁄2)</text>
+<text x="270.08" y="226.00" font-family="TH Sarabun New" font-size="16pt">(ข) มุม 150° อยู่จตุภาคที่ 2</text>
+</svg>

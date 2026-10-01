@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="212.0pt" viewBox="0 0 452.0 212.0">
+<line x1="26.00" y1="150.00" x2="421.00" y2="150.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="426.00,150.00 420.47,152.34 420.47,147.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="26.00" y1="147.00" x2="26.00" y2="153.00" stroke="#000000" stroke-width="0.8"/>
+<text x="23.00" y="166.00" font-family="Cambria Math" font-size="10pt">0</text>
+<line x1="76.00" y1="147.00" x2="76.00" y2="153.00" stroke="#000000" stroke-width="0.8"/>
+<text x="73.00" y="166.00" font-family="Cambria Math" font-size="10pt">1</text>
+<line x1="126.00" y1="147.00" x2="126.00" y2="153.00" stroke="#000000" stroke-width="0.8"/>
+<text x="123.00" y="166.00" font-family="Cambria Math" font-size="10pt">2</text>
+<line x1="176.00" y1="147.00" x2="176.00" y2="153.00" stroke="#000000" stroke-width="0.8"/>
+<text x="173.00" y="166.00" font-family="Cambria Math" font-size="10pt">3</text>
+<line x1="226.00" y1="147.00" x2="226.00" y2="153.00" stroke="#000000" stroke-width="0.8"/>
+<text x="223.00" y="166.00" font-family="Cambria Math" font-size="10pt">4</text>
+<line x1="276.00" y1="147.00" x2="276.00" y2="153.00" stroke="#000000" stroke-width="0.8"/>
+<text x="273.00" y="166.00" font-family="Cambria Math" font-size="10pt">5</text>
+<line x1="326.00" y1="147.00" x2="326.00" y2="153.00" stroke="#000000" stroke-width="0.8"/>
+<text x="323.00" y="166.00" font-family="Cambria Math" font-size="10pt">6</text>
+<line x1="376.00" y1="147.00" x2="376.00" y2="153.00" stroke="#000000" stroke-width="0.8"/>
+<text x="373.00" y="166.00" font-family="Cambria Math" font-size="10pt">7</text>
+<rect x="126.00" y="82.00" width="200.00" height="30.00" fill="none" stroke="#000000" stroke-width="1.4"/>
+<line x1="226.00" y1="82.00" x2="226.00" y2="112.00" stroke="#000000" stroke-width="1.8"/>
+<line x1="76.00" y1="97.00" x2="126.00" y2="97.00" stroke="#000000" stroke-width="1.2"/>
+<line x1="326.00" y1="97.00" x2="376.00" y2="97.00" stroke="#000000" stroke-width="1.2"/>
+<line x1="76.00" y1="88.00" x2="76.00" y2="106.00" stroke="#000000" stroke-width="1.2"/>
+<line x1="376.00" y1="88.00" x2="376.00" y2="106.00" stroke="#000000" stroke-width="1.2"/>
+<line x1="76.00" y1="114.00" x2="76.00" y2="146.00" stroke="#7F7F7F" stroke-width="0.5" stroke-dasharray="2,2"/>
+<line x1="126.00" y1="114.00" x2="126.00" y2="146.00" stroke="#7F7F7F" stroke-width="0.5" stroke-dasharray="2,2"/>
+<line x1="226.00" y1="114.00" x2="226.00" y2="146.00" stroke="#7F7F7F" stroke-width="0.5" stroke-dasharray="2,2"/>
+<line x1="326.00" y1="114.00" x2="326.00" y2="146.00" stroke="#7F7F7F" stroke-width="0.5" stroke-dasharray="2,2"/>
+<line x1="376.00" y1="114.00" x2="376.00" y2="146.00" stroke="#7F7F7F" stroke-width="0.5" stroke-dasharray="2,2"/>
+<text x="64.82" y="56.00" font-family="TH Sarabun New" font-size="13pt">ต่ำสุด</text>
+<text x="72.92" y="74.00" font-family="Cambria Math" font-size="11pt">1</text>
+<text x="113.68" y="74.00" font-family="Cambria Math" font-size="11pt">Q₁=2</text>
+<text x="209.23" y="56.00" font-family="TH Sarabun New" font-size="13pt">มัธยฐาน</text>
+<text x="213.68" y="74.00" font-family="Cambria Math" font-size="11pt">Q₂=4</text>
+<text x="313.68" y="74.00" font-family="Cambria Math" font-size="11pt">Q₃=6</text>
+<text x="364.82" y="56.00" font-family="TH Sarabun New" font-size="13pt">สูงสุด</text>
+<text x="372.92" y="74.00" font-family="Cambria Math" font-size="11pt">7</text>
+<line x1="131.00" y1="188.00" x2="321.00" y2="188.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="126.00,188.00 130.61,186.05 130.61,189.95" fill="#000000" stroke="none" stroke-width="0"/>
+<polygon points="326.00,188.00 321.39,189.95 321.39,186.05" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="192.12" y="206.00" font-family="Cambria Math" font-size="11pt">IQR=Q₃−Q₁=4</text>
+</svg>

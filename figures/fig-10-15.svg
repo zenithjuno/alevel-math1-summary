@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="214.0pt" viewBox="0 0 452.0 214.0">
+<path d="M 61.94 138.31 A 22.00 22.00 0 0 0 51.66 121.34" fill="none" stroke="#000000" stroke-width="0.9"/>
+<text x="64.29" y="127.42" font-family="Cambria Math" font-size="11pt" font-style="italic">θ</text>
+<line x1="40.00" y1="140.00" x2="162.02" y2="130.61" stroke="#000000" stroke-width="1.6"/>
+<polygon points="170.00,130.00 160.82,133.96 160.32,127.49" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="40.00" y1="140.00" x2="85.76" y2="66.78" stroke="#000000" stroke-width="1.6"/>
+<polygon points="90.00,60.00 87.73,69.74 82.24,66.30" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="102.56" y="150.96" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="53.16" y="98.70" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="62.96" y="172.00" font-family="Cambria Math" font-size="12pt">u·v=|u||v|cosθ</text>
+<text x="59.84" y="198.00" font-family="TH Sarabun New" font-size="16pt">ดอต: ผลเป็นจำนวน</text>
+<polygon points="316.28,121.61 273.29,176.26 357.24,213.91 400.23,159.26" fill="#EEEEEE" stroke="none" stroke-width="0"/>
+<line x1="320.00" y1="130.00" x2="292.38" y2="165.12" stroke="#000000" stroke-width="1.6"/>
+<polygon points="287.43,171.41 290.73,161.97 295.83,165.97" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="320.00" y1="130.00" x2="376.30" y2="155.25" stroke="#000000" stroke-width="1.6"/>
+<polygon points="383.60,158.52 373.64,157.61 376.29,151.69" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="320.00" y1="130.00" x2="320.00" y2="54.17" stroke="#000000" stroke-width="2.4"/>
+<polygon points="320.00,46.17 323.24,55.63 316.76,55.63" fill="#000000" stroke="none" stroke-width="0"/>
+<polyline points="315.97,135.12 315.97,125.59 320.00,120.47" fill="none" stroke="#000000" stroke-width="0.8"/>
+<polyline points="328.19,133.67 328.19,124.15 320.00,120.47" fill="none" stroke="#000000" stroke-width="0.8"/>
+<text x="273.43" y="175.41" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="387.60" y="160.52" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="326.00" y="54.17" font-family="Cambria Math" font-size="12pt">u×v</text>
+<text x="275.52" y="198.00" font-family="TH Sarabun New" font-size="16pt">ครอส: ผลเป็นเวกเตอร์</text>
+</svg>

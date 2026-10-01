@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400.0pt" height="130.0pt" viewBox="0 0 400.0 130.0">
+<text x="8.00" y="51.00" font-family="Cambria Math" font-size="12pt" font-style="italic">A</text>
+<text x="22.00" y="51.00" font-family="Cambria Math" font-size="12pt">=</text>
+<rect x="41.00" y="25.00" width="26.00" height="20.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<rect x="69.00" y="25.00" width="26.00" height="20.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="50.64" y="39.50" font-family="Cambria Math" font-size="12pt">1</text>
+<text x="78.64" y="39.50" font-family="Cambria Math" font-size="12pt">2</text>
+<text x="50.64" y="61.50" font-family="Cambria Math" font-size="12pt">3</text>
+<text x="78.64" y="61.50" font-family="Cambria Math" font-size="12pt">4</text>
+<polyline points="43.00,22.00 38.00,22.00 38.00,70.00 43.00,70.00" fill="none" stroke="#000000" stroke-width="1.1"/>
+<polyline points="93.00,22.00 98.00,22.00 98.00,70.00 93.00,70.00" fill="none" stroke="#000000" stroke-width="1.1"/>
+<text x="112.00" y="51.00" font-family="Cambria Math" font-size="12pt" font-style="italic">B</text>
+<text x="126.00" y="51.00" font-family="Cambria Math" font-size="12pt">=</text>
+<rect x="145.00" y="25.00" width="26.00" height="20.00" fill="#F3D9B5" stroke="none" stroke-width="0"/>
+<rect x="145.00" y="47.00" width="26.00" height="20.00" fill="#F3D9B5" stroke="none" stroke-width="0"/>
+<text x="154.64" y="39.50" font-family="Cambria Math" font-size="12pt">2</text>
+<text x="182.64" y="39.50" font-family="Cambria Math" font-size="12pt">0</text>
+<text x="154.64" y="61.50" font-family="Cambria Math" font-size="12pt">1</text>
+<text x="182.64" y="61.50" font-family="Cambria Math" font-size="12pt">3</text>
+<polyline points="147.00,22.00 142.00,22.00 142.00,70.00 147.00,70.00" fill="none" stroke="#000000" stroke-width="1.1"/>
+<polyline points="197.00,22.00 202.00,22.00 202.00,70.00 197.00,70.00" fill="none" stroke="#000000" stroke-width="1.1"/>
+<text x="222.00" y="51.00" font-family="Cambria Math" font-size="12pt" font-style="italic">AB</text>
+<text x="244.00" y="51.00" font-family="Cambria Math" font-size="12pt">=</text>
+<rect x="265.00" y="25.00" width="30.00" height="20.00" fill="#D9D9D9" stroke="none" stroke-width="0"/>
+<text x="276.64" y="39.50" font-family="Cambria Math" font-size="12pt">4</text>
+<text x="308.64" y="39.50" font-family="Cambria Math" font-size="12pt">6</text>
+<text x="273.28" y="61.50" font-family="Cambria Math" font-size="12pt">10</text>
+<text x="305.28" y="61.50" font-family="Cambria Math" font-size="12pt">12</text>
+<polyline points="267.00,22.00 262.00,22.00 262.00,70.00 267.00,70.00" fill="none" stroke="#000000" stroke-width="1.1"/>
+<polyline points="325.00,22.00 330.00,22.00 330.00,70.00 325.00,70.00" fill="none" stroke="#000000" stroke-width="1.1"/>
+<text x="8.00" y="104.00" font-family="TH Sarabun New" font-size="14pt">แถว 1 ของ A × หลัก 1 ของ B:</text>
+<text x="174.36" y="104.00" font-family="Cambria Math" font-size="12pt">1(2)+2(1)=4</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300.0pt" height="224.0pt" viewBox="0 0 300.0 224.0">
+<line x1="14.00" y1="170.00" x2="279.00" y2="170.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="284.00,170.00 278.47,172.34 278.47,167.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="54.00" y1="200.00" x2="54.00" y2="15.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="54.00,10.00 56.34,15.53 51.66,15.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="278.00" y="185.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="60.00" y="19.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="43.00" y="183.00" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<text x="251.88" y="188.00" font-family="TH Sarabun New" font-size="14pt">ส่วนจริง</text>
+<text x="62.00" y="20.00" font-family="TH Sarabun New" font-size="14pt">ส่วนจินตภาพ</text>
+<line x1="204.00" y1="170.00" x2="204.00" y2="70.00" stroke="#000000" stroke-width="0.8" stroke-dasharray="3,2"/>
+<line x1="54.00" y1="70.00" x2="204.00" y2="70.00" stroke="#000000" stroke-width="0.8" stroke-dasharray="3,2"/>
+<line x1="54.00" y1="170.00" x2="197.34" y2="74.44" stroke="#000000" stroke-width="1.7"/>
+<polygon points="204.00,70.00 197.93,77.94 194.33,72.55" fill="#000000" stroke="none" stroke-width="0"/>
+<circle cx="204.00" cy="70.00" r="2.6" fill="#000000" stroke="none"/>
+<text x="210.00" y="66.00" font-family="Cambria Math" font-size="12pt">z=a+bi</text>
+<text x="210.00" y="84.00" font-family="Cambria Math" font-size="12pt">(a,b)</text>
+<text x="201.00" y="185.00" font-family="Cambria Math" font-size="12pt" font-style="italic">a</text>
+<text x="42.00" y="74.00" font-family="Cambria Math" font-size="12pt" font-style="italic">b</text>
+</svg>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>บทที่ 2 ตรรกศาสตร์ · สรุปเนื้อหา A-Level คณิตศาสตร์ประยุกต์ 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#1f1f1d;--muted:#5f5e5a;--navy:#0c447c;--blue:#185fa5;--tint:#e6f1fb;
+--line:#d3d1c7;--caution:#fcebeb;--caution-ink:#791f1f;--figure:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--ink:#ecebe6;--muted:#b4b2a9;--navy:#b5d4f4;
+--blue:#85b7eb;--tint:#0c2a4a;--line:#444441;--caution:#3a1717;--caution-ink:#f7c1c1;--figure:#f4f4f2}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Sarabun",system-ui,sans-serif;
+font-size:1.12rem;line-height:1.75}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
+header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
+header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
+.banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
+.banner .n{background:#0c447c;color:#fff;font-size:2.2rem;font-weight:700;padding:.2rem 1rem;display:flex;align-items:center}
+.banner .t{background:var(--tint);color:var(--navy);padding:.5rem 1rem;flex:1}
+.banner .t small{display:block;font-size:.85rem;opacity:.85}
+.banner .t span{font-size:1.45rem;font-weight:700}
+.search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
+background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+details.section>summary{cursor:pointer;list-style:none}
+details.section>summary::-webkit-details-marker{display:none}
+details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
+details.section>summary::after{content:" ▾";color:var(--muted)}
+details.section:not([open])>summary::after{content:" ▸"}
+h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
+p{margin:.5rem 0}
+p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
+p.definition{background:var(--tint);border-radius:8px;padding:.5rem .8rem;margin:.8rem 0}
+p.example{border-left:3px solid var(--line);border-radius:0;padding:.1rem 0 .1rem .8rem;color:var(--muted);font-size:1.02rem}
+p.example math{color:var(--ink)}
+.formula{background:var(--tint);border-radius:10px;padding:.55rem .8rem;margin:.6rem 0;
+text-align:center;overflow-x:auto;font-size:1.08em}
+.formula math{margin:0 .25rem}
+.formula .sep{color:var(--muted);margin:0 .2rem}
+ul.points{margin:.3rem 0 .6rem;padding-left:1.3rem}
+ul.formulas{list-style:none;background:var(--tint);border-radius:10px;padding:.5rem .8rem;margin:.6rem 0;overflow-x:auto}
+ul.formulas li{padding:.2rem 0}
+ul.formulas li+li{border-top:1px dashed var(--line)}
+ul.formulas .cond{font-size:.95rem}
+@media (max-width:480px){.formula,ul.formulas{font-size:.98em}}
+.table-wrap{overflow-x:auto;margin:.6rem 0 .9rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;min-width:100%;font-size:1rem}
+th,td{border:1px solid var(--line);padding:.35rem .55rem;vertical-align:middle}
+th{background:var(--tint);color:var(--navy);text-align:left}
+figure{margin:1rem 0;text-align:center}
+figure img{width:100%;max-width:34rem;height:auto;background:var(--figure);border-radius:8px;padding:.4rem}
+figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
+.display{overflow-x:auto;margin:.6rem 0;text-align:center}
+math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
+math[display=block]{margin:.3rem 0}
+mark{background:#fac775;color:#412402;border-radius:3px}
+.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager a,.cards a{color:var(--blue);text-decoration:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
+.cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
+.cards b{background:#0c447c;color:#fff;border-radius:8px;min-width:2.2rem;text-align:center;padding:.1rem .3rem}
+.hero{text-align:center;margin:1.2rem 0}
+.hero img{height:84px;margin:0 .6rem;background:#fff;border-radius:10px}
+.hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
+.hero p{color:var(--muted);margin:0}
+.hidden{display:none}
+</style></head>
+<body>
+<header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
+<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html" selected>บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<img src="assets/health-science-program.png" alt="Health Science Program"></header>
+<main><div class="banner"><div class="n">2</div><div class="t"><small>บทที่ 2</small><span>ตรรกศาสตร์</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. ประพจน์และค่าความจริง</a><a href="#s2">2. ตัวเชื่อมและตารางค่าความจริง</a><a href="#s3">3. ประพจน์ที่สมมูลกัน</a><a href="#s4">4. การนิเสธประพจน์</a><a href="#s5">5. สัจนิรันดร์และประพจน์ที่เท็จทุกกรณี</a><a href="#s6">6. ประโยคเปิดและตัวบ่งปริมาณ</a><a href="#s7">7. การอ้างเหตุผล</a><a href="#s8">8. แนวที่เลือกฝึก: ใช้เงื่อนไขของตัวเชื่อมบังคับค่าความจริง</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. ประพจน์และค่าความจริง</strong></h2></summary><div class="body">
+<p>ตรรกศาสตร์พิจารณาความจริง/เท็จ และข้อสรุปจากหลายข้อความ</p>
+<p><strong>ประพจน์</strong> คือประโยคบอกเล่าหรือปฏิเสธที่มีค่าความจริงอย่างใดอย่างหนึ่ง คือจริงหรือเท็จ เช่น “<math displaystyle="true"><mrow><mn>2</mn></mrow></math> เป็นจำนวนคู่” เป็นประพจน์ที่จริง ส่วน “<math displaystyle="true"><mrow><mn>3</mn></mrow></math> เป็นจำนวนคู่” เป็นประพจน์ที่เท็จ</p>
+<p>คำถามและคำสั่งไม่เป็นประพจน์ เช่น “วันนี้วันอะไร” และ “จงหาค่า <math displaystyle="true"><mrow><mi>x</mi></mrow></math>” เพราะไม่ได้กล่าวข้อความให้ตัดสินว่าจริงหรือเท็จ</p>
+<p>ใช้ตัวอักษร <math displaystyle="true"><mrow><mi>p</mi></mrow></math>, <math displaystyle="true"><mrow><mi>q</mi></mrow></math>, <math displaystyle="true"><mrow><mi>r</mi></mrow></math> แทนประพจน์ และใช้ <math displaystyle="true"><mrow><mi>T</mi></mrow></math><strong> แทนจริง</strong> กับ <math displaystyle="true"><mrow><mi>F</mi></mrow></math><strong> แทนเท็จ</strong></p>
+</div></details>
+<details class="section" id="s2" open><summary><h2><math displaystyle="true"><mrow><mn>2</mn></mrow></math><strong>. ตัวเชื่อมและตารางค่าความจริง</strong></h2></summary><div class="body">
+<p>ตัวเชื่อมรวมหลายประพจน์ ตารางนี้แสดงค่าทุกกรณีของ <math displaystyle="true"><mrow><mi>p</mi><mo separator="true">,</mo><mi>q</mi></mrow></math></p>
+<div class="table-wrap"><table><thead><tr><th><math displaystyle="true"><mrow><mi>p</mi></mrow></math></th><th><math displaystyle="true"><mrow><mi>q</mi></mrow></math></th><th><math displaystyle="true"><mrow><mo>~</mo><mi>p</mi></mrow></math></th><th><math displaystyle="true"><mrow><mi>p</mi><mo>∧</mo><mi>q</mi></mrow></math></th><th><math displaystyle="true"><mrow><mi>p</mi><mo>∨</mo><mi>q</mi></mrow></math></th><th><math displaystyle="true"><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi></mrow></math></th><th><math displaystyle="true"><mrow><mi>p</mi><mo>⇔</mo><mi>q</mi></mrow></math></th></tr></thead><tbody><tr><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td></tr><tr><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td></tr><tr><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td></tr><tr><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>F</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>T</mi></mrow></math></td></tr></tbody></table></div>
+<h3>อ่านตารางอย่างไร</h3>
+<div class="table-wrap"><table><thead><tr><th>ตัวเชื่อม</th><th>เงื่อนไขค่าความจริง</th></tr></thead><tbody><tr><td>นิเสธ <math displaystyle="true"><mrow><mo>~</mo><mi>p</mi></mrow></math></td><td>“ไม่ <math displaystyle="true"><mrow><mi>p</mi></mrow></math>” มีค่าความจริงตรงข้ามกับ <math displaystyle="true"><mrow><mi>p</mi></mrow></math></td></tr><tr><td>และ <math displaystyle="true"><mrow><mi>p</mi><mo>∧</mo><mi>q</mi></mrow></math></td><td>จริงเมื่อ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> จริงทั้งคู่</td></tr><tr><td>หรือ <math displaystyle="true"><mrow><mi>p</mi><mo>∨</mo><mi>q</mi></mrow></math></td><td>จริงเมื่อมีอย่างน้อยหนึ่งข้อความจริง รวมกรณีที่จริงทั้งคู่ด้วย</td></tr><tr><td>ถ้า…แล้ว… <math displaystyle="true"><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi></mrow></math></td><td>เท็จกรณีเดียว คือ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> จริง แต่ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> เท็จ</td></tr><tr><td>ก็ต่อเมื่อ <math displaystyle="true"><mrow><mi>p</mi><mo>⇔</mo><mi>q</mi></mrow></math></td><td>จริงเมื่อ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> มีค่าความจริงเหมือนกัน คือจริงทั้งคู่หรือเท็จทั้งคู่</td></tr></tbody></table></div>
+<p>ถ้า <math displaystyle="true"><mrow><mi>p</mi></mrow></math> เท็จ <math displaystyle="true"><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi></mrow></math> จริงไม่ว่า <math displaystyle="true"><mrow><mi>q</mi></mrow></math> จริงหรือเท็จ จึงสรุปว่า <math displaystyle="true"><mrow><mi>q</mi></mrow></math> จริงจากค่าประพจน์เงื่อนไขอย่างเดียวไม่ได้</p>
+<p>หลายตัวเชื่อม: หาค่าส่วนย่อยตามวงเล็บก่อน แล้วหาค่าทั้งหมด</p>
+</div></details>
+<details class="section" id="s3" open><summary><h2><math displaystyle="true"><mrow><mn>3</mn></mrow></math><strong>. ประพจน์ที่สมมูลกัน</strong></h2></summary><div class="body">
+<p>ประพจน์สองรูป <strong>สมมูลกัน</strong> เมื่อมีค่าความจริงเหมือนกันทุกกรณี เขียนแทนด้วย ≡ จึงใช้รูปหนึ่งแทนอีกรูปหนึ่งได้</p>
+<p>สมมูลที่ใช้บ่อย ได้แก่</p>
+<ul class="formulas"><li><math displaystyle="true"><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi><mo>≡</mo><mo>~</mo><mi>p</mi><mo>∨</mo><mi>q</mi></mrow></math></li><li><math displaystyle="true"><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi><mo>≡</mo><mo>~</mo><mi>q</mi><mo>⇒</mo><mo>~</mo><mi>p</mi></mrow></math></li><li><math displaystyle="true"><mrow><mi>p</mi><mo>⇔</mo><mi>q</mi><mo>≡</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>∧</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>q</mi><mo>⇒</mo><mi>p</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li><li><math displaystyle="true"><mrow><mo>~</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>~</mo><mi>p</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mi>p</mi></mrow></math></li></ul>
+<p>ตัวเชื่อม “และ” กับ “หรือ” สลับลำดับได้ และมีสมบัติการแจกแจง</p>
+<ul class="formulas"><li><math displaystyle="true"><mrow><mi>p</mi><mo>∧</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>q</mi><mo>∨</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>∧</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>∨</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>∧</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li><li><math displaystyle="true"><mrow><mi>p</mi><mo>∨</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>q</mi><mo>∧</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>∨</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>∧</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>∨</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li></ul>
+<p class="caution"><strong>ระวัง:</strong> <math displaystyle="true"><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi></mrow></math> ไม่ได้สมมูลกับ <math displaystyle="true"><mrow><mi>q</mi><mo>⇒</mo><mi>p</mi></mrow></math> เสมอ การสลับเหตุและผลจึงอาจเปลี่ยนค่าความจริง</p>
+<p class="example">เช่น “ถ้าจำนวนเต็มหารด้วย <math displaystyle="true"><mrow><mn>4</mn></mrow></math> ลงตัว แล้วหารด้วย <math displaystyle="true"><mrow><mn>2</mn></mrow></math> ลงตัว” เป็นจริง แต่ข้อความที่สลับกันไม่จริงสำหรับจำนวนเต็มทุกจำนวน เพราะ <math displaystyle="true"><mrow><mn>2</mn></mrow></math> หารด้วย <math displaystyle="true"><mrow><mn>2</mn></mrow></math> ลงตัว แต่หารด้วย <math displaystyle="true"><mrow><mn>4</mn></mrow></math> ไม่ลงตัว</p>
+</div></details>
+<details class="section" id="s4" open><summary><h2><math displaystyle="true"><mrow><mn>4</mn></mrow></math><strong>. การนิเสธประพจน์</strong></h2></summary><div class="body">
+<p>การนิเสธต้องตรงข้ามกับข้อความทั้งหมด ไม่ใช่เติม “ไม่” ในบางตำแหน่ง</p>
+<p>สูตรสำคัญ ได้แก่</p>
+<ul class="formulas"><li><math displaystyle="true"><mrow><mo>~</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>∧</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mo>~</mo><mi>p</mi><mo>∨</mo><mo>~</mo><mi>q</mi></mrow></math></li><li><math displaystyle="true"><mrow><mo>~</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>∨</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mo>~</mo><mi>p</mi><mo>∧</mo><mo>~</mo><mi>q</mi></mrow></math></li><li><math displaystyle="true"><mrow><mo>~</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mi>p</mi><mo>∧</mo><mo>~</mo><mi>q</mi></mrow></math></li><li><math displaystyle="true"><mrow><mo>~</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>⇔</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>p</mi><mo>∧</mo><mo>~</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>∨</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>~</mo><mi>p</mi><mo>∧</mo><mi>q</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></li></ul>
+<p class="example">ตัวอย่างเช่น นิเสธของ “ทั้ง <math displaystyle="true"><mrow><mi>p</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> จริง” คือ “มีอย่างน้อยหนึ่งข้อความที่เท็จ” ไม่จำเป็นต้องเท็จทั้งคู่</p>
+<p>ส่วนนิเสธของ “ถ้า <math displaystyle="true"><mrow><mi>p</mi></mrow></math> แล้ว <math displaystyle="true"><mrow><mi>q</mi></mrow></math>” คือ “<math displaystyle="true"><mrow><mi>p</mi></mrow></math> จริง แต่ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> เท็จ” ซึ่งตรงกับกรณีเดียวที่ทำให้ประพจน์เงื่อนไขเป็นเท็จ</p>
+</div></details>
+<details class="section" id="s5" open><summary><h2><math displaystyle="true"><mrow><mn>5</mn></mrow></math><strong>. สัจนิรันดร์และประพจน์ที่เท็จทุกกรณี</strong></h2></summary><div class="body">
+<p><strong>สัจนิรันดร์</strong> คือประพจน์ที่จริงทุกกรณี ไม่ว่าประพจน์ย่อยจะมีค่าความจริงอย่างไร เช่น <math displaystyle="true"><mrow><mi>p</mi><mo>∨</mo><mo>~</mo><mi>p</mi></mrow></math> เพราะ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> กับนิเสธของ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> ต้องมีข้อความหนึ่งจริงเสมอ</p>
+<p>ส่วน <math displaystyle="true"><mrow><mi>p</mi><mo>∧</mo><mo>~</mo><mi>p</mi></mrow></math> เป็นประพจน์ที่เท็จทุกกรณี เพราะ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> กับนิเสธของ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> จริงพร้อมกันไม่ได้</p>
+<p>ถ้าตรวจด้วยตารางค่าความจริง ประพจน์ที่มีประพจน์ย่อยต่างกัน <math displaystyle="true"><mrow><mi>k</mi></mrow></math> ตัว จะมีค่าความจริงให้ตรวจ <math displaystyle="true"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi>k</mi></mrow></msup></mrow></math> กรณี เช่น <math displaystyle="true"><mrow><mi>p</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>q</mi></mrow></math> มี <math displaystyle="true"><mrow><msup><mrow><mn>2</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>4</mn></mrow></math> กรณี</p>
+<h3>วิธีหลักที่ใช้ตรวจสัจนิรันดร์ในบทนี้ คือบังคับให้ประพจน์เป็นเท็จ แล้วหาข้อขัดแย้ง</h3>
+<p>สมมติทั้งประพจน์เท็จ → ใช้ตัวเชื่อมย้อนค่าประพจน์ย่อย เช่น <math displaystyle="true"><mrow><mi>p</mi><mo>⇒</mo><mi>q</mi></mrow></math> เท็จต้อง <math displaystyle="true"><mrow><mi>p</mi></mrow></math> จริง <math displaystyle="true"><mrow><mi>q</mi></mrow></math> เท็จ</p>
+<ul class="points"><li>ถ้าสมมติแล้วเกิดข้อขัดแย้ง เช่น บังคับให้ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> ต้องจริงและเท็จพร้อมกัน แสดงว่าประพจน์เป็นเท็จไม่ได้ จึงเป็นสัจนิรันดร์</li><li>ถ้าหาค่าความจริงที่ทำให้ประพจน์เท็จได้โดยไม่ขัดแย้ง แสดงว่าประพจน์ไม่เป็นสัจนิรันดร์</li></ul>
+<p class="example">เช่น ถ้าบังคับให้ <math displaystyle="true"><mrow><mi>p</mi><mo>∨</mo><mo>~</mo><mi>p</mi></mrow></math> เป็นเท็จ จะต้องให้ทั้ง <math displaystyle="true"><mrow><mi>p</mi></mrow></math> และ <math displaystyle="true"><mrow><mo>~</mo><mi>p</mi></mrow></math> เป็นเท็จ แต่เมื่อ <math displaystyle="true"><mrow><mi>p</mi></mrow></math> เท็จ <math displaystyle="true"><mrow><mo>~</mo><mi>p</mi></mrow></math> ต้องจริง จึงเกิดข้อขัดแย้ง สรุปว่า <math displaystyle="true"><mrow><mi>p</mi><mo>∨</mo><mo>~</mo><mi>p</mi></mrow></math> เป็นสัจนิรันดร์</p>
+<p class="caution"><strong>ระวัง:</strong> ถ้าการบังคับค่าแยกได้หลายกรณี ต้องตรวจทุกกรณีที่อาจทำให้ประพจน์เท็จ การพบข้อขัดแย้งเพียงทางเดียวยังไม่พอ ถ้ายังมีทางอื่นที่เป็นไปได้</p>
+</div></details>
+<details class="section" id="s6" open><summary><h2><math displaystyle="true"><mrow><mn>6</mn></mrow></math><strong>. ประโยคเปิดและตัวบ่งปริมาณ</strong></h2></summary><div class="body">
+<p>ข้อความอย่าง <math displaystyle="true"><mrow><mi>x</mi><mo>+</mo><mn>1</mn><mo>=</mo><mn>3</mn></mrow></math> ยังตัดสินว่าจริงหรือเท็จไม่ได้จนกว่าจะรู้ค่า <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ข้อความลักษณะนี้เรียกว่า <strong>ประโยคเปิด</strong></p>
+<p>เมื่อแทน <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math> จะได้ข้อความจริง แต่เมื่อแทน <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math> จะได้ข้อความเท็จ</p>
+<p>นอกจากแทนค่าแล้ว เรายังใช้ <strong>ตัวบ่งปริมาณ</strong> บอกว่าประโยคเปิดเป็นจริงกับสมาชิกมากน้อยเพียงใดในเอกภพสัมพัทธ์ <math displaystyle="true"><mrow><mi>U</mi></mrow></math> ที่กำหนด</p>
+<ul class="points"><li><math displaystyle="true"><mrow><mo>∀</mo><mi>x</mi><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> หมายถึง <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> จริงสำหรับ <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ทุกตัวใน <math displaystyle="true"><mrow><mi>U</mi></mrow></math></li><li><math displaystyle="true"><mrow><mo>∃</mo><mi>x</mi><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> หมายถึงมี <math displaystyle="true"><mrow><mi>x</mi></mrow></math> อย่างน้อยหนึ่งตัวใน <math displaystyle="true"><mrow><mi>U</mi></mrow></math> ที่ทำให้ <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> จริง</li></ul>
+<h3>การนิเสธตัวบ่งปริมาณ</h3>
+<ul class="points"><li><math displaystyle="true"><mrow><mo>~</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>∀</mo><mi>x</mi><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mo>∃</mo><mi>x</mi><mo>~</mo><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> — นิเสธของ “ทุกตัวเป็นเช่นนั้น” คือ “มีอย่างน้อยหนึ่งตัวที่ไม่เป็นเช่นนั้น”</li><li><math displaystyle="true"><mrow><mo>~</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>∃</mo><mi>x</mi><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>≡</mo><mo>∀</mo><mi>x</mi><mo>~</mo><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> — นิเสธของ “มีอย่างน้อยหนึ่งตัวเป็นเช่นนั้น” คือ “ทุกตัวไม่เป็นเช่นนั้น”</li></ul>
+<p class="example">เช่น นิเสธของ “นักเรียนทุกคนส่งงาน” คือ “มีนักเรียนอย่างน้อยหนึ่งคนไม่ส่งงาน” ไม่ใช่ “นักเรียนทุกคนไม่ส่งงาน”</p>
+<p class="caution"><strong>ระวัง:</strong> ต้องดู <math displaystyle="true"><mrow><mi>U</mi></mrow></math> ด้วย ข้อความเดียวกันอาจมีค่าความจริงต่างกันเมื่อเปลี่ยนกลุ่มที่พิจารณา</p>
+</div></details>
+<details class="section" id="s7" open><summary><h2><math displaystyle="true"><mrow><mn>7</mn></mrow></math><strong>. การอ้างเหตุผล</strong></h2></summary><div class="body">
+<p>การอ้างเหตุผลมี <strong>เหตุ</strong> คือข้อความที่ให้มา และ <strong>ข้อสรุป</strong> คือข้อความที่ต้องการสรุปจากเหตุนั้น</p>
+<p>การอ้างเหตุผลสมเหตุสมผลเมื่อไม่มีกรณีที่เหตุทุกข้อจริง แต่ข้อสรุปเท็จ เราตรวจได้สองวิธี โดยใช้ค่าความจริงของตัวเชื่อม ไม่ต้องจำรูปแบบการอ้างเหตุผล</p>
+<h3>วิธีที่ <math displaystyle="true"><mrow><mn>1</mn></mrow></math>: ตรวจสัจนิรันดร์โดยบังคับให้เหตุทุกข้อจริง และข้อสรุปเท็จ</h3>
+<p>ถ้ามีเหตุ <math displaystyle="true"><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow></math>, <math displaystyle="true"><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow></math>, …, <math displaystyle="true"><mrow><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow></math> และข้อสรุป <math displaystyle="true"><mrow><mi>C</mi></mrow></math> ให้พิจารณาประพจน์</p>
+<div class="formula"><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>∧</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>∧</mo><mo>…</mo><mo>∧</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>⇒</mo><mi>C</mi></mrow></math></div>
+<p>ประพจน์นี้เท็จเมื่อเหตุทุกข้อจริงและข้อสรุปเท็จ จึงบังคับค่าตามนี้แล้วตรวจข้อขัดแย้ง</p>
+<ul class="points"><li>ถ้าทุกกรณีที่บังคับไว้เกิดข้อขัดแย้ง ประพจน์นี้เป็นสัจนิรันดร์ การอ้างเหตุผลจึงสมเหตุสมผล</li><li>ถ้ามีกรณีที่เหตุทุกข้อจริงและข้อสรุปเท็จได้โดยไม่ขัดแย้ง การอ้างเหตุผลไม่สมเหตุสมผล</li></ul>
+<h3>วิธีที่ <math displaystyle="true"><mrow><mn>2</mn></mrow></math>: ให้เหตุทุกข้อจริง แล้วตรวจค่าความจริงของข้อสรุป</h3>
+<p>ให้เหตุทุกข้อจริง → หาค่าประพจน์ย่อย → ตรวจข้อสรุปทุกกรณีที่เป็นไปได้</p>
+<ul class="points"><li>ถ้าข้อสรุปจริงในทุกกรณีที่เหตุทุกข้อจริง การอ้างเหตุผลสมเหตุสมผล</li><li>ถ้ามีแม้เพียงกรณีเดียวที่เหตุทุกข้อจริง แต่ข้อสรุปเท็จ การอ้างเหตุผลไม่สมเหตุสมผล</li></ul>
+<p class="caution"><strong>ระวัง:</strong> ถ้ายังหาค่าของข้อสรุปไม่ได้แน่นอน ต้องตรวจกรณีที่เหลือให้ครบ ผลจริงเพียงกรณีเดียวไม่ได้ยืนยันว่าการอ้างเหตุผลสมเหตุสมผล</p>
+<p>ถ้าเหตุทุกข้อเป็นจริงพร้อมกันไม่ได้ ให้ใช้วิธีที่ <math displaystyle="true"><mrow><mn>1</mn></mrow></math> จะเห็นว่าไม่มีกรณีที่เหตุทุกข้อจริงและข้อสรุปเท็จ การอ้างเหตุผลจึงสมเหตุสมผลตามเกณฑ์ทางตรรกศาสตร์</p>
+</div></details>
+<details class="section" id="s8" open><summary><h2><math displaystyle="true"><mrow><mn>8</mn></mrow></math><strong>. แนวที่เลือกฝึก: ใช้เงื่อนไขของตัวเชื่อมบังคับค่าความจริง</strong></h2></summary><div class="body">
+<p>ก่อนเริ่ม ให้ดูว่าโจทย์ถามค่าความจริงในกรณีที่กำหนด ตรวจสัจนิรันดร์ หรือตรวจการอ้างเหตุผล เพราะแต่ละคำถามมีจุดเริ่มต่างกัน</p>
+<div class="table-wrap"><table><thead><tr><th>โจทย์ถาม</th><th>วิธีเริ่ม</th></tr></thead><tbody><tr><td>หาค่าความจริง</td><td>ใช้ค่าที่โจทย์กำหนด คำนวณจากส่วนย่อยไปสู่ประพจน์ทั้งหมด</td></tr><tr><td>ตรวจสัจนิรันดร์</td><td>บังคับให้ประพจน์ทั้งหมดเป็นเท็จ แล้วตรวจว่าค่าของประพจน์ย่อยขัดแย้งกันหรือไม่</td></tr><tr><td>ตรวจการอ้างเหตุผล</td><td>บังคับเหตุทุกข้อจริงและข้อสรุปเท็จเพื่อหาข้อขัดแย้ง หรือให้เหตุทุกข้อจริงแล้วตรวจว่าข้อสรุปต้องจริงหรือไม่</td></tr></tbody></table></div>
+<p>เริ่มจากตัวเชื่อมที่บังคับค่าแน่นอน: “และ” จริงต้องจริงทั้งคู่; “หรือ” เท็จต้องเท็จทั้งคู่; “ถ้า…แล้ว…” เท็จต้องเหตุจริงผลเท็จ</p>
+<p>ไล่ค่าต่อ ตรวจว่าประพจน์ย่อยเดียวกันถูกบังคับต่างค่าหรือไม่ ถ้ามีหลายทางเลือกต้องตรวจให้ครบ</p>
+<p>กรณีที่แสดงว่าข้อความไม่ได้จริงเสมอเรียกว่า <strong>กรณีค้าน</strong> เช่น “จำนวนเต็มคู่ทุกจำนวนหารด้วย <math displaystyle="true"><mrow><mn>4</mn></mrow></math> ลงตัว” มีกรณีค้านคือ <math displaystyle="true"><mrow><mn>2</mn></mrow></math> จึงเป็นข้อความเท็จ</p>
+<p class="caution"><strong>ระวัง:</strong> การลองแล้วไม่พบกรณีค้านเพียงไม่กี่ครั้งยังไม่ยืนยันว่าข้อความจริงเสมอ ต้องตรวจให้ครบทุกกรณีหรือใช้เหตุผลที่ครอบคลุมทุกกรณี</p>
+</div></details><div class="pager"><a href="ch01.html">← บทที่ 1</a><a href="index.html">สารบัญ</a><a href="ch03.html">บทที่ 3 →</a></div></main>
+<script>
+const box=document.querySelector('.search');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
+document.querySelectorAll('details.section').forEach(d=>{
+ const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
+ if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
+  while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
+  nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
+   const m=document.createElement('mark');r.surroundContents(m);});}
+});});}
+const sel=document.querySelector('header.top select');
+if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
+</script>
+</body></html>

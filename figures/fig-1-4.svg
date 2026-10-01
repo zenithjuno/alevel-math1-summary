@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="330.0pt" height="212.0pt" viewBox="0 0 330.0 212.0">
+<path d="M 135.00 59.89 A 56.00 56.00 0 1 0 135.00 160.11 A 56.00 56.00 0 0 1 135.00 59.89 Z" fill="#CFE3F3" fill-rule="evenodd" stroke="none"/>
+<path d="M 135.00 59.89 A 56.00 56.00 0 1 1 135.00 160.11 A 56.00 56.00 0 0 0 135.00 59.89 Z" fill="#F3D9B5" fill-rule="evenodd" stroke="none"/>
+<path d="M 135.00 59.89 A 56.00 56.00 0 0 1 135.00 160.11 A 56.00 56.00 0 0 1 135.00 59.89 Z" fill="#D9D9D9" fill-rule="evenodd" stroke="none"/>
+<circle cx="110.00" cy="110.00" r="56.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<circle cx="160.00" cy="110.00" r="56.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<line x1="104.00" y1="42.00" x2="104.00" y2="94.00" stroke="#000000" stroke-width="0.7" stroke-dasharray="1.5,2"/>
+<line x1="104.00" y1="126.00" x2="104.00" y2="178.00" stroke="#000000" stroke-width="0.7" stroke-dasharray="1.5,2"/>
+<line x1="166.00" y1="42.00" x2="166.00" y2="94.00" stroke="#000000" stroke-width="0.7" stroke-dasharray="1.5,2"/>
+<line x1="166.00" y1="126.00" x2="166.00" y2="178.00" stroke="#000000" stroke-width="0.7" stroke-dasharray="1.5,2"/>
+<polyline points="54.00,46.00 54.00,40.00 166.00,40.00 166.00,46.00" fill="none" stroke="#000000" stroke-width="1.0"/>
+<line x1="104.00" y1="40.00" x2="166.00" y2="40.00" stroke="#000000" stroke-width="3.0"/>
+<text x="96.56" y="31.00" font-family="Cambria Math" font-size="12pt">n(A)</text>
+<polyline points="104.00,174.00 104.00,180.00 216.00,180.00 216.00,174.00" fill="none" stroke="#000000" stroke-width="1.0"/>
+<line x1="104.00" y1="180.00" x2="166.00" y2="180.00" stroke="#000000" stroke-width="3.0"/>
+<text x="146.56" y="200.00" font-family="Cambria Math" font-size="12pt">n(B)</text>
+<text x="68.92" y="114.00" font-family="Cambria Math" font-size="12pt">A−B</text>
+<text x="124.92" y="114.00" font-family="Cambria Math" font-size="12pt">A∩B</text>
+<text x="180.92" y="114.00" font-family="Cambria Math" font-size="12pt">B−A</text>
+<line x1="143.00" y1="40.00" x2="226.00" y2="52.00" stroke="#000000" stroke-width="0.6"/>
+<text x="228.00" y="56.00" font-family="TH Sarabun New" font-size="14pt">ช่วงที่ซ้อนกัน</text>
+<text x="228.00" y="72.00" font-family="TH Sarabun New" font-size="14pt">ถูกนับสองครั้ง</text>
+</svg>

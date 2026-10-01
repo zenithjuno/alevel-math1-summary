@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="176.0pt" viewBox="0 0 452.0 176.0">
+<line x1="40.00" y1="140.00" x2="152.24" y2="111.94" stroke="#000000" stroke-width="1.4"/>
+<polygon points="160.00,110.00 151.61,115.44 150.04,109.15" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="160.00" y1="110.00" x2="196.24" y2="42.06" stroke="#000000" stroke-width="1.4"/>
+<polygon points="200.00,35.00 198.41,44.87 192.69,41.82" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="164.00" y="124.00" font-family="Cambria Math" font-size="12pt" font-style="italic">P</text>
+<text x="204.00" y="33.00" font-family="Cambria Math" font-size="12pt" font-style="italic">Q</text>
+<text x="185.46" y="81.21" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="89.04" y="172.00" font-family="TH Sarabun New" font-size="16pt">ต่อหัวต่อหาง</text>
+<text x="99.55" y="140.64" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<line x1="40.00" y1="140.00" x2="193.31" y2="39.39" stroke="#000000" stroke-width="2.8"/>
+<polygon points="200.00,35.00 193.87,42.90 190.31,37.48" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="110.24" y="74.55" font-family="Cambria Math" font-size="12pt">u+v</text>
+<circle cx="40.00" cy="140.00" r="2.4" fill="#000000" stroke="none"/>
+<text x="26.00" y="144.00" font-family="Cambria Math" font-size="12pt" font-style="italic">O</text>
+<line x1="386.00" y1="110.00" x2="426.00" y2="35.00" stroke="#000000" stroke-width="0.9" stroke-dasharray="4,3"/>
+<line x1="306.00" y1="65.00" x2="426.00" y2="35.00" stroke="#000000" stroke-width="0.9" stroke-dasharray="4,3"/>
+<line x1="266.00" y1="140.00" x2="378.24" y2="111.94" stroke="#000000" stroke-width="1.4"/>
+<polygon points="386.00,110.00 377.61,115.44 376.04,109.15" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="266.00" y1="140.00" x2="302.24" y2="72.06" stroke="#000000" stroke-width="1.4"/>
+<polygon points="306.00,65.00 304.41,74.87 298.69,71.82" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="273.82" y="101.79" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="301.28" y="172.00" font-family="TH Sarabun New" font-size="16pt">สี่เหลี่ยมด้านขนาน</text>
+<text x="325.55" y="140.64" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<line x1="266.00" y1="140.00" x2="419.31" y2="39.39" stroke="#000000" stroke-width="2.8"/>
+<polygon points="426.00,35.00 419.87,42.90 416.31,37.48" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="336.24" y="74.55" font-family="Cambria Math" font-size="12pt">u+v</text>
+<circle cx="266.00" cy="140.00" r="2.4" fill="#000000" stroke="none"/>
+<text x="252.00" y="144.00" font-family="Cambria Math" font-size="12pt" font-style="italic">O</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="330.0pt" viewBox="0 0 452.0 330.0">
+<line x1="14.00" y1="138.67" x2="205.00" y2="138.67" stroke="#000000" stroke-width="0.9"/>
+<polygon points="210.00,138.67 204.47,141.00 204.47,136.33" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="112.00" y1="148.00" x2="112.00" y2="13.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="112.00,8.00 114.34,13.53 109.66,13.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="204.00" y="153.67" font-family="Cambria Math" font-size="12pt" font-style="italic">x</text>
+<text x="118.00" y="17.00" font-family="Cambria Math" font-size="12pt" font-style="italic">y</text>
+<text x="101.00" y="151.67" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<line x1="21.54" y1="120.00" x2="112.00" y2="120.00" stroke="#000000" stroke-width="1.6"/>
+<line x1="112.00" y1="82.67" x2="202.46" y2="82.67" stroke="#000000" stroke-width="1.6"/>
+<polygon points="91.27,120.00 85.74,122.34 85.74,117.66" fill="#000000" stroke="none" stroke-width="0"/>
+<polygon points="132.73,82.67 138.26,80.33 138.26,85.00" fill="#000000" stroke="none" stroke-width="0"/>
+<circle cx="112.00" cy="120.00" r="3.0" fill="#000000" stroke="none"/>
+<circle cx="112.00" cy="82.67" r="3.00" fill="#FFFFFF" stroke="#000000" stroke-width="1.0"/>
+<text x="21.54" y="114.00" font-family="Cambria Math" font-size="12pt">1</text>
+<text x="194.46" y="76.67" font-family="Cambria Math" font-size="12pt">3</text>
+<text x="30.00" y="22.00" font-family="Cambria Math" font-size="12pt" font-style="italic">f</text>
+<line x1="240.00" y1="138.67" x2="431.00" y2="138.67" stroke="#000000" stroke-width="0.9"/>
+<polygon points="436.00,138.67 430.47,141.00 430.47,136.33" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="338.00" y1="148.00" x2="338.00" y2="13.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="338.00,8.00 340.34,13.53 335.66,13.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="430.00" y="153.67" font-family="Cambria Math" font-size="12pt" font-style="italic">x</text>
+<text x="344.00" y="17.00" font-family="Cambria Math" font-size="12pt" font-style="italic">y</text>
+<text x="327.00" y="151.67" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<line x1="247.54" y1="64.00" x2="338.00" y2="64.00" stroke="#000000" stroke-width="1.6"/>
+<line x1="338.00" y1="101.33" x2="428.46" y2="101.33" stroke="#000000" stroke-width="1.6"/>
+<polygon points="317.27,64.00 311.74,66.34 311.74,61.66" fill="#000000" stroke="none" stroke-width="0"/>
+<polygon points="358.73,101.33 364.26,99.00 364.26,103.67" fill="#000000" stroke="none" stroke-width="0"/>
+<circle cx="338.00" cy="64.00" r="3.0" fill="#000000" stroke="none"/>
+<circle cx="338.00" cy="101.33" r="3.00" fill="#FFFFFF" stroke="#000000" stroke-width="1.0"/>
+<text x="247.54" y="58.00" font-family="Cambria Math" font-size="12pt">4</text>
+<text x="420.46" y="95.33" font-family="Cambria Math" font-size="12pt">2</text>
+<text x="256.00" y="22.00" font-family="Cambria Math" font-size="12pt" font-style="italic">g</text>
+<line x1="14.00" y1="300.67" x2="205.00" y2="300.67" stroke="#000000" stroke-width="0.9"/>
+<polygon points="210.00,300.67 204.47,303.00 204.47,298.33" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="112.00" y1="310.00" x2="112.00" y2="175.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="112.00,170.00 114.34,175.53 109.66,175.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="204.00" y="315.67" font-family="Cambria Math" font-size="12pt" font-style="italic">x</text>
+<text x="118.00" y="179.00" font-family="Cambria Math" font-size="12pt" font-style="italic">y</text>
+<text x="101.00" y="313.67" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<line x1="21.54" y1="207.33" x2="202.46" y2="207.33" stroke="#000000" stroke-width="1.6"/>
+<polygon points="91.27,207.33 85.74,209.67 85.74,205.00" fill="#000000" stroke="none" stroke-width="0"/>
+<polygon points="132.73,207.33 138.26,205.00 138.26,209.67" fill="#000000" stroke="none" stroke-width="0"/>
+<circle cx="112.00" cy="207.33" r="3.0" fill="#000000" stroke="none"/>
+<text x="21.54" y="201.33" font-family="Cambria Math" font-size="12pt">5</text>
+<text x="194.46" y="201.33" font-family="Cambria Math" font-size="12pt">5</text>
+<text x="30.00" y="184.00" font-family="Cambria Math" font-size="12pt">f+g</text>
+<line x1="240.00" y1="300.67" x2="431.00" y2="300.67" stroke="#000000" stroke-width="0.9"/>
+<polygon points="436.00,300.67 430.47,303.00 430.47,298.33" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="338.00" y1="310.00" x2="338.00" y2="175.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="338.00,170.00 340.34,175.53 335.66,175.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="430.00" y="315.67" font-family="Cambria Math" font-size="12pt" font-style="italic">x</text>
+<text x="344.00" y="179.00" font-family="Cambria Math" font-size="12pt" font-style="italic">y</text>
+<text x="327.00" y="313.67" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<line x1="247.54" y1="226.00" x2="338.00" y2="226.00" stroke="#000000" stroke-width="1.6"/>
+<line x1="338.00" y1="188.67" x2="428.46" y2="188.67" stroke="#000000" stroke-width="1.6"/>
+<polygon points="317.27,226.00 311.74,228.34 311.74,223.66" fill="#000000" stroke="none" stroke-width="0"/>
+<polygon points="358.73,188.67 364.26,186.33 364.26,191.00" fill="#000000" stroke="none" stroke-width="0"/>
+<circle cx="338.00" cy="226.00" r="3.0" fill="#000000" stroke="none"/>
+<circle cx="338.00" cy="188.67" r="3.00" fill="#FFFFFF" stroke="#000000" stroke-width="1.0"/>
+<text x="247.54" y="220.00" font-family="Cambria Math" font-size="12pt">4</text>
+<text x="420.46" y="182.67" font-family="Cambria Math" font-size="12pt">6</text>
+<text x="256.00" y="184.00" font-family="Cambria Math" font-size="12pt">fg</text>
+</svg>

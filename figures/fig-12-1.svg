@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="206.0pt" viewBox="0 0 452.0 206.0">
+<circle cx="18.00" cy="88.00" r="3.0" fill="#000000" stroke="none"/>
+<line x1="18.00" y1="88.00" x2="92.00" y2="44.00" stroke="#000000" stroke-width="1.2"/>
+<text x="96.00" y="49.00" font-family="TH Sarabun New" font-size="14pt">เสื้อแบบ 1</text>
+<line x1="149.64" y1="44.00" x2="232.00" y2="18.00" stroke="#000000" stroke-width="1.0"/>
+<text x="236.00" y="23.00" font-family="TH Sarabun New" font-size="14pt">กางเกงแบบ 1</text>
+<text x="336.00" y="23.00" font-family="TH Sarabun New" font-size="13pt">ชุด 1: เสื้อ 1 กางเกง 1</text>
+<line x1="149.64" y1="44.00" x2="232.00" y2="44.00" stroke="#000000" stroke-width="1.0"/>
+<text x="236.00" y="49.00" font-family="TH Sarabun New" font-size="14pt">กางเกงแบบ 2</text>
+<text x="336.00" y="49.00" font-family="TH Sarabun New" font-size="13pt">ชุด 2: เสื้อ 1 กางเกง 2</text>
+<line x1="149.64" y1="44.00" x2="232.00" y2="70.00" stroke="#000000" stroke-width="1.0"/>
+<text x="236.00" y="75.00" font-family="TH Sarabun New" font-size="14pt">กางเกงแบบ 3</text>
+<text x="336.00" y="75.00" font-family="TH Sarabun New" font-size="13pt">ชุด 3: เสื้อ 1 กางเกง 3</text>
+<line x1="18.00" y1="88.00" x2="92.00" y2="132.00" stroke="#000000" stroke-width="1.2"/>
+<text x="96.00" y="137.00" font-family="TH Sarabun New" font-size="14pt">เสื้อแบบ 2</text>
+<line x1="149.64" y1="132.00" x2="232.00" y2="106.00" stroke="#000000" stroke-width="1.0"/>
+<text x="236.00" y="111.00" font-family="TH Sarabun New" font-size="14pt">กางเกงแบบ 1</text>
+<text x="336.00" y="111.00" font-family="TH Sarabun New" font-size="13pt">ชุด 4: เสื้อ 2 กางเกง 1</text>
+<line x1="149.64" y1="132.00" x2="232.00" y2="132.00" stroke="#000000" stroke-width="1.0"/>
+<text x="236.00" y="137.00" font-family="TH Sarabun New" font-size="14pt">กางเกงแบบ 2</text>
+<text x="336.00" y="137.00" font-family="TH Sarabun New" font-size="13pt">ชุด 5: เสื้อ 2 กางเกง 2</text>
+<line x1="149.64" y1="132.00" x2="232.00" y2="158.00" stroke="#000000" stroke-width="1.0"/>
+<text x="236.00" y="163.00" font-family="TH Sarabun New" font-size="14pt">กางเกงแบบ 3</text>
+<text x="336.00" y="163.00" font-family="TH Sarabun New" font-size="13pt">ชุด 6: เสื้อ 2 กางเกง 3</text>
+<text x="195.32" y="198.00" font-family="Cambria Math" font-size="12pt">2×3=6</text>
+<text x="242.92" y="198.00" font-family="TH Sarabun New" font-size="16pt">ชุด</text>
+</svg>

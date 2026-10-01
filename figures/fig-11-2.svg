@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300.0pt" height="250.0pt" viewBox="0 0 300.0 250.0">
+<line x1="14.00" y1="120.00" x2="279.00" y2="120.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="284.00,120.00 278.47,122.34 278.47,117.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="54.00" y1="230.00" x2="54.00" y2="15.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="54.00,10.00 56.34,15.53 51.66,15.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="278.00" y="135.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="60.00" y="19.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="43.00" y="133.00" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<text x="251.88" y="138.00" font-family="TH Sarabun New" font-size="14pt">ส่วนจริง</text>
+<text x="62.00" y="20.00" font-family="TH Sarabun New" font-size="14pt">ส่วนจินตภาพ</text>
+<line x1="204.00" y1="48.08" x2="204.00" y2="191.92" stroke="#000000" stroke-width="0.8" stroke-dasharray="3,2"/>
+<line x1="54.00" y1="48.08" x2="204.00" y2="48.08" stroke="#000000" stroke-width="0.6" stroke-dasharray="1.5,2"/>
+<line x1="54.00" y1="191.92" x2="204.00" y2="191.92" stroke="#000000" stroke-width="0.6" stroke-dasharray="1.5,2"/>
+<line x1="200.00" y1="84.04" x2="208.00" y2="84.04" stroke="#000000" stroke-width="0.9"/>
+<line x1="208.00" y1="155.96" x2="200.00" y2="155.96" stroke="#000000" stroke-width="0.9"/>
+<circle cx="204.00" cy="48.08" r="2.6" fill="#000000" stroke="none"/>
+<text x="210.00" y="52.08" font-family="Cambria Math" font-size="12pt">z=a+bi</text>
+<circle cx="204.00" cy="191.92" r="2.6" fill="#000000" stroke="none"/>
+<text x="210.00" y="195.92" font-family="Cambria Math" font-size="12pt">z̄=a−bi</text>
+<text x="208.00" y="134.00" font-family="Cambria Math" font-size="12pt" font-style="italic">a</text>
+<text x="42.00" y="52.08" font-family="Cambria Math" font-size="12pt" font-style="italic">b</text>
+<text x="34.00" y="195.92" font-family="Cambria Math" font-size="12pt">−b</text>
+<text x="91.72" y="89.04" font-family="TH Sarabun New" font-size="14pt">สะท้อนผ่านแกนจริง</text>
+</svg>

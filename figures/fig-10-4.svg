@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300.0pt" height="222.0pt" viewBox="0 0 300.0 222.0">
+<line x1="10.00" y1="185.00" x2="215.00" y2="185.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="220.00,185.00 214.47,187.34 214.47,182.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="39.40" y1="210.00" x2="39.40" y2="15.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="39.40,10.00 41.74,15.53 37.06,15.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="214.00" y="200.00" font-family="Cambria Math" font-size="12pt" font-style="italic">x</text>
+<text x="45.40" y="19.00" font-family="Cambria Math" font-size="12pt" font-style="italic">y</text>
+<text x="28.40" y="198.00" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<line x1="39.40" y1="185.00" x2="165.40" y2="185.00" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,3"/>
+<line x1="165.40" y1="185.00" x2="165.40" y2="18.33" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,3"/>
+<polyline points="157.40,185.00 157.40,177.00 165.40,177.00" fill="none" stroke="#000000" stroke-width="0.8"/>
+<line x1="39.40" y1="185.00" x2="160.58" y2="24.71" stroke="#000000" stroke-width="1.8"/>
+<polygon points="165.40,18.33 162.28,27.83 157.11,23.93" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="99.40" y="200.00" font-family="Cambria Math" font-size="12pt">3</text>
+<text x="171.40" y="105.67" font-family="Cambria Math" font-size="12pt">4</text>
+<text x="86.40" y="99.67" font-family="Cambria Math" font-size="12pt">5</text>
+<text x="171.40" y="18.33" font-family="Cambria Math" font-size="12pt">(3,4)</text>
+<text x="226.00" y="100.00" font-family="Cambria Math" font-size="12pt">u =</text>
+<text x="263.64" y="93.50" font-family="Cambria Math" font-size="12pt">3</text>
+<text x="263.64" y="115.50" font-family="Cambria Math" font-size="12pt">4</text>
+<polyline points="259.00,76.00 254.00,76.00 254.00,124.00 259.00,124.00" fill="none" stroke="#000000" stroke-width="1.1"/>
+<polyline points="275.00,76.00 280.00,76.00 280.00,124.00 275.00,124.00" fill="none" stroke="#000000" stroke-width="1.1"/>
+</svg>

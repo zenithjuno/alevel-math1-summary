@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340.0pt" height="190.0pt" viewBox="0 0 340.0 190.0">
+<polygon points="40.00,150.00 230.00,150.00 300.00,45.00 110.00,45.00" fill="#D9D9D9" stroke="none" stroke-width="0"/>
+<line x1="230.00" y1="150.00" x2="300.00" y2="45.00" stroke="#000000" stroke-width="0.8"/>
+<line x1="110.00" y1="45.00" x2="300.00" y2="45.00" stroke="#000000" stroke-width="0.8"/>
+<line x1="110.00" y1="45.00" x2="110.00" y2="150.00" stroke="#000000" stroke-width="0.9" stroke-dasharray="4,3"/>
+<polyline points="103.00,150.00 103.00,143.00 110.00,143.00" fill="none" stroke="#000000" stroke-width="0.8"/>
+<line x1="40.00" y1="150.00" x2="222.00" y2="150.00" stroke="#000000" stroke-width="1.6"/>
+<polygon points="230.00,150.00 220.54,153.24 220.54,146.76" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="40.00" y1="150.00" x2="105.56" y2="51.66" stroke="#000000" stroke-width="1.6"/>
+<polygon points="110.00,45.00 107.45,54.67 102.06,51.07" fill="#000000" stroke="none" stroke-width="0"/>
+<path d="M 62.00 150.00 A 22.00 22.00 0 0 0 52.20 131.69" fill="none" stroke="#000000" stroke-width="0.9"/>
+<text x="65.13" y="138.90" font-family="Cambria Math" font-size="11pt" font-style="italic">θ</text>
+<text x="179.14" y="167.00" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="124.92" y="180.00" font-family="Cambria Math" font-size="12pt">|u|</text>
+<text x="45.03" y="87.37" font-family="Cambria Math" font-size="12pt">v  |v|</text>
+<text x="115.00" y="101.50" font-family="Cambria Math" font-size="11pt">|v|sinθ</text>
+<text x="183.20" y="103.50" font-family="Cambria Math" font-size="12pt">|u×v|</text>
+</svg>

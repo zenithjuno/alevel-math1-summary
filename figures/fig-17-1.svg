@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320.0pt" height="230.0pt" viewBox="0 0 320.0 230.0">
+<line x1="62.00" y1="186.00" x2="306.00" y2="186.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="310.00,186.00 304.47,188.34 304.47,183.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="62.00" y1="186.00" x2="62.00" y2="35.60" stroke="#000000" stroke-width="0.9"/>
+<polygon points="62.00,31.60 64.34,37.13 59.66,37.13" fill="#000000" stroke="none" stroke-width="0"/>
+<rect x="79.00" y="146.00" width="26.00" height="40.00" fill="#D9D9D9" stroke="#000000" stroke-width="1.1"/>
+<text x="88.36" y="140.00" font-family="Cambria Math" font-size="13pt">⅛</text>
+<text x="88.64" y="202.00" font-family="Cambria Math" font-size="12pt">0</text>
+<rect x="135.00" y="66.00" width="26.00" height="120.00" fill="#D9D9D9" stroke="#000000" stroke-width="1.1"/>
+<text x="144.36" y="60.00" font-family="Cambria Math" font-size="13pt">⅜</text>
+<text x="144.64" y="202.00" font-family="Cambria Math" font-size="12pt">1</text>
+<rect x="191.00" y="66.00" width="26.00" height="120.00" fill="#D9D9D9" stroke="#000000" stroke-width="1.1"/>
+<text x="200.36" y="60.00" font-family="Cambria Math" font-size="13pt">⅜</text>
+<text x="200.64" y="202.00" font-family="Cambria Math" font-size="12pt">2</text>
+<rect x="247.00" y="146.00" width="26.00" height="40.00" fill="#D9D9D9" stroke="#000000" stroke-width="1.1"/>
+<text x="256.36" y="140.00" font-family="Cambria Math" font-size="13pt">⅛</text>
+<text x="256.64" y="202.00" font-family="Cambria Math" font-size="12pt">3</text>
+<line x1="62.00" y1="146.00" x2="79.00" y2="146.00" stroke="#7F7F7F" stroke-width="0.5" stroke-dasharray="2,2"/>
+<text x="44.00" y="151.00" font-family="Cambria Math" font-size="12pt">⅛</text>
+<line x1="62.00" y1="66.00" x2="79.00" y2="66.00" stroke="#7F7F7F" stroke-width="0.5" stroke-dasharray="2,2"/>
+<text x="44.00" y="71.00" font-family="Cambria Math" font-size="12pt">⅜</text>
+<text x="300.00" y="204.00" font-family="Cambria Math" font-size="12pt" font-style="italic">k</text>
+<text x="36.00" y="25.60" font-family="Cambria Math" font-size="11pt">P(X=k)</text>
+<text x="149.12" y="222.00" font-family="Cambria Math" font-size="12pt">X∼B(3,½)</text>
+</svg>

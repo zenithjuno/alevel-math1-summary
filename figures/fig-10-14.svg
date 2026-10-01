@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380.0pt" height="270.0pt" viewBox="0 0 380.0 270.0">
+<polygon points="170.00,214.00 233.64,176.48 156.41,146.57 92.77,184.08" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<line x1="92.77" y1="184.08" x2="135.59" y2="94.83" stroke="#000000" stroke-width="1.2"/>
+<line x1="233.64" y1="176.48" x2="276.46" y2="87.23" stroke="#000000" stroke-width="1.2"/>
+<line x1="156.41" y1="146.57" x2="199.23" y2="57.32" stroke="#000000" stroke-width="0.9" stroke-dasharray="4,3"/>
+<line x1="92.77" y1="184.08" x2="156.41" y2="146.57" stroke="#000000" stroke-width="0.9" stroke-dasharray="4,3"/>
+<line x1="212.82" y1="124.75" x2="276.46" y2="87.23" stroke="#000000" stroke-width="1.2"/>
+<line x1="135.59" y1="94.83" x2="199.23" y2="57.32" stroke="#000000" stroke-width="1.2"/>
+<line x1="233.64" y1="176.48" x2="156.41" y2="146.57" stroke="#000000" stroke-width="0.9" stroke-dasharray="4,3"/>
+<line x1="212.82" y1="124.75" x2="135.59" y2="94.83" stroke="#000000" stroke-width="1.2"/>
+<line x1="276.46" y1="87.23" x2="199.23" y2="57.32" stroke="#000000" stroke-width="1.2"/>
+<line x1="212.82" y1="124.75" x2="212.82" y2="185.72" stroke="#000000" stroke-width="0.9" stroke-dasharray="2,2"/>
+<polyline points="212.82,177.33 207.98,181.52 207.98,189.91" fill="none" stroke="#000000" stroke-width="0.8"/>
+<line x1="170.00" y1="214.00" x2="170.00" y2="119.12" stroke="#7F7F7F" stroke-width="1.2"/>
+<polygon points="170.00,111.12 173.24,120.58 166.76,120.58" fill="#7F7F7F" stroke="none" stroke-width="0"/>
+<line x1="170.00" y1="214.00" x2="226.75" y2="180.55" stroke="#000000" stroke-width="1.8"/>
+<polygon points="233.64,176.48 227.14,184.08 223.85,178.50" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="170.00" y1="214.00" x2="100.23" y2="186.97" stroke="#000000" stroke-width="1.8"/>
+<polygon points="92.77,184.08 102.76,184.48 100.42,190.52" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="170.00" y1="214.00" x2="209.36" y2="131.96" stroke="#000000" stroke-width="1.8"/>
+<polygon points="212.82,124.75 211.65,134.68 205.81,131.88" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="176.00" y="117.12" font-family="Cambria Math" font-size="12pt">v×w</text>
+<text x="239.64" y="188.48" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="76.77" y="196.08" font-family="Cambria Math" font-size="12pt" font-style="italic">w</text>
+<text x="218.82" y="126.75" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<circle cx="170.00" cy="214.00" r="2.0" fill="#000000" stroke="none"/>
+<text x="165.00" y="231.00" font-family="Cambria Math" font-size="12pt" font-style="italic">O</text>
+<line x1="215.82" y1="158.28" x2="282.46" y2="158.28" stroke="#000000" stroke-width="0.6"/>
+<text x="285.46" y="163.28" font-family="TH Sarabun New" font-size="14pt">ความสูง</text>
+<text x="119.21" y="188.28" font-family="Cambria Math" font-size="11pt">|v×w|</text>
+<text x="127.70" y="262.00" font-family="TH Sarabun New" font-size="14pt">ปริมาตร</text>
+<text x="171.82" y="262.00" font-family="Cambria Math" font-size="12pt">|u·(v×w)|</text>
+</svg>

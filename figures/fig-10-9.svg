@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="150.0pt" viewBox="0 0 452.0 150.0">
+<path d="M 80.00 96.00 A 20.00 20.00 0 0 0 74.14 81.86" fill="none" stroke="#000000" stroke-width="0.9"/>
+<text x="84.64" y="88.52" font-family="Cambria Math" font-size="11pt" font-style="italic">θ</text>
+<line x1="60.00" y1="96.00" x2="132.00" y2="96.00" stroke="#000000" stroke-width="1.6"/>
+<polygon points="140.00,96.00 130.54,99.24 130.54,92.76" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="60.00" y1="96.00" x2="105.25" y2="50.75" stroke="#000000" stroke-width="1.6"/>
+<polygon points="110.91,45.09 106.51,54.07 101.93,49.49" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="136.00" y="112.00" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="114.91" y="43.09" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="58.20" y="136.00" font-family="Cambria Math" font-size="12pt">u·v&gt;0</text>
+<polyline points="219.00,96.00 219.00,87.00 210.00,87.00" fill="none" stroke="#000000" stroke-width="0.8"/>
+<line x1="210.00" y1="96.00" x2="282.00" y2="96.00" stroke="#000000" stroke-width="1.6"/>
+<polygon points="290.00,96.00 280.54,99.24 280.54,92.76" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="210.00" y1="96.00" x2="210.00" y2="32.00" stroke="#000000" stroke-width="1.6"/>
+<polygon points="210.00,24.00 213.24,33.46 206.76,33.46" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="286.00" y="112.00" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="214.00" y="22.00" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="208.20" y="136.00" font-family="Cambria Math" font-size="12pt">u·v=0</text>
+<path d="M 380.00 96.00 A 20.00 20.00 0 0 0 345.86 81.86" fill="none" stroke="#000000" stroke-width="0.9"/>
+<text x="368.40" y="72.28" font-family="Cambria Math" font-size="11pt" font-style="italic">θ</text>
+<line x1="360.00" y1="96.00" x2="432.00" y2="96.00" stroke="#000000" stroke-width="1.6"/>
+<polygon points="440.00,96.00 430.54,99.24 430.54,92.76" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="360.00" y1="96.00" x2="314.75" y2="50.75" stroke="#000000" stroke-width="1.6"/>
+<polygon points="309.09,45.09 318.07,49.49 313.49,54.07" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="436.00" y="112.00" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="297.09" y="43.09" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="358.20" y="136.00" font-family="Cambria Math" font-size="12pt">u·v&lt;0</text>
+</svg>

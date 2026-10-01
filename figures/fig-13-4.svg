@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="222.0pt" viewBox="0 0 452.0 222.0">
+<circle cx="82.00" cy="82.00" r="52.00" fill="#D9D9D9" stroke="none"/>
+<circle cx="144.00" cy="82.00" r="52.00" fill="#D9D9D9" stroke="none"/>
+<rect x="5.00" y="8.00" width="216.00" height="148.00" fill="none" stroke="#000000" stroke-width="1.0"/>
+<text x="10.00" y="150.00" font-family="Cambria Math" font-size="12pt" font-style="italic">S</text>
+<circle cx="82.00" cy="82.00" r="52.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<circle cx="144.00" cy="82.00" r="52.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<text x="34.23" y="44.23" font-family="Cambria Math" font-size="12pt" font-style="italic">A</text>
+<text x="182.77" y="44.23" font-family="Cambria Math" font-size="12pt" font-style="italic">B</text>
+<text x="139.56" y="23.00" font-family="Cambria Math" font-size="11pt">P(S)=100%</text>
+<text x="68.28" y="182.00" font-family="TH Sarabun New" font-size="16pt">อย่างน้อยหนึ่งเกิด</text>
+<text x="92.84" y="206.00" font-family="Cambria Math" font-size="12pt">P(A∪B)</text>
+<path d="M 231.00 8.00 H 447.00 V 156.00 H 231.00 Z M 339.00 40.25 A 52.00 52.00 0 1 0 339.00 123.75 A 52.00 52.00 0 1 0 339.00 40.25 Z" fill="#D9D9D9" fill-rule="evenodd" stroke="none"/>
+<rect x="231.00" y="8.00" width="216.00" height="148.00" fill="none" stroke="#000000" stroke-width="1.0"/>
+<text x="236.00" y="150.00" font-family="Cambria Math" font-size="12pt" font-style="italic">S</text>
+<circle cx="308.00" cy="82.00" r="52.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<circle cx="370.00" cy="82.00" r="52.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<text x="260.23" y="44.23" font-family="Cambria Math" font-size="12pt" font-style="italic">A</text>
+<text x="408.77" y="44.23" font-family="Cambria Math" font-size="12pt" font-style="italic">B</text>
+<text x="365.56" y="23.00" font-family="Cambria Math" font-size="11pt">P(S)=100%</text>
+<text x="318.36" y="182.00" font-family="TH Sarabun New" font-size="16pt">ไม่มีเลย</text>
+<text x="271.80" y="206.00" font-family="Cambria Math" font-size="12pt">P(A′∩B′)=100%−P(A∪B)</text>
+</svg>

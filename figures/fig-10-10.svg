@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="244.0pt" viewBox="0 0 452.0 244.0">
+<polygon points="106.13,122.79 48.05,173.09 148.65,202.13 206.73,151.83" fill="#EEEEEE" stroke="none" stroke-width="0"/>
+<line x1="110.00" y1="130.00" x2="72.05" y2="162.87" stroke="#000000" stroke-width="1.6"/>
+<polygon points="66.00,168.11 71.03,159.46 75.27,164.36" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="110.00" y1="130.00" x2="178.52" y2="149.78" stroke="#000000" stroke-width="1.6"/>
+<polygon points="186.21,152.00 176.22,152.49 178.02,146.26" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="110.00" y1="130.00" x2="110.00" y2="54.17" stroke="#000000" stroke-width="2.4"/>
+<polygon points="110.00,46.17 113.24,55.63 106.76,55.63" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="52.00" y="172.11" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="190.21" y="154.00" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="116.00" y="54.17" font-family="Cambria Math" font-size="12pt">u×v</text>
+<polyline points="104.50,134.76 104.50,125.24 110.00,120.47" fill="none" stroke="#000000" stroke-width="0.8"/>
+<polyline points="119.53,132.75 119.53,123.22 110.00,120.47" fill="none" stroke="#000000" stroke-width="0.8"/>
+<text x="62.72" y="212.00" font-family="TH Sarabun New" font-size="16pt">ตั้งฉากกับ u และ v</text>
+<polygon points="332.13,122.79 274.05,173.09 374.65,202.13 432.73,151.83" fill="#EEEEEE" stroke="none" stroke-width="0"/>
+<line x1="336.00" y1="130.00" x2="298.05" y2="162.87" stroke="#000000" stroke-width="1.6"/>
+<polygon points="292.00,168.11 297.03,159.46 301.27,164.36" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="336.00" y1="130.00" x2="404.52" y2="149.78" stroke="#000000" stroke-width="1.6"/>
+<polygon points="412.21,152.00 402.22,152.49 404.02,146.26" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="336.00" y1="130.00" x2="336.00" y2="54.17" stroke="#000000" stroke-width="2.4"/>
+<polygon points="336.00,46.17 339.24,55.63 332.76,55.63" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="278.00" y="172.11" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="416.21" y="154.00" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<text x="342.00" y="54.17" font-family="Cambria Math" font-size="12pt">u×v</text>
+<polyline points="316.20,133.81 318.02,134.31 319.89,134.75 321.81,135.15 323.76,135.49 325.75,135.79 327.77,136.03 329.81,136.22 331.86,136.35 333.93,136.44 336.00,136.46 338.07,136.44 340.14,136.35 342.19,136.22 344.23,136.03 346.25,135.79 348.24,135.49 350.19,135.15 352.11,134.75 353.98,134.31 355.80,133.81 357.57,133.27 359.28,132.68 360.92,132.05 362.50,131.38 364.00,130.66 365.43,129.91 366.77,129.12 368.04,128.30 369.21,127.45 370.29,126.56" fill="none" stroke="#000000" stroke-width="1.0"/>
+<polygon points="370.29,126.56 367.83,130.92 365.46,127.83" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="252.45" y="212.00" font-family="TH Sarabun New" font-size="15pt">นิ้วโค้งจาก u ไป v นิ้วโป้งชี้ทิศ u×v</text>
+<text x="319.20" y="236.00" font-family="Cambria Math" font-size="12pt">i×j=k</text>
+</svg>

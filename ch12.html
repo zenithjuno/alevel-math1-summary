@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>บทที่ 12 หลักการนับเบื้องต้น · สรุปเนื้อหา A-Level คณิตศาสตร์ประยุกต์ 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#1f1f1d;--muted:#5f5e5a;--navy:#0c447c;--blue:#185fa5;--tint:#e6f1fb;
+--line:#d3d1c7;--caution:#fcebeb;--caution-ink:#791f1f;--figure:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--ink:#ecebe6;--muted:#b4b2a9;--navy:#b5d4f4;
+--blue:#85b7eb;--tint:#0c2a4a;--line:#444441;--caution:#3a1717;--caution-ink:#f7c1c1;--figure:#f4f4f2}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Sarabun",system-ui,sans-serif;
+font-size:1.12rem;line-height:1.75}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
+header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
+header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
+.banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
+.banner .n{background:#0c447c;color:#fff;font-size:2.2rem;font-weight:700;padding:.2rem 1rem;display:flex;align-items:center}
+.banner .t{background:var(--tint);color:var(--navy);padding:.5rem 1rem;flex:1}
+.banner .t small{display:block;font-size:.85rem;opacity:.85}
+.banner .t span{font-size:1.45rem;font-weight:700}
+.search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
+background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+details.section>summary{cursor:pointer;list-style:none}
+details.section>summary::-webkit-details-marker{display:none}
+details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
+details.section>summary::after{content:" ▾";color:var(--muted)}
+details.section:not([open])>summary::after{content:" ▸"}
+h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
+p{margin:.5rem 0}
+p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
+p.definition{background:var(--tint);border-radius:8px;padding:.5rem .8rem;margin:.8rem 0}
+p.example{border-left:3px solid var(--line);border-radius:0;padding:.1rem 0 .1rem .8rem;color:var(--muted);font-size:1.02rem}
+p.example math{color:var(--ink)}
+.formula{background:var(--tint);border-radius:10px;padding:.55rem .8rem;margin:.6rem 0;
+text-align:center;overflow-x:auto;font-size:1.08em}
+.formula math{margin:0 .25rem}
+.formula .sep{color:var(--muted);margin:0 .2rem}
+ul.points{margin:.3rem 0 .6rem;padding-left:1.3rem}
+ul.formulas{list-style:none;background:var(--tint);border-radius:10px;padding:.5rem .8rem;margin:.6rem 0;overflow-x:auto}
+ul.formulas li{padding:.2rem 0}
+ul.formulas li+li{border-top:1px dashed var(--line)}
+ul.formulas .cond{font-size:.95rem}
+@media (max-width:480px){.formula,ul.formulas{font-size:.98em}}
+.table-wrap{overflow-x:auto;margin:.6rem 0 .9rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;min-width:100%;font-size:1rem}
+th,td{border:1px solid var(--line);padding:.35rem .55rem;vertical-align:middle}
+th{background:var(--tint);color:var(--navy);text-align:left}
+figure{margin:1rem 0;text-align:center}
+figure img{width:100%;max-width:34rem;height:auto;background:var(--figure);border-radius:8px;padding:.4rem}
+figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
+.display{overflow-x:auto;margin:.6rem 0;text-align:center}
+math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
+math[display=block]{margin:.3rem 0}
+mark{background:#fac775;color:#412402;border-radius:3px}
+.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager a,.cards a{color:var(--blue);text-decoration:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
+.cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
+.cards b{background:#0c447c;color:#fff;border-radius:8px;min-width:2.2rem;text-align:center;padding:.1rem .3rem}
+.hero{text-align:center;margin:1.2rem 0}
+.hero img{height:84px;margin:0 .6rem;background:#fff;border-radius:10px}
+.hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
+.hero p{color:var(--muted);margin:0}
+.hidden{display:none}
+</style></head>
+<body>
+<header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
+<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html" selected>บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<img src="assets/health-science-program.png" alt="Health Science Program"></header>
+<main><div class="banner"><div class="n">12</div><div class="t"><small>บทที่ 12</small><span>หลักการนับเบื้องต้น</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. ก่อนนับ ต้องรู้ว่าอะไรถือเป็นหนึ่งแบบ</a><a href="#s2">2. หลักการคูณกับหลักการบวก</a><a href="#s3">3. แฟกทอเรียลและการเรียงของต่างกัน</a><a href="#s4">4. การเรียงของที่มีของเหมือนกัน</a><a href="#s5">5. การเรียงรอบวง</a><a href="#s6">6. การเลือกแบบไม่สนลำดับ</a><a href="#s7">7. เครื่องมือเมื่อมีเงื่อนไข</a><a href="#s8">8. แนวที่เลือกฝึก: รหัสที่มีเลขบังคับ</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. ก่อนนับ ต้องรู้ว่าอะไรถือเป็นหนึ่งแบบ</strong></h2></summary><div class="body">
+<p>หลักการนับหาจำนวนผลลัพธ์โดยไม่แจงทุกแบบ ก่อนคำนวณตอบสามเรื่อง:</p>
+<ul class="points"><li>กำลังสร้างอะไร เช่น รหัส จำนวนเต็ม แถวคน หรือกลุ่มคน</li><li>ใช้สิ่งเดิมซ้ำได้หรือไม่ และมีตำแหน่งใดถูกจำกัด</li><li>ถ้าสลับลำดับ หมุน หรือเปลี่ยนตำแหน่ง ยังถือว่าเป็นแบบเดิมหรือไม่</li></ul>
+<p class="example">เช่น คนสองคนสลับหน้าที่หัวหน้ากับรอง จะได้การมอบหน้าที่คนละแบบ แต่ถ้าเลือกเป็นทีมสองคน ทีมเดิมยังเป็นทีมเดิมแม้เขียนชื่อสลับกัน</p>
+</div></details>
+<details class="section" id="s2" open><summary><h2><math displaystyle="true"><mrow><mn>2</mn></mrow></math><strong>. หลักการคูณกับหลักการบวก</strong></h2></summary><div class="body">
+<p><strong>หลักการคูณ:</strong> ถ้าทำงานให้เสร็จต้องผ่านหลายขั้น และสำหรับทุกทางเลือกในขั้นก่อนหน้า ขั้นถัดไปมีจำนวนทางเลือกตามที่กำหนด ให้นำจำนวนทางเลือกแต่ละขั้นมาคูณกัน</p>
+<p class="example">เช่น เลือกเสื้อ <math displaystyle="true"><mrow><mn>2</mn></mrow></math> แบบ แล้วเลือกกางเกง <math displaystyle="true"><mrow><mn>3</mn></mrow></math> แบบ โดยจับคู่ได้ทุกแบบ จะได้ <math displaystyle="true"><mrow><mn>2</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>6</mn></mrow></math> ชุด แต่ละชุดต้องมีทั้งเสื้อและกางเกง</p>
+<figure><img src="figures/fig-12-1.svg" alt="รูป 12.1" loading="lazy"><figcaption><strong>รูป 12.1</strong> แต่ละทางเลือกของเสื้อแตกต่อเป็นกางเกง <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ทาง จึงได้ <math displaystyle="true"><mrow><mn>6</mn></mrow></math> ชุด</figcaption></figure>
+<p>ห้ามใช้ซ้ำ → จำนวนตัวเลือกขั้นต่อไปลดลงได้ คูณจำนวนที่เหลือให้ถูก ไม่จำเป็นต้องเท่ากันทุกขั้น</p>
+<p><strong>หลักการบวก:</strong> ถ้างานสำเร็จได้ด้วยกรณีใดกรณีหนึ่ง และกรณีเหล่านั้นไม่ซ้ำกัน ให้นับแต่ละกรณีแล้วบวก</p>
+<p>ของขวัญ <math displaystyle="true"><mrow><mn>1</mn></mrow></math> ชิ้น เลือกจากเสื้อ <math displaystyle="true"><mrow><mn>2</mn></mrow></math> แบบหรือกางเกง <math displaystyle="true"><mrow><mn>3</mn></mrow></math> แบบ กรณีไม่ซ้ำ จึง <math displaystyle="true"><mrow><mn>2</mn><mo>+</mo><mn>3</mn><mo>=</mo><mn>5</mn></mrow></math> แบบ ต่างจากชุดแต่งตัวที่ต้องใช้ทั้งสองชิ้น</p>
+<figure><img src="figures/fig-12-3.svg" alt="รูป 12.3" loading="lazy"><figcaption><strong>รูป 12.3</strong> ต้องผ่านทุกขั้นให้คูณ ส่วนใช้เพียงกรณีเดียวจากกรณีที่ไม่ซ้ำกันให้บวก</figcaption></figure>
+<p>ถ้ากรณีทับกัน การบวกตรง ๆ จะนับบางผลลัพธ์ซ้ำ ต้องแยกกรณีใหม่ให้ไม่ทับกัน หรือหักส่วนที่นับซ้ำออก เช่น เมื่อ <math displaystyle="true"><mrow><mi>A</mi><mo separator="true">,</mo><mi>B</mi></mrow></math> เป็นเซตจำกัด <math displaystyle="true"><mrow><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>+</mo><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>−</mo><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></p>
+<p>ขั้นต่อไปมีตัวเลือกต่างกันตามทางก่อนหน้า → แยกกรณี → คูณภายใน → บวกแต่ละกรณี</p>
+<p class="caution"><strong>ระวัง:</strong> อย่าตัดสินจากคำว่า “และ” หรือ “หรือ” เพียงคำเดียว ให้ดูว่าผลลัพธ์หนึ่งแบบต้องผ่านกี่ขั้น และแต่ละกรณีซ้ำกันหรือไม่</p>
+</div></details>
+<details class="section" id="s3" open><summary><h2><math displaystyle="true"><mrow><mn>3</mn></mrow></math><strong>. แฟกทอเรียลและการเรียงของต่างกัน</strong></h2></summary><div class="body">
+<p class="definition"><strong>บทนิยาม:</strong> สำหรับจำนวนเต็มบวก <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ให้ <math displaystyle="true"><mrow><mi>n</mi><mo>!</mo><mo>=</mo><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>…</mo><mn>1</mn></mrow></math> และกำหนด <math displaystyle="true"><mrow><mn>0</mn><mo>!</mo><mo>=</mo><mn>1</mn></mrow></math></p>
+<p>การเรียงของต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ชิ้นเป็นแถว ใช้ครบทุกชิ้น จะได้ <math displaystyle="true"><mrow><mi>n</mi><mo>!</mo></mrow></math> แบบ เพราะตำแหน่งแรกเลือกได้ <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ทาง แล้วเหลือ <math displaystyle="true"><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></math> ทาง ลดลงไปจนเหลือ <math displaystyle="true"><mrow><mn>1</mn></mrow></math> ทาง</p>
+<p>ถ้าเลือกของต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ชิ้นมาเรียงเพียง <math displaystyle="true"><mrow><mi>r</mi></mrow></math> ตำแหน่งโดยไม่ซ้ำ เมื่อ <math displaystyle="true"><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow></math> เป็นจำนวนเต็มและ <math displaystyle="true"><mrow><mn>0</mn><mo>≤</mo><mi>r</mi><mo>≤</mo><mi>n</mi></mrow></math> จะได้</p>
+<div class="formula"><math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></math></div>
+<p>สำหรับ <math displaystyle="true"><mrow><mi>r</mi><mo>≥</mo><mn>1</mn></mrow></math> นี่คือ <math displaystyle="true"><mrow><mi>n</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>…</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mi>r</mi><mo>+</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math>; กรณี <math displaystyle="true"><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow></math> มีการไม่เลือกอะไรอยู่หนึ่งแบบ</p>
+<p>ถ้าแต่ละตำแหน่งเลือกจากของ <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ชนิดได้อย่างอิสระและใช้ซ้ำได้ โดย <math displaystyle="true"><mrow><mi>n</mi></mrow></math> เป็นจำนวนเต็มบวกและ <math displaystyle="true"><mrow><mi>r</mi></mrow></math> เป็นจำนวนเต็มไม่ลบ จะมี <math displaystyle="true"><mrow><msup><mrow><mi>n</mi></mrow><mrow><mi>r</mi></mrow></msup></mrow></math> แบบ แทนการลดจำนวนตัวเลือกลงทุกขั้น</p>
+<p class="caution"><strong>ระวัง:</strong> สูตร <math displaystyle="true"><mrow><mi>n</mi><mo>!</mo></mrow></math> และ <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ใช้กับของต่างกันและไม่ซ้ำ หากมีข้อจำกัดตำแหน่ง ต้องจัดการข้อจำกัดก่อน ไม่ใส่สูตรทันที</p>
+</div></details>
+<details class="section" id="s4" open><summary><h2><math displaystyle="true"><mrow><mn>4</mn></mrow></math><strong>. การเรียงของที่มีของเหมือนกัน</strong></h2></summary><div class="body">
+<p>ถ้ามีของรวม <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ชิ้น แบ่งเป็นชนิดที่เหมือนกันภายในชนิด จำนวน <math displaystyle="true"><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mrow><mi>n</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow></math> ชิ้น โดย <math displaystyle="true"><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>+</mo><mo>…</mo><mo>+</mo><msub><mrow><mi>n</mi></mrow><mrow><mi>k</mi></mrow></msub><mo>=</mo><mi>n</mi></mrow></math> การเรียงเป็นแถวใช้ครบทุกชิ้นมี</p>
+<p><math displaystyle="true"><mrow><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>!</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>!</mo><mo>…</mo><msub><mrow><mi>n</mi></mrow><mrow><mi>k</mi></mrow></msub><mo>!</mo></mrow></mfrac></mrow></math> แบบ</p>
+<p><math displaystyle="true"><mrow><mi>n</mi><mo>!</mo></mrow></math> นับเหมือนทุกชิ้นต่างกัน แต่สลับชนิดเดียวกันไม่เกิดแบบใหม่ จึงหารจำนวนที่นับซ้ำ</p>
+<p class="example">เช่น <math displaystyle="true"><mrow><mi>A</mi><mo separator="true">,</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi></mrow></math> เรียงได้ <math displaystyle="true"><mrow><mfrac><mrow><mn>3</mn><mo>!</mo></mrow><mrow><mn>2</mn><mo>!</mo></mrow></mfrac><mo>=</mo><mn>3</mn></mrow></math> แบบ คือ <math displaystyle="true"><mrow><mi>A</mi><mi>A</mi><mi>B</mi></mrow></math>, <math displaystyle="true"><mrow><mi>A</mi><mi>B</mi><mi>A</mi></mrow></math>, <math displaystyle="true"><mrow><mi>B</mi><mi>A</mi><mi>A</mi></mrow></math></p>
+<p class="caution"><strong>ระวัง:</strong> ของจะเหมือนกันหรือไม่ขึ้นกับโจทย์ คนที่ใส่เสื้อสีเดียวกันยังเป็นคนต่างกัน ไม่หารแฟกทอเรียลเพียงเพราะสีเหมือนกัน</p>
+</div></details>
+<details class="section" id="s5" open><summary><h2><math displaystyle="true"><mrow><mn>5</mn></mrow></math><strong>. การเรียงรอบวง</strong></h2></summary><div class="body">
+<p>เมื่อเรียงของต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ชิ้นรอบวง โดย <math displaystyle="true"><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></math> และการหมุนทั้งวงถือเป็นแบบเดิม แต่ภาพสะท้อนยังถือเป็นคนละแบบ จะมี <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>!</mo></mrow></math> แบบ</p>
+<p>ตรึงหนึ่งชิ้นเป็นจุดอ้างอิง แล้วเรียงอีก <math displaystyle="true"><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></math> ชิ้น เพราะการหมุนทั้งวงไม่ได้เปลี่ยนว่าใครอยู่ข้างใคร</p>
+<p class="example">เช่น คนต่างกัน <math displaystyle="true"><mrow><mn>4</mn></mrow></math> คนรอบโต๊ะ เมื่อหมุนทั้งวงถือเป็นแบบเดิม ตรึงหนึ่งคนแล้วเรียงอีกสามคนได้ <math displaystyle="true"><mrow><mn>3</mn><mo>!</mo><mo>=</mo><mn>6</mn></mrow></math> แบบ</p>
+<figure><img src="figures/fig-12-2.svg" alt="รูป 12.2" loading="lazy"><figcaption><strong>รูป 12.2</strong> การหมุนทั้งวงยังเป็นแบบเดิม จึงตรึงหนึ่งคนแล้วเรียงคนที่เหลือ</figcaption></figure>
+<p class="caution"><strong>ระวัง:</strong> ถ้าเก้าอี้มีหมายเลขกำกับและตำแหน่งที่นั่งถือว่าต่างกัน จะนับเหมือนตำแหน่งต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ตำแหน่ง จึงได้ <math displaystyle="true"><mrow><mi>n</mi><mo>!</mo></mrow></math> สำหรับคนต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> คน ไม่ใช้ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>!</mo></mrow></math> และไม่หาร <math displaystyle="true"><mrow><mn>2</mn></mrow></math> เพิ่มถ้าโจทย์ไม่ได้ถือว่าภาพสะท้อนเหมือนกัน</p>
+</div></details>
+<details class="section" id="s6" open><summary><h2><math displaystyle="true"><mrow><mn>6</mn></mrow></math><strong>. การเลือกแบบไม่สนลำดับ</strong></h2></summary><div class="body">
+<p>ถ้าเลือกของต่างกัน <math displaystyle="true"><mrow><mi>n</mi></mrow></math> ชิ้นมา <math displaystyle="true"><mrow><mi>r</mi></mrow></math> ชิ้น โดยไม่ซ้ำและไม่สนลำดับ เมื่อ <math displaystyle="true"><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow></math> เป็นจำนวนเต็มและ <math displaystyle="true"><mrow><mn>0</mn><mo>≤</mo><mi>r</mi><mo>≤</mo><mi>n</mi></mrow></math> จะมี</p>
+<p><math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mi>r</mi><mo>!</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo>−</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></math> แบบ</p>
+<p><math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> เขียนเป็นตัวจัดหมู่แบบคอลัมน์ได้ ความหมายเดียวกัน:</p>
+<div class="display"><math display="block"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mtable><mtr><mtd columnalign="center"><mrow><mi>n</mi></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mi>r</mi></mrow></mtd></mtr></mtable><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></div>
+<p>การเลือกชุดเดียวกันถูก <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> นับซ้ำ <math displaystyle="true"><mrow><mi>r</mi><mo>!</mo></mrow></math> ครั้งจากการเรียงของที่เลือก จึงหาร <math displaystyle="true"><mrow><mi>r</mi><mo>!</mo></mrow></math> ออก และมี <math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>n</mi><mo>−</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> เพราะเลือกของที่เอากับเลือกของที่เหลือให้ข้อมูลชุดเดียวกัน</p>
+<p class="example">เช่น จากนักเรียน <math displaystyle="true"><mrow><mn>5</mn></mrow></math> คน เลือกหัวหน้ากับรองโดยห้ามเป็นคนเดียวกัน มี <math displaystyle="true"><mrow><mn>5</mn><mo>×</mo><mn>4</mn><mo>=</mo><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>5</mn><mo separator="true">,</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mn>20</mn></mrow></math> แบบ แต่เลือกทีมสองคนมี <math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>5</mn><mo separator="true">,</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>20</mn></mrow><mrow><mn>2</mn><mo>!</mo></mrow></mfrac><mo>=</mo><mn>10</mn></mrow></math> ทีม</p>
+<p><strong>เกณฑ์เลือกวิธี:</strong> ลองสลับของที่เลือก ถ้าคำตอบเปลี่ยน เช่น สลับหน้าที่หรือตำแหน่ง ให้คิดแบบเรียง; ถ้าผลลัพธ์เดิม เช่น สมาชิกทีมเดิม ให้คิดแบบเลือกไม่สนลำดับ</p>
+<p class="caution"><strong>ระวัง:</strong> คำว่า “เลือก” อาจตามด้วยการมอบหน้าที่ จึงไม่ได้แปลว่าต้องใช้ <math displaystyle="true"><mrow><mi>C</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>n</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> เสมอ</p>
+</div></details>
+<details class="section" id="s7" open><summary><h2><math displaystyle="true"><mrow><mn>7</mn></mrow></math><strong>. เครื่องมือเมื่อมีเงื่อนไข</strong></h2></summary><div class="body">
+<div class="table-wrap"><table><thead><tr><th>เงื่อนไข</th><th>วิธีเริ่ม</th><th>สิ่งที่ต้องตรวจ</th></tr></thead><tbody><tr><td>บางตำแหน่งจำกัดตัวเลือก</td><td>นับตำแหน่งนั้นก่อน แล้วเติมที่เหลือ</td><td>ตัวเลือกที่ใช้ไปแล้วและข้อห้ามตำแหน่งอื่น</td></tr><tr><td>ของที่กำหนดต้องอยู่ติดกัน</td><td>รวมเป็นหนึ่งกลุ่ม เรียงกลุ่มกับของที่เหลือ แล้วเรียงภายในกลุ่ม</td><td>แต่ละผลลัพธ์ต้องเกิดจากการแบ่งกลุ่มเพียงวิธีเดียว</td></tr><tr><td>ของสองชิ้นห้ามติดกัน</td><td>นับทั้งหมดลบกรณีสองชิ้นติดกัน หรือเรียงของอื่นแล้วเลือกช่องแทรก</td><td>นิยามช่องหัวท้ายและห้ามใส่หลายชิ้นในช่องเดียวถ้าต้องแยกกัน</td></tr><tr><td>ต้องมีอย่างน้อยหนึ่ง</td><td>นับทั้งหมดลบกรณีไม่มีเลย</td><td>กรณีที่ลบต้องเป็นส่วนเติมเต็มตรงเงื่อนไข</td></tr><tr><td>มีจำนวนที่กำหนดแน่นอน</td><td>เลือกตำแหน่งของสิ่งนั้น แล้วเติมที่เหลือ</td><td>ห้ามให้ตำแหน่งที่เหลือสร้างสิ่งนั้นเพิ่ม</td></tr></tbody></table></div>
+<p>แบ่งกรณีต้อง <strong>ครอบคลุมทั้งหมดและไม่ทับกัน</strong></p>
+</div></details>
+<details class="section" id="s8" open><summary><h2><math displaystyle="true"><mrow><mn>8</mn></mrow></math><strong>. แนวที่เลือกฝึก: รหัสที่มีเลขบังคับ</strong></h2></summary><div class="body">
+<p>ก่อนเติมรหัส ให้แยก <strong>รหัส</strong> ออกจาก <strong>จำนวนหลายหลัก</strong> รหัสอาจเริ่มด้วย <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ได้ตามโจทย์ แต่จำนวนสามหลักเริ่มด้วย <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ไม่ได้ จากนั้นตรวจว่าเลขซ้ำได้หรือไม่ และต้องมีเลขที่บังคับกี่ครั้ง</p>
+<p>ไม่ซ้ำและบังคับเลขหนึ่งตัว → เลือกตำแหน่งเลขนั้นก่อน → เติมที่เหลือ ไม่ต้องตามว่าเลขบังคับเกิดขั้นใด</p>
+<p class="example">ตัวอย่าง รหัส <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ตำแหน่งใช้เลข <math displaystyle="true"><mrow><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn></mrow></math> ไม่ซ้ำ ต้องมี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> และอนุญาตให้เริ่มด้วย <math displaystyle="true"><mrow><mn>0</mn></mrow></math>:</p>
+<ul class="points"><li>เลือกตำแหน่งของ <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ได้ <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ทาง</li><li>เติมสองตำแหน่งที่เหลือด้วยเลข <math displaystyle="true"><mrow><mn>1</mn><mo>–</mo><mn>4</mn></mrow></math> ได้ <math displaystyle="true"><mrow><mn>4</mn></mrow></math> ทาง แล้วเหลือ <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ทาง</li><li>รวม <math displaystyle="true"><mrow><mn>3</mn><mo>×</mo><mn>4</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>36</mn></mrow></math> รหัส</li></ul>
+<p>ถ้าเปลี่ยนเป็น <strong>จำนวนสามหลัก</strong> ที่ต้องมี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> และไม่ซ้ำ เลข <math displaystyle="true"><mrow><mn>0</mn></mrow></math> อยู่ได้เฉพาะหลักสิบหรือหลักหน่วย จึงเหลือ <math displaystyle="true"><mrow><mn>2</mn><mo>×</mo><mn>4</mn><mo>×</mo><mn>3</mn><mo>=</mo><mn>24</mn></mrow></math> จำนวน</p>
+<p>หากอนุญาตให้เลขซ้ำและต้องมี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> <strong>อย่างน้อยหนึ่งตัว</strong> วิธีเลือกตำแหน่งของ <math displaystyle="true"><mrow><mn>0</mn></mrow></math> หนึ่งตำแหน่งแล้วเติมทุกเลขจะนับรหัสที่มี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> หลายตัวซ้ำ ให้ใช้ส่วนเติมเต็มแทน เช่น รหัส <math displaystyle="true"><mrow><mn>3</mn></mrow></math> ตำแหน่งจากเลข <math displaystyle="true"><mrow><mn>0</mn><mo>–</mo><mn>4</mn></mrow></math> ที่ซ้ำได้และเริ่ม <math displaystyle="true"><mrow><mn>0</mn></mrow></math> ได้ มีทั้งหมด <math displaystyle="true"><mrow><msup><mrow><mn>5</mn></mrow><mrow><mn>3</mn></mrow></msup></mrow></math> รหัส และไม่มี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> เลย <math displaystyle="true"><mrow><msup><mrow><mn>4</mn></mrow><mrow><mn>3</mn></mrow></msup></mrow></math> รหัส จึงมี <math displaystyle="true"><mrow><mn>0</mn></mrow></math> อย่างน้อยหนึ่งตัว <math displaystyle="true"><mrow><msup><mrow><mn>5</mn></mrow><mrow><mn>3</mn></mrow></msup><mo>−</mo><msup><mrow><mn>4</mn></mrow><mrow><mn>3</mn></mrow></msup><mo>=</mo><mn>61</mn></mrow></math> รหัส</p>
+<p class="caution"><strong>ระวัง:</strong> “มีหนึ่งตัวพอดี” ต่างจาก “มีอย่างน้อยหนึ่งตัว” และการเลือกตำแหน่งที่จำกัดก่อนทำได้เมื่อยังตามข้อจำกัดของตำแหน่งอื่นครบ</p>
+</div></details><div class="pager"><a href="ch11.html">← บทที่ 11</a><a href="index.html">สารบัญ</a><a href="ch13.html">บทที่ 13 →</a></div></main>
+<script>
+const box=document.querySelector('.search');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
+document.querySelectorAll('details.section').forEach(d=>{
+ const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
+ if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
+  while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
+  nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
+   const m=document.createElement('mark');r.surroundContents(m);});}
+});});}
+const sel=document.querySelector('header.top select');
+if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
+</script>
+</body></html>

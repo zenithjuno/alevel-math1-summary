@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="330.0pt" height="124.0pt" viewBox="0 0 330.0 124.0">
+<polyline points="43.00,52.00 43.00,46.00 120.33,46.00 120.33,52.00" fill="none" stroke="#000000" stroke-width="0.8"/>
+<polyline points="126.33,52.00 126.33,46.00 287.00,46.00 287.00,52.00" fill="none" stroke="#000000" stroke-width="0.8"/>
+<line x1="40.00" y1="62.00" x2="290.00" y2="62.00" stroke="#000000" stroke-width="1.6"/>
+<circle cx="40.00" cy="62.00" r="2.8" fill="#000000" stroke="none"/>
+<circle cx="123.33" cy="62.00" r="2.8" fill="#000000" stroke="none"/>
+<circle cx="290.00" cy="62.00" r="2.8" fill="#000000" stroke="none"/>
+<text x="36.00" y="82.00" font-family="Cambria Math" font-size="12pt" font-style="italic">P</text>
+<text x="119.33" y="82.00" font-family="Cambria Math" font-size="12pt" font-style="italic">R</text>
+<text x="286.00" y="82.00" font-family="Cambria Math" font-size="12pt" font-style="italic">Q</text>
+<rect x="72.17" y="22.00" width="19.00" height="19.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="77.17" y="36.00" font-family="Cambria Math" font-size="12pt" font-style="italic">m</text>
+<rect x="197.17" y="22.00" width="19.00" height="19.00" fill="#F3D9B5" stroke="none" stroke-width="0"/>
+<text x="202.17" y="36.00" font-family="Cambria Math" font-size="12pt" font-style="italic">n</text>
+<rect x="23.48" y="94.00" width="41.04" height="19.00" fill="#F3D9B5" stroke="none" stroke-width="0"/>
+<text x="28.48" y="108.00" font-family="TH Sarabun New" font-size="14pt">คูณ</text>
+<text x="50.52" y="108.00" font-family="Cambria Math" font-size="12pt" font-style="italic">n</text>
+<rect x="265.48" y="94.00" width="41.04" height="19.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="270.48" y="108.00" font-family="TH Sarabun New" font-size="14pt">คูณ</text>
+<text x="292.52" y="108.00" font-family="Cambria Math" font-size="12pt" font-style="italic">m</text>
+</svg>

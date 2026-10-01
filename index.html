@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>สรุปเนื้อหา A-Level คณิตศาสตร์ประยุกต์ 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#1f1f1d;--muted:#5f5e5a;--navy:#0c447c;--blue:#185fa5;--tint:#e6f1fb;
+--line:#d3d1c7;--caution:#fcebeb;--caution-ink:#791f1f;--figure:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--ink:#ecebe6;--muted:#b4b2a9;--navy:#b5d4f4;
+--blue:#85b7eb;--tint:#0c2a4a;--line:#444441;--caution:#3a1717;--caution-ink:#f7c1c1;--figure:#f4f4f2}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Sarabun",system-ui,sans-serif;
+font-size:1.12rem;line-height:1.75}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
+header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
+header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
+.banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
+.banner .n{background:#0c447c;color:#fff;font-size:2.2rem;font-weight:700;padding:.2rem 1rem;display:flex;align-items:center}
+.banner .t{background:var(--tint);color:var(--navy);padding:.5rem 1rem;flex:1}
+.banner .t small{display:block;font-size:.85rem;opacity:.85}
+.banner .t span{font-size:1.45rem;font-weight:700}
+.search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
+background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+details.section>summary{cursor:pointer;list-style:none}
+details.section>summary::-webkit-details-marker{display:none}
+details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
+details.section>summary::after{content:" ▾";color:var(--muted)}
+details.section:not([open])>summary::after{content:" ▸"}
+h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
+p{margin:.5rem 0}
+p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
+p.definition{background:var(--tint);border-radius:8px;padding:.5rem .8rem;margin:.8rem 0}
+p.example{border-left:3px solid var(--line);border-radius:0;padding:.1rem 0 .1rem .8rem;color:var(--muted);font-size:1.02rem}
+p.example math{color:var(--ink)}
+.formula{background:var(--tint);border-radius:10px;padding:.55rem .8rem;margin:.6rem 0;
+text-align:center;overflow-x:auto;font-size:1.08em}
+.formula math{margin:0 .25rem}
+.formula .sep{color:var(--muted);margin:0 .2rem}
+ul.points{margin:.3rem 0 .6rem;padding-left:1.3rem}
+ul.formulas{list-style:none;background:var(--tint);border-radius:10px;padding:.5rem .8rem;margin:.6rem 0;overflow-x:auto}
+ul.formulas li{padding:.2rem 0}
+ul.formulas li+li{border-top:1px dashed var(--line)}
+ul.formulas .cond{font-size:.95rem}
+@media (max-width:480px){.formula,ul.formulas{font-size:.98em}}
+.table-wrap{overflow-x:auto;margin:.6rem 0 .9rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;min-width:100%;font-size:1rem}
+th,td{border:1px solid var(--line);padding:.35rem .55rem;vertical-align:middle}
+th{background:var(--tint);color:var(--navy);text-align:left}
+figure{margin:1rem 0;text-align:center}
+figure img{width:100%;max-width:34rem;height:auto;background:var(--figure);border-radius:8px;padding:.4rem}
+figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
+.display{overflow-x:auto;margin:.6rem 0;text-align:center}
+math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
+math[display=block]{margin:.3rem 0}
+mark{background:#fac775;color:#412402;border-radius:3px}
+.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager a,.cards a{color:var(--blue);text-decoration:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
+.cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
+.cards b{background:#0c447c;color:#fff;border-radius:8px;min-width:2.2rem;text-align:center;padding:.1rem .3rem}
+.hero{text-align:center;margin:1.2rem 0}
+.hero img{height:84px;margin:0 .6rem;background:#fff;border-radius:10px}
+.hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
+.hero p{color:var(--muted);margin:0}
+.hidden{display:none}
+</style></head>
+<body>
+<header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
+<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html">บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<img src="assets/health-science-program.png" alt="Health Science Program"></header>
+<main><div class="hero"><img src="assets/chut-math.png" alt="CHUT Math"><img src="assets/health-science-program.png" alt="Health Science Program"><h1>สรุปเนื้อหา A-Level คณิตศาสตร์ประยุกต์ 1</h1><p>ห้องเรียนวิทยาศาสตร์สุขภาพ โรงเรียนเตรียมอุดมศึกษา ภาคเหนือ · CHUT Math</p></div><ul class="cards"><li><a href="ch01.html"><b>1</b>เซต</a></li><li><a href="ch02.html"><b>2</b>ตรรกศาสตร์</a></li><li><a href="ch03.html"><b>3</b>จำนวนจริง</a></li><li><a href="ch04.html"><b>4</b>ความสัมพันธ์และฟังก์ชัน</a></li><li><a href="ch05.html"><b>5</b>เอกซ์โพเนนเชียลและลอการิทึม</a></li><li><a href="ch06.html"><b>6</b>เรขาคณิตวิเคราะห์</a></li><li><a href="ch07.html"><b>7</b>ภาคตัดกรวย</a></li><li><a href="ch08.html"><b>8</b>ฟังก์ชันตรีโกณมิติ</a></li><li><a href="ch09.html"><b>9</b>เมทริกซ์</a></li><li><a href="ch10.html"><b>10</b>เวกเตอร์</a></li><li><a href="ch11.html"><b>11</b>จำนวนเชิงซ้อน</a></li><li><a href="ch12.html"><b>12</b>หลักการนับเบื้องต้น</a></li><li><a href="ch13.html"><b>13</b>ความน่าจะเป็น</a></li><li><a href="ch14.html"><b>14</b>ลำดับและอนุกรม</a></li><li><a href="ch15.html"><b>15</b>แคลคูลัสเบื้องต้น</a></li><li><a href="ch16.html"><b>16</b>สถิติ</a></li><li><a href="ch17.html"><b>17</b>ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</a></li></ul></main>
+<script>
+const box=document.querySelector('.search');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
+document.querySelectorAll('details.section').forEach(d=>{
+ const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
+ if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
+  while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
+  nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
+   const m=document.createElement('mark');r.surroundContents(m);});}
+});});}
+const sel=document.querySelector('header.top select');
+if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
+</script>
+</body></html>

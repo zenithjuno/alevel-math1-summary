@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="146.0pt" viewBox="0 0 452.0 146.0">
+<rect x="120.00" y="12.00" width="116.00" height="26.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="174.00" y="31.00" font-family="Cambria Math" font-size="14pt">+</text>
+<text x="280.00" y="31.00" font-family="Cambria Math" font-size="14pt">−</text>
+<rect x="332.00" y="12.00" width="110.00" height="26.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="383.00" y="31.00" font-family="Cambria Math" font-size="14pt">+</text>
+<line x1="118.00" y1="10.00" x2="444.00" y2="10.00" stroke="#7F7F7F" stroke-width="0.5"/>
+<line x1="118.00" y1="40.00" x2="444.00" y2="40.00" stroke="#7F7F7F" stroke-width="0.5"/>
+<text x="6.00" y="30.00" font-family="Cambria Math" font-size="12pt">(x−2)(x−3)</text>
+<line x1="115.20" y1="112.00" x2="436.80" y2="112.00" stroke="#000000" stroke-width="1.296"/>
+<polygon points="108.00,112.00 118.80,106.24 118.80,117.76" fill="#000000" stroke="none" stroke-width="0"/>
+<polygon points="444.00,112.00 433.20,106.24 433.20,117.76" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="238.00" y1="10.00" x2="238.00" y2="100.00" stroke="#000000" stroke-width="0.7" stroke-dasharray="3,2"/>
+<line x1="330.00" y1="10.00" x2="330.00" y2="100.00" stroke="#000000" stroke-width="0.7" stroke-dasharray="3,2"/>
+<line x1="238.00" y1="104.08" x2="238.00" y2="119.92" stroke="#000000" stroke-width="1.296"/>
+<text x="234.64" y="136.00" font-family="Cambria" font-size="12pt">2</text>
+<line x1="330.00" y1="104.08" x2="330.00" y2="119.92" stroke="#000000" stroke-width="1.296"/>
+<text x="326.64" y="136.00" font-family="Cambria" font-size="12pt">3</text>
+<line x1="120.96" y1="76.00" x2="238.00" y2="76.00" stroke="#000000" stroke-width="2.16"/>
+<polygon points="108.00,76.00 120.96,69.52 120.96,82.48" fill="#000000" stroke="none" stroke-width="0"/>
+<circle cx="238.00" cy="76.00" r="6.48" fill="#FFFFFF" stroke="#000000" stroke-width="1.728"/>
+<line x1="330.00" y1="76.00" x2="431.04" y2="76.00" stroke="#000000" stroke-width="2.16"/>
+<circle cx="330.00" cy="76.00" r="6.48" fill="#FFFFFF" stroke="#000000" stroke-width="1.728"/>
+<polygon points="444.00,76.00 431.04,69.52 431.04,82.48" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="6.00" y="81.00" font-family="TH Sarabun New" font-size="14pt">คำตอบ</text>
+</svg>

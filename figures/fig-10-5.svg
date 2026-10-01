@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="150.0pt" viewBox="0 0 452.0 150.0">
+<line x1="30.00" y1="70.00" x2="102.84" y2="33.58" stroke="#000000" stroke-width="1.6"/>
+<polygon points="110.00,30.00 102.99,37.13 100.09,31.33" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="49.27" y="49.27" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="67.02" y="66.52" font-family="Cambria Math" font-size="11pt">|u|</text>
+<line x1="60.00" y1="110.00" x2="180.84" y2="49.58" stroke="#000000" stroke-width="1.6"/>
+<polygon points="188.00,46.00 180.99,53.13 178.09,47.33" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="123.82" y="63.08" font-family="Cambria Math" font-size="12pt" font-style="italic">tu</text>
+<text x="112.23" y="95.42" font-family="Cambria Math" font-size="11pt">|t||u|</text>
+<text x="83.87" y="144.00" font-family="Cambria Math" font-size="12pt">t&gt;0</text>
+<text x="112.03" y="144.00" font-family="TH Sarabun New" font-size="14pt">ทิศเดิม</text>
+<line x1="256.00" y1="70.00" x2="328.84" y2="33.58" stroke="#000000" stroke-width="1.6"/>
+<polygon points="336.00,30.00 328.99,37.13 326.09,31.33" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="275.27" y="49.27" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="293.02" y="66.52" font-family="Cambria Math" font-size="11pt">|u|</text>
+<line x1="416.00" y1="60.00" x2="295.16" y2="120.42" stroke="#000000" stroke-width="1.6"/>
+<polygon points="288.00,124.00 295.01,116.87 297.91,122.67" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="338.74" y="114.92" font-family="Cambria Math" font-size="12pt" font-style="italic">tu</text>
+<text x="326.81" y="82.58" font-family="Cambria Math" font-size="11pt">|t||u|</text>
+<text x="309.87" y="144.00" font-family="Cambria Math" font-size="12pt">t&lt;0</text>
+<text x="338.03" y="144.00" font-family="TH Sarabun New" font-size="14pt">กลับทิศ</text>
+</svg>

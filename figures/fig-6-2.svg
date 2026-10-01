@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300.0pt" height="220.0pt" viewBox="0 0 300.0 220.0">
+<line x1="20.00" y1="182.50" x2="280.00" y2="182.50" stroke="#000000" stroke-width="0.9"/>
+<polygon points="285.00,182.50 279.47,184.84 279.47,180.16" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="42.71" y1="205.00" x2="42.71" y2="15.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="42.71,10.00 45.05,15.53 40.38,15.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="279.00" y="197.50" font-family="Cambria Math" font-size="12pt" font-style="italic">x</text>
+<text x="48.71" y="19.00" font-family="Cambria Math" font-size="12pt" font-style="italic">y</text>
+<text x="31.71" y="195.50" font-family="Cambria Math" font-size="10pt" font-style="italic">O</text>
+<polyline points="80.57,152.50 247.14,152.50 247.14,40.00" fill="none" stroke="#000000" stroke-width="0.9" stroke-dasharray="4,3"/>
+<line x1="80.57" y1="152.50" x2="247.14" y2="40.00" stroke="#000000" stroke-width="1.6"/>
+<polyline points="240.14,152.50 240.14,145.50 247.14,145.50" fill="none" stroke="#000000" stroke-width="0.8"/>
+<circle cx="80.57" cy="152.50" r="2.4" fill="#000000" stroke="none"/>
+<circle cx="247.14" cy="40.00" r="2.4" fill="#000000" stroke="none"/>
+<circle cx="163.86" cy="96.25" r="2.2" fill="#000000" stroke="none"/>
+<text x="54.57" y="170.50" font-family="Cambria Math" font-size="12pt">P(x₁,y₁)</text>
+<text x="213.14" y="32.00" font-family="Cambria Math" font-size="12pt">Q(x₂,y₂)</text>
+<text x="149.86" y="92.25" font-family="Cambria Math" font-size="12pt" font-style="italic">M</text>
+<text x="147.86" y="168.50" font-family="Cambria Math" font-size="12pt">x₂−x₁</text>
+<text x="253.14" y="100.25" font-family="Cambria Math" font-size="12pt">y₂−y₁</text>
+</svg>

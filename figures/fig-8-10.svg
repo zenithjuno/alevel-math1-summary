@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="236.0pt" viewBox="0 0 452.0 236.0">
+<polygon points="20.00,150.00 200.00,150.00 130.00,36.00" fill="none" stroke="#000000" stroke-width="1.0"/>
+<line x1="20.00" y1="150.00" x2="200.00" y2="150.00" stroke="#000000" stroke-width="3.2"/>
+<line x1="20.00" y1="150.00" x2="130.00" y2="36.00" stroke="#000000" stroke-width="3.2"/>
+<path d="M 20.00 150.00 L 48.00 150.00 A 28.00 28.00 0 0 0 39.44 129.85 Z" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<path d="M 48.00 150.00 A 28.00 28.00 0 0 0 39.44 129.85" fill="none" stroke="#000000" stroke-width="0.9"/>
+<text x="51.95" y="186.00" font-family="TH Sarabun New" font-size="15pt">มุมอยู่ระหว่างสองด้านที่รู้</text>
+<text x="58.40" y="208.00" font-family="TH Sarabun New" font-size="15pt">เริ่มจากกฎของโคไซน์</text>
+<polygon points="250.00,150.00 430.00,150.00 360.00,36.00" fill="none" stroke="#000000" stroke-width="1.0"/>
+<line x1="250.00" y1="150.00" x2="430.00" y2="150.00" stroke="#000000" stroke-width="3.2"/>
+<line x1="430.00" y1="150.00" x2="360.00" y2="36.00" stroke="#000000" stroke-width="3.2"/>
+<path d="M 250.00 150.00 L 278.00 150.00 A 28.00 28.00 0 0 0 269.44 129.85 Z" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<path d="M 278.00 150.00 A 28.00 28.00 0 0 0 269.44 129.85" fill="none" stroke="#000000" stroke-width="0.9"/>
+<rect x="399.00" y="81.00" width="16.00" height="16.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="403.00" y="94.00" font-family="Cambria Math" font-size="12pt" font-style="italic">a</text>
+<text x="280.00" y="142.00" font-family="Cambria Math" font-size="12pt" font-style="italic">A</text>
+<text x="291.62" y="186.00" font-family="TH Sarabun New" font-size="15pt">มุมอยู่ตรงข้ามด้านที่รู้</text>
+<text x="267.18" y="208.00" font-family="TH Sarabun New" font-size="15pt">มีคู่ด้าน–มุม เริ่มจากกฎของไซน์</text>
+<line x1="150.00" y1="227.00" x2="172.00" y2="227.00" stroke="#000000" stroke-width="3.2"/>
+<text x="178.00" y="232.00" font-family="TH Sarabun New" font-size="14pt">ด้านที่รู้</text>
+<rect x="240.00" y="220.00" width="14.00" height="12.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="260.00" y="232.00" font-family="TH Sarabun New" font-size="14pt">มุมที่รู้</text>
+</svg>

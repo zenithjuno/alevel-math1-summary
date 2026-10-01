@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>บทที่ 6 เรขาคณิตวิเคราะห์ · สรุปเนื้อหา A-Level คณิตศาสตร์ประยุกต์ 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#1f1f1d;--muted:#5f5e5a;--navy:#0c447c;--blue:#185fa5;--tint:#e6f1fb;
+--line:#d3d1c7;--caution:#fcebeb;--caution-ink:#791f1f;--figure:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--ink:#ecebe6;--muted:#b4b2a9;--navy:#b5d4f4;
+--blue:#85b7eb;--tint:#0c2a4a;--line:#444441;--caution:#3a1717;--caution-ink:#f7c1c1;--figure:#f4f4f2}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Sarabun",system-ui,sans-serif;
+font-size:1.12rem;line-height:1.75}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem}
+header.top img{height:34px;width:auto;background:#fff;border-radius:6px}
+header.top .t{flex:1;min-width:0;font-size:.9rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header.top select{font:inherit;font-size:.95rem;max-width:44vw;padding:.25rem .4rem;border-radius:8px;
+border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+main{max-width:46rem;margin:0 auto;padding:1rem 1rem 4rem}
+.banner{display:flex;align-items:stretch;margin:.5rem 0 1rem;border-radius:10px;overflow:hidden}
+.banner .n{background:#0c447c;color:#fff;font-size:2.2rem;font-weight:700;padding:.2rem 1rem;display:flex;align-items:center}
+.banner .t{background:var(--tint);color:var(--navy);padding:.5rem 1rem;flex:1}
+.banner .t small{display:block;font-size:.85rem;opacity:.85}
+.banner .t span{font-size:1.45rem;font-weight:700}
+.search{width:100%;font:inherit;padding:.5rem .8rem;border:1px solid var(--line);border-radius:10px;
+background:var(--bg);color:var(--ink);margin:.25rem 0 .75rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+nav.toc a{font-size:.9rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--blue);text-decoration:none}
+details.section{border-left:4px solid var(--blue);background:transparent;margin:1rem 0;padding:0 0 0 .9rem}
+details.section>summary{cursor:pointer;list-style:none}
+details.section>summary::-webkit-details-marker{display:none}
+details.section>summary h2{display:inline;font-size:1.25rem;color:var(--navy);margin:0}
+details.section>summary::after{content:" ▾";color:var(--muted)}
+details.section:not([open])>summary::after{content:" ▸"}
+h3{font-size:1.05rem;color:var(--navy);margin:1.4rem 0 .4rem;padding-bottom:.15rem;border-bottom:1px solid var(--line)}
+p{margin:.5rem 0}
+p.caution{background:var(--caution);color:var(--caution-ink);padding:.5rem .8rem;border-radius:8px;margin:.8rem 0}
+p.definition{background:var(--tint);border-radius:8px;padding:.5rem .8rem;margin:.8rem 0}
+p.example{border-left:3px solid var(--line);border-radius:0;padding:.1rem 0 .1rem .8rem;color:var(--muted);font-size:1.02rem}
+p.example math{color:var(--ink)}
+.formula{background:var(--tint);border-radius:10px;padding:.55rem .8rem;margin:.6rem 0;
+text-align:center;overflow-x:auto;font-size:1.08em}
+.formula math{margin:0 .25rem}
+.formula .sep{color:var(--muted);margin:0 .2rem}
+ul.points{margin:.3rem 0 .6rem;padding-left:1.3rem}
+ul.formulas{list-style:none;background:var(--tint);border-radius:10px;padding:.5rem .8rem;margin:.6rem 0;overflow-x:auto}
+ul.formulas li{padding:.2rem 0}
+ul.formulas li+li{border-top:1px dashed var(--line)}
+ul.formulas .cond{font-size:.95rem}
+@media (max-width:480px){.formula,ul.formulas{font-size:.98em}}
+.table-wrap{overflow-x:auto;margin:.6rem 0 .9rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;min-width:100%;font-size:1rem}
+th,td{border:1px solid var(--line);padding:.35rem .55rem;vertical-align:middle}
+th{background:var(--tint);color:var(--navy);text-align:left}
+figure{margin:1rem 0;text-align:center}
+figure img{width:100%;max-width:34rem;height:auto;background:var(--figure);border-radius:8px;padding:.4rem}
+figcaption{font-size:.95rem;color:var(--muted);margin-top:.3rem}
+.display{overflow-x:auto;margin:.6rem 0;text-align:center}
+math{font-size:1.08em;font-family:"STIX Two Math","Cambria Math",math}
+math[display=block]{margin:.3rem 0}
+mark{background:#fac775;color:#412402;border-radius:3px}
+.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem}
+.pager a,.cards a{color:var(--blue);text-decoration:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;padding:0;list-style:none}
+.cards a{display:flex;gap:.7rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.6rem .8rem}
+.cards b{background:#0c447c;color:#fff;border-radius:8px;min-width:2.2rem;text-align:center;padding:.1rem .3rem}
+.hero{text-align:center;margin:1.2rem 0}
+.hero img{height:84px;margin:0 .6rem;background:#fff;border-radius:10px}
+.hero h1{font-size:1.5rem;color:var(--navy);margin:.6rem 0 .2rem}
+.hero p{color:var(--muted);margin:0}
+.hidden{display:none}
+</style></head>
+<body>
+<header class="top"><a href="index.html"><img src="assets/chut-math.png" alt="CHUT Math"></a>
+<span class="t">A-Level คณิตศาสตร์ประยุกต์ 1</span>
+<select aria-label="เลือกบท"><option value="index.html">สารบัญ</option><option value="ch01.html">บทที่ 1 เซต</option><option value="ch02.html">บทที่ 2 ตรรกศาสตร์</option><option value="ch03.html">บทที่ 3 จำนวนจริง</option><option value="ch04.html">บทที่ 4 ความสัมพันธ์และฟังก์ชัน</option><option value="ch05.html">บทที่ 5 เอกซ์โพเนนเชียลและลอการิทึม</option><option value="ch06.html" selected>บทที่ 6 เรขาคณิตวิเคราะห์</option><option value="ch07.html">บทที่ 7 ภาคตัดกรวย</option><option value="ch08.html">บทที่ 8 ฟังก์ชันตรีโกณมิติ</option><option value="ch09.html">บทที่ 9 เมทริกซ์</option><option value="ch10.html">บทที่ 10 เวกเตอร์</option><option value="ch11.html">บทที่ 11 จำนวนเชิงซ้อน</option><option value="ch12.html">บทที่ 12 หลักการนับเบื้องต้น</option><option value="ch13.html">บทที่ 13 ความน่าจะเป็น</option><option value="ch14.html">บทที่ 14 ลำดับและอนุกรม</option><option value="ch15.html">บทที่ 15 แคลคูลัสเบื้องต้น</option><option value="ch16.html">บทที่ 16 สถิติ</option><option value="ch17.html">บทที่ 17 ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</option></select>
+<img src="assets/health-science-program.png" alt="Health Science Program"></header>
+<main><div class="banner"><div class="n">6</div><div class="t"><small>บทที่ 6</small><span>เรขาคณิตวิเคราะห์</span></div></div><input class="search" type="search" placeholder="ค้นในบทนี้ เช่น สูตร หรือคำว่า ระวัง"><nav class="toc"><a href="#s1">1. จุดและพิกัดบนระนาบ</a><a href="#s2">2. ระยะระหว่างจุดและจุดแบ่งส่วนของเส้นตรง</a><a href="#s3">3. ความชันและสมการเส้นตรง</a><a href="#s4">4. เส้นขนาน เส้นตั้งฉาก และจุดตัด</a><a href="#s5">5. ระยะจากจุดถึงเส้นตรง</a><a href="#s6">6. สมการวงกลม</a><a href="#s7">7. แนวข้อสอบที่เน้น: วงกลมกับเส้นสัมผัส</a></nav><details class="section" id="s1" open><summary><h2><math displaystyle="true"><mrow><mn>1</mn></mrow></math><strong>. จุดและพิกัดบนระนาบ</strong></h2></summary><div class="body">
+<p>เรขาคณิตวิเคราะห์ใช้พิกัดและสมการ เปลี่ยนเรื่องตำแหน่ง ระยะ และสัมผัสเป็นการคำนวณ</p>
+<p>จุด <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> บอกตำแหน่งแนวนอน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> แนวตั้ง <math displaystyle="true"><mrow><mi>y</mi></mrow></math> เครื่องหมายบอกจตุภาค</p>
+<div class="table-wrap"><table><thead><tr><th>จตุภาค</th><th>เครื่องหมายพิกัด</th></tr></thead><tbody><tr><td>จตุภาคที่ <math displaystyle="true"><mrow><mn>1</mn></mrow></math></td><td><math displaystyle="true"><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math>, <math displaystyle="true"><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow></math></td></tr><tr><td>จตุภาคที่ <math displaystyle="true"><mrow><mn>2</mn></mrow></math></td><td><math displaystyle="true"><mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></math>, <math displaystyle="true"><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow></math></td></tr><tr><td>จตุภาคที่ <math displaystyle="true"><mrow><mn>3</mn></mrow></math></td><td><math displaystyle="true"><mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></math>, <math displaystyle="true"><mrow><mi>y</mi><mo>&lt;</mo><mn>0</mn></mrow></math></td></tr><tr><td>จตุภาคที่ <math displaystyle="true"><mrow><mn>4</mn></mrow></math></td><td><math displaystyle="true"><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></math>, <math displaystyle="true"><mrow><mi>y</mi><mo>&lt;</mo><mn>0</mn></mrow></math></td></tr></tbody></table></div>
+<p>จุดบนแกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> มี <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> ส่วนจุดบนแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math> มี <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> จุดบนแกนไม่อยู่ในจตุภาคใด</p>
+<figure><img src="figures/fig-6-1.svg" alt="รูป 6.1" loading="lazy"><figcaption><strong>รูป 6.1</strong> เครื่องหมายของพิกัดในแต่ละจตุภาค</figcaption></figure>
+</div></details>
+<details class="section" id="s2" open><summary><h2><math displaystyle="true"><mrow><mn>2</mn></mrow></math><strong>. ระยะระหว่างจุดและจุดแบ่งส่วนของเส้นตรง</strong></h2></summary><div class="body">
+<p>ถ้ามีจุด <math displaystyle="true"><mrow><mi>P</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> และ <math displaystyle="true"><mrow><mi>Q</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ระยะระหว่างสองจุดคือ</p>
+<div class="formula"><math displaystyle="true"><mrow><mi>P</mi><mi>Q</mi><mo>=</mo><msqrt><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></math></div>
+<p>สูตรมาจากพีทาโกรัส ผลต่างพิกัดเป็นระยะแนวนอน/แนวตั้ง</p>
+<figure><img src="figures/fig-6-2.svg" alt="รูป 6.2" loading="lazy"><figcaption><strong>รูป 6.2</strong> ระยะระหว่างสองจุดคือด้านตรงข้ามมุมฉาก</figcaption></figure>
+<p>จุดกึ่งกลางของส่วนของเส้นตรง <math displaystyle="true"><mrow><mi>P</mi><mi>Q</mi></mrow></math> คือ</p>
+<div class="formula"><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mfrac><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow><mrow><mn>2</mn></mrow></mfrac><mo separator="true">,</mo><mfrac><mrow><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></div>
+<p>ถ้าจุด <math displaystyle="true"><mrow><mi>R</mi></mrow></math> แบ่งส่วนของเส้นตรงภายใน โดย <math displaystyle="true"><mrow><mi>P</mi><mi>R</mi><mo>:</mo><mi>R</mi><mi>Q</mi><mo>=</mo><mi>m</mi><mo>:</mo><mi>n</mi></mrow></math> เมื่อ <math displaystyle="true"><mrow><mi>m</mi><mo separator="true">,</mo><mi>n</mi><mo>&gt;</mo><mn>0</mn></mrow></math> จะมีพิกัด</p>
+<div class="formula"><math displaystyle="true"><mrow><mi>R</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">(</mo><mrow><mfrac><mrow><mi>n</mi><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>+</mo><mi>m</mi><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></mfrac><mo separator="true">,</mo><mfrac><mrow><mi>n</mi><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>+</mo><mi>m</mi><msub><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></mfrac></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></div>
+<p class="caution"><strong>ระวัง:</strong> น้ำหนักที่คูณพิกัดของ <math displaystyle="true"><mrow><mi>P</mi></mrow></math> เป็น <math displaystyle="true"><mrow><mi>n</mi></mrow></math> และที่คูณพิกัดของ <math displaystyle="true"><mrow><mi>Q</mi></mrow></math> เป็น <math displaystyle="true"><mrow><mi>m</mi></mrow></math> ไม่ใช่อ่านอัตราส่วนแล้วคูณตามลำดับทันที เช่น ถ้า <math displaystyle="true"><mrow><mi>P</mi><mi>R</mi><mo>:</mo><mi>R</mi><mi>Q</mi><mo>=</mo><mn>1</mn><mo>:</mo><mn>2</mn></mrow></math> จุด <math displaystyle="true"><mrow><mi>R</mi></mrow></math> จะใกล้ <math displaystyle="true"><mrow><mi>P</mi></mrow></math> มากกว่า จึงให้น้ำหนักพิกัดของ <math displaystyle="true"><mrow><mi>P</mi></mrow></math> มากกว่า</p>
+<figure><img src="figures/fig-6-3.svg" alt="รูป 6.3" loading="lazy"><figcaption><strong>รูป 6.3</strong> จุด <math displaystyle="true"><mrow><mi>R</mi></mrow></math> แบ่ง <math displaystyle="true"><mrow><mi>P</mi><mi>Q</mi></mrow></math> ภายในด้วยอัตราส่วน <math displaystyle="true"><mrow><mi>m</mi><mo>:</mo><mi>n</mi></mrow></math></figcaption></figure>
+</div></details>
+<details class="section" id="s3" open><summary><h2><math displaystyle="true"><mrow><mn>3</mn></mrow></math><strong>. ความชันและสมการเส้นตรง</strong></h2></summary><div class="body">
+<p>ความชันบอกว่าเมื่อเคลื่อนที่ไปทางขวา ค่า <math displaystyle="true"><mrow><mi>y</mi></mrow></math> เปลี่ยนเร็วเพียงใด สำหรับเส้นตรงผ่านสองจุด เมื่อ <math displaystyle="true"><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≠</mo><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow></math> จะมี</p>
+<div class="formula"><math displaystyle="true"><mrow><mi>m</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>−</mo><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow></mfrac></mrow></math></div>
+<ul class="points"><li><math displaystyle="true"><mrow><mi>m</mi><mo>&gt;</mo><mn>0</mn></mrow></math>: เส้นสูงขึ้นเมื่อมองจากซ้ายไปขวา</li><li><math displaystyle="true"><mrow><mi>m</mi><mo>&lt;</mo><mn>0</mn></mrow></math>: เส้นต่ำลงเมื่อมองจากซ้ายไปขวา</li><li><math displaystyle="true"><mrow><mi>m</mi><mo>=</mo><mn>0</mn></mrow></math>: เส้นขนานแกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math></li><li>เส้นขนานแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math> ไม่มีค่าความชัน เพราะผลต่างของ <math displaystyle="true"><mrow><mi>x</mi></mrow></math> เป็นศูนย์</li></ul>
+<figure><img src="figures/fig-6-4.svg" alt="รูป 6.4" loading="lazy"><figcaption><strong>รูป 6.4</strong> ความชันบอกทิศของเส้นตรง</figcaption></figure>
+<p>รูปสมการที่ใช้บ่อย ได้แก่</p>
+<div class="table-wrap"><table><thead><tr><th>ข้อมูล/รูปสมการ</th><th>สมการเส้นตรง</th></tr></thead><tbody><tr><td>รู้ความชัน <math displaystyle="true"><mrow><mi>m</mi></mrow></math> และจุด <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td><td><math displaystyle="true"><mrow><mi>y</mi><mo>−</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mi>m</mi><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td></tr><tr><td>รู้ความชัน <math displaystyle="true"><mrow><mi>m</mi></mrow></math> และจุดตัดแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math> <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>0</mn><mo separator="true">,</mo><mi>b</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></td><td><math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow></math></td></tr><tr><td>รูปทั่วไป</td><td><math displaystyle="true"><mrow><mi>A</mi><mi>x</mi><mo>+</mo><mi>B</mi><mi>y</mi><mo>+</mo><mi>C</mi><mo>=</mo><mn>0</mn></mrow></math> โดย <math displaystyle="true"><mrow><mi>A</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>B</mi></mrow></math> ไม่เป็นศูนย์พร้อมกัน</td></tr></tbody></table></div>
+<p>ถ้า <math displaystyle="true"><mrow><mi>B</mi><mo>≠</mo><mn>0</mn></mrow></math> ความชันของเส้นตรงรูปทั่วไปคือ <math displaystyle="true"><mrow><mo>−</mo><mfrac><mrow><mi>A</mi></mrow><mrow><mi>B</mi></mrow></mfrac></mrow></math> ส่วนเส้นแนวตั้งเขียนเป็น <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mi>c</mi></mrow></math></p>
+<p>การหาจุดตัดแกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> ให้แทน <math displaystyle="true"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> และการหาจุดตัดแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math> ให้แทน <math displaystyle="true"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math></p>
+</div></details>
+<details class="section" id="s4" open><summary><h2><math displaystyle="true"><mrow><mn>4</mn></mrow></math><strong>. เส้นขนาน เส้นตั้งฉาก และจุดตัด</strong></h2></summary><div class="body">
+<p>สำหรับเส้นตรงที่มีค่าความชัน</p>
+<ul class="points"><li>เส้นขนานกันมีความชันเท่ากัน</li><li>เส้นตั้งฉากกันมี <math displaystyle="true"><mrow><msub><mrow><mi>m</mi></mrow><mrow><mn>1</mn></mrow></msub><msub><mrow><mi>m</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mo>−</mo><mn>1</mn></mrow></math></li></ul>
+<p>เส้นแนวตั้งกับเส้นแนวนอนตั้งฉากกันเช่นกัน แต่ใช้สูตรผลคูณความชันไม่ได้ เพราะเส้นแนวตั้งไม่มีค่าความชัน</p>
+<p>จุดตัด: แก้สองสมการพร้อมกัน เพราะจุดต้องอยู่ทั้งสองเส้น</p>
+<p class="caution"><strong>ระวัง:</strong> ความชันเท่ากันยังต้องตรวจว่าเป็นคนละเส้นหรือเป็นเส้นเดียวกัน และจุดที่โจทย์บอกว่าอยู่บนเส้นใด ต้องแทนพิกัดแล้วทำให้สมการของเส้นนั้นเป็นจริง</p>
+</div></details>
+<details class="section" id="s5" open><summary><h2><math displaystyle="true"><mrow><mn>5</mn></mrow></math><strong>. ระยะจากจุดถึงเส้นตรง</strong></h2></summary><div class="body">
+<p>ระยะจากจุดถึงเส้นตรงหมายถึง <strong>ระยะสั้นที่สุด</strong> ซึ่งวัดตามแนวตั้งฉากกับเส้นตรง</p>
+<figure><img src="figures/fig-6-5.svg" alt="รูป 6.5" loading="lazy"><figcaption><strong>รูป 6.5</strong> ระยะสั้นที่สุดวัดตามแนวตั้งฉาก</figcaption></figure>
+<p>ถ้าจุดคือ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mn>0</mn></mrow></msub><mo separator="true">,</mo><msub><mrow><mi>y</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> และเส้นตรงคือ <math displaystyle="true"><mrow><mi>A</mi><mi>x</mi><mo>+</mo><mi>B</mi><mi>y</mi><mo>+</mo><mi>C</mi><mo>=</mo><mn>0</mn></mrow></math> ระยะคือ</p>
+<div class="formula"><math displaystyle="true"><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>A</mi><msub><mrow><mi>x</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>+</mo><mi>B</mi><msub><mrow><mi>y</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>+</mo><mi>C</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow><mrow><msqrt><mrow><msup><mrow><mi>A</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mi>B</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></mfrac></mrow></math></div>
+<p>จัดเส้นตรงให้ด้านหนึ่งเป็นศูนย์ก่อนแทนพิกัดในสูตรระยะ</p>
+<p class="caution"><strong>ระวัง:</strong> ตัวเศษต้องมีค่าสัมบูรณ์ เพราะระยะไม่ติดลบ และตัวส่วนคือ <math displaystyle="true"><mrow><msqrt><mrow><msup><mrow><mi>A</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mi>B</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></math> ไม่ใช่ <math displaystyle="true"><mrow><mi>A</mi><mo>+</mo><mi>B</mi></mrow></math></p>
+<p>ถ้าเส้นขนานสองเส้นเขียนเป็น <math displaystyle="true"><mrow><mi>A</mi><mi>x</mi><mo>+</mo><mi>B</mi><mi>y</mi><mo>+</mo><msub><mrow><mi>C</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow></math> และ <math displaystyle="true"><mrow><mi>A</mi><mi>x</mi><mo>+</mo><mi>B</mi><mi>y</mi><mo>+</mo><msub><mrow><mi>C</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow></math> โดยมีสัมประสิทธิ์ <math displaystyle="true"><mrow><mi>A</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>B</mi></mrow></math> ตรงกัน ระยะระหว่างเส้นคือ</p>
+<div class="formula"><math displaystyle="true"><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><msub><mrow><mi>C</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>C</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow><mrow><msqrt><mrow><msup><mrow><mi>A</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mi>B</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></mfrac></mrow></math></div>
+<p>หากสัมประสิทธิ์ยังไม่ตรงกัน ต้องจัดให้ตรงกันก่อนใช้สูตรนี้</p>
+</div></details>
+<details class="section" id="s6" open><summary><h2><math displaystyle="true"><mrow><mn>6</mn></mrow></math><strong>. สมการวงกลม</strong></h2></summary><div class="body">
+<p>วงกลมคือเซตของจุดที่อยู่ห่างจากจุดศูนย์กลางเป็นระยะคงที่ ระยะนั้นเรียกว่า <strong>รัศมี</strong></p>
+<p>ถ้าศูนย์กลางคือ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> และรัศมี <math displaystyle="true"><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow></math> สมการวงกลมคือ</p>
+<div class="formula"><math displaystyle="true"><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>y</mi><mo>−</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math></div>
+<p class="example">เช่น <math displaystyle="true"><mrow><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>y</mi><mo>+</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>9</mn></mrow></math> มีศูนย์กลาง <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>2</mn><mo separator="true">,</mo><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> และรัศมี <math displaystyle="true"><mrow><mn>3</mn></mrow></math></p>
+<figure><img src="figures/fig-6-6.svg" alt="รูป 6.6" loading="lazy"><figcaption><strong>รูป 6.6</strong> วงกลมศูนย์กลาง <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mn>2</mn><mo separator="true">,</mo><mo>−</mo><mn>1</mn></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> รัศมี <math displaystyle="true"><mrow><mn>3</mn></mrow></math></figcaption></figure>
+<p>ถ้าโจทย์ให้รูปทั่วไป</p>
+<div class="formula"><math displaystyle="true"><mrow><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mi>D</mi><mi>x</mi><mo>+</mo><mi>E</mi><mi>y</mi><mo>+</mo><mi>F</mi><mo>=</mo><mn>0</mn></mrow></math></div>
+<p>ศูนย์กลางคือ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>−</mo><mfrac><mrow><mi>D</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo separator="true">,</mo><mo>−</mo><mfrac><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> และมี <math displaystyle="true"><mrow><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mfrac><mrow><msup><mrow><mi>D</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>4</mn></mrow></mfrac><mo>−</mo><mi>F</mi></mrow></math> หรือจัดกำลังสองสมบูรณ์เพื่อกลับไปอ่านรูปมาตรฐานก็ได้</p>
+<p class="caution"><strong>ระวัง:</strong> ต้องได้ <math displaystyle="true"><mrow><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>&gt;</mo><mn>0</mn></mrow></math> จึงเป็นวงกลม ถ้าได้ศูนย์จะเหลือเพียงจุดเดียว และถ้าติดลบจะไม่มีจุดในระนาบจำนวนจริงที่ทำให้สมการเป็นจริง</p>
+<p>ถ้ารู้ศูนย์กลางและรู้ว่าวงกลมผ่านจุดใด ให้ใช้ระยะจากศูนย์กลางถึงจุดนั้นหารัศมี</p>
+</div></details>
+<details class="section" id="s7" open><summary><h2><math displaystyle="true"><mrow><mn>7</mn></mrow></math><strong>. แนวข้อสอบที่เน้น: วงกลมกับเส้นสัมผัส</strong></h2></summary><div class="body">
+<p>เส้นสัมผัสวงกลมมีจุดร่วมกับวงกลมเพียงจุดเดียว และตั้งฉากกับรัศมีที่ลากไปยังจุดสัมผัส</p>
+<p>ตรวจสัมผัสโดยเทียบ <strong>ระยะศูนย์กลางถึงเส้นตรงกับรัศมี</strong> ไม่ต้องหาจุดตัดก่อน</p>
+<p>ให้ <math displaystyle="true"><mrow><mi>d</mi></mrow></math> เป็นระยะจากศูนย์กลางถึงเส้นตรง และ <math displaystyle="true"><mrow><mi>r</mi></mrow></math> เป็นรัศมี</p>
+<div class="table-wrap"><table><thead><tr><th>ระยะ <math displaystyle="true"><mrow><mi>d</mi></mrow></math> เทียบกับรัศมี <math displaystyle="true"><mrow><mi>r</mi></mrow></math></th><th>ความสัมพันธ์</th></tr></thead><tbody><tr><td><math displaystyle="true"><mrow><mi>d</mi><mo>&lt;</mo><mi>r</mi></mrow></math></td><td>เส้นตรงตัดวงกลมสองจุด</td></tr><tr><td><math displaystyle="true"><mrow><mi>d</mi><mo>=</mo><mi>r</mi></mrow></math></td><td>เส้นตรงสัมผัสวงกลม</td></tr><tr><td><math displaystyle="true"><mrow><mi>d</mi><mo>&gt;</mo><mi>r</mi></mrow></math></td><td>เส้นตรงไม่ตัดวงกลม</td></tr></tbody></table></div>
+<figure><img src="figures/fig-6-7.svg" alt="รูป 6.7" loading="lazy"><figcaption><strong>รูป 6.7</strong> เทียบระยะจากศูนย์กลางถึงเส้นตรงกับรัศมี</figcaption></figure>
+<p>ถ้าโจทย์บอกว่าเส้นตรงสัมผัสวงกลม เราจึงตั้งเงื่อนไข <math displaystyle="true"><mrow><mi>d</mi><mo>=</mo><mi>r</mi></mrow></math> เพื่อหาค่าที่ยังไม่รู้ เช่น ตำแหน่งศูนย์กลางหรือรัศมี</p>
+<h3>วงกลมสัมผัสแกนพิกัด</h3>
+<p>สำหรับศูนย์กลาง <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mi>h</mi><mo separator="true">,</mo><mi>k</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math> ระยะถึงแกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math> คือ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>k</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math> และระยะถึงแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math> คือ <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>h</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math> จึงได้ว่า</p>
+<div class="table-wrap"><table><thead><tr><th>การสัมผัสแกน</th><th>เงื่อนไขรัศมี</th></tr></thead><tbody><tr><td>สัมผัสแกน <math displaystyle="true"><mrow><mi>x</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>r</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>k</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math></td></tr><tr><td>สัมผัสแกน <math displaystyle="true"><mrow><mi>y</mi></mrow></math></td><td><math displaystyle="true"><mrow><mi>r</mi><mo>=</mo><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>h</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow></mrow></math></td></tr><tr><td>สัมผัสทั้งสองแกน</td><td><math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>h</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mo>=</mo><mrow><mo fence="true" stretchy="true">|</mo><mrow><mi>k</mi></mrow><mo fence="true" stretchy="true">|</mo></mrow><mo>=</mo><mi>r</mi></mrow></math></td></tr></tbody></table></div>
+<figure><img src="figures/fig-6-8.svg" alt="รูป 6.8" loading="lazy"><figcaption><strong>รูป 6.8</strong> วงกลมสัมผัสแกนพิกัด</figcaption></figure>
+<p>ถ้าโจทย์กำหนดจตุภาคของศูนย์กลาง ให้ใช้เครื่องหมายของ <math displaystyle="true"><mrow><mi>h</mi></mrow></math> และ <math displaystyle="true"><mrow><mi>k</mi></mrow></math> เลือกกรณีให้ตรง เช่น ศูนย์กลางในจตุภาคที่ <math displaystyle="true"><mrow><mn>2</mn></mrow></math> ต้องมี <math displaystyle="true"><mrow><mi>h</mi><mo>&lt;</mo><mn>0</mn></mrow></math> และ <math displaystyle="true"><mrow><mi>k</mi><mo>&gt;</mo><mn>0</mn></mrow></math> ถ้าสัมผัสทั้งสองแกน ศูนย์กลางจึงเป็น <math displaystyle="true"><mrow><mrow><mo fence="true" stretchy="true">(</mo><mrow><mo>−</mo><mi>r</mi><mo separator="true">,</mo><mi>r</mi></mrow><mo fence="true" stretchy="true">)</mo></mrow></mrow></math></p>
+<p>อ่านศูนย์กลาง/รัศมี → เลือกเงื่อนไขสัมผัส → แก้สมการ → คัดคำตอบตามเงื่อนไข</p>
+<p class="caution"><strong>ระวัง:</strong> สมการระยะมีค่าสัมบูรณ์หรืออาจต้องยกกำลังสอง จึงควรตรวจคำตอบกลับในเงื่อนไขเดิม พร้อมตรวจว่า <math displaystyle="true"><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow></math> และศูนย์กลางอยู่ในจตุภาคที่กำหนดจริง</p>
+</div></details><div class="pager"><a href="ch05.html">← บทที่ 5</a><a href="index.html">สารบัญ</a><a href="ch07.html">บทที่ 7 →</a></div></main>
+<script>
+const box=document.querySelector('.search');
+if(box){box.addEventListener('input',()=>{const q=box.value.trim();
+document.querySelectorAll('mark').forEach(m=>m.replaceWith(...m.childNodes));
+document.querySelectorAll('details.section').forEach(d=>{
+ const hit=!q||d.textContent.includes(q);d.classList.toggle('hidden',!hit);if(q&&hit)d.open=true;
+ if(q&&hit){const w=document.createTreeWalker(d,NodeFilter.SHOW_TEXT);const nodes=[];
+  while(w.nextNode()){const n=w.currentNode;if(n.parentNode.closest('math'))continue;if(n.nodeValue.includes(q))nodes.push(n);}
+  nodes.forEach(n=>{const i=n.nodeValue.indexOf(q);const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+q.length);
+   const m=document.createElement('mark');r.surroundContents(m);});}
+});});}
+const sel=document.querySelector('header.top select');
+if(sel){sel.addEventListener('change',()=>{if(sel.value)location.href=sel.value;});}
+</script>
+</body></html>

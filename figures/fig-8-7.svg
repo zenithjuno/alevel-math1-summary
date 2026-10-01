@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="196.0pt" viewBox="0 0 452.0 196.0">
+<line x1="11.00" y1="80.00" x2="144.00" y2="80.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="149.00,80.00 143.47,82.34 143.47,77.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="75.00" y1="144.00" x2="75.00" y2="21.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="75.00,16.00 77.34,21.53 72.66,21.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="143.00" y="95.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="81.00" y="25.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<circle cx="75.00" cy="80.00" r="52.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<path d="M 75.00 132.00 A 52.0 52.0 0 0 0 75.00 28.00" fill="none" stroke="#000000" stroke-width="4.0"/>
+<circle cx="75.00" cy="132.00" r="3.4" fill="#000000" stroke="none"/>
+<circle cx="75.00" cy="28.00" r="3.4" fill="#000000" stroke="none"/>
+<text x="48.12" y="162.00" font-family="Cambria Math" font-size="12pt">arcsin u</text>
+<text x="38.04" y="184.00" font-family="Cambria Math" font-size="12pt">[−π⁄2, π⁄2]</text>
+<line x1="161.00" y1="80.00" x2="294.00" y2="80.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="299.00,80.00 293.47,82.34 293.47,77.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="225.00" y1="144.00" x2="225.00" y2="21.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="225.00,16.00 227.34,21.53 222.66,21.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="293.00" y="95.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="231.00" y="25.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<circle cx="225.00" cy="80.00" r="52.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<path d="M 277.00 80.00 A 52.0 52.0 0 0 0 173.00 80.00" fill="none" stroke="#000000" stroke-width="4.0"/>
+<circle cx="277.00" cy="80.00" r="3.4" fill="#000000" stroke="none"/>
+<circle cx="173.00" cy="80.00" r="3.4" fill="#000000" stroke="none"/>
+<text x="198.12" y="162.00" font-family="Cambria Math" font-size="12pt">arccos u</text>
+<text x="204.84" y="184.00" font-family="Cambria Math" font-size="12pt">[0, π]</text>
+<line x1="311.00" y1="80.00" x2="444.00" y2="80.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="449.00,80.00 443.47,82.34 443.47,77.66" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="375.00" y1="144.00" x2="375.00" y2="21.00" stroke="#000000" stroke-width="0.9"/>
+<polygon points="375.00,16.00 377.34,21.53 372.66,21.53" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="443.00" y="95.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<text x="381.00" y="25.00" font-family="Cambria Math" font-size="12pt" font-style="italic"></text>
+<circle cx="375.00" cy="80.00" r="52.00" fill="none" stroke="#000000" stroke-width="1.2"/>
+<path d="M 375.00 132.00 A 52.0 52.0 0 0 0 375.00 28.00" fill="none" stroke="#000000" stroke-width="4.0"/>
+<circle cx="375.00" cy="132.00" r="3.40" fill="#FFFFFF" stroke="#000000" stroke-width="1.0"/>
+<circle cx="375.00" cy="28.00" r="3.40" fill="#FFFFFF" stroke="#000000" stroke-width="1.0"/>
+<text x="348.12" y="162.00" font-family="Cambria Math" font-size="12pt">arctan u</text>
+<text x="338.04" y="184.00" font-family="Cambria Math" font-size="12pt">(−π⁄2, π⁄2)</text>
+</svg>

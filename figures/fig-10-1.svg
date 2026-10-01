@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="186.0pt" viewBox="0 0 452.0 186.0">
+<line x1="40.00" y1="110.00" x2="172.84" y2="43.58" stroke="#000000" stroke-width="1.8"/>
+<polygon points="180.00,40.00 172.99,47.13 170.09,41.33" fill="#000000" stroke="none" stroke-width="0"/>
+<circle cx="40.00" cy="110.00" r="2.6" fill="#000000" stroke="none"/>
+<text x="36.00" y="101.00" font-family="Cambria Math" font-size="12pt" font-style="italic">P</text>
+<text x="188.00" y="48.00" font-family="Cambria Math" font-size="12pt" font-style="italic">Q</text>
+<text x="-2.00" y="115.00" font-family="TH Sarabun New" font-size="14pt">จุดเริ่ม</text>
+<text x="188.00" y="32.00" font-family="TH Sarabun New" font-size="14pt">จุดปลาย</text>
+<line x1="48.05" y1="126.10" x2="188.05" y2="56.10" stroke="#000000" stroke-width="0.7" stroke-dasharray="3,2"/>
+<line x1="44.83" y1="119.66" x2="50.46" y2="130.93" stroke="#000000" stroke-width="0.7"/>
+<line x1="184.83" y1="49.66" x2="190.46" y2="60.93" stroke="#000000" stroke-width="0.7"/>
+<text x="111.38" y="106.83" font-family="TH Sarabun New" font-size="14pt">ขนาด</text>
+<line x1="172.00" y1="34.00" x2="150.00" y2="18.00" stroke="#000000" stroke-width="0.6"/>
+<text x="84.00" y="18.00" font-family="TH Sarabun New" font-size="14pt">หัวบอกทิศทาง</text>
+<text x="27.26" y="176.00" font-family="TH Sarabun New" font-size="14pt">ความยาว = ขนาด  หัวลูกศร = ทิศทาง</text>
+<line x1="262.00" y1="100.00" x2="345.34" y2="44.44" stroke="#000000" stroke-width="1.6"/>
+<polygon points="352.00,40.00 345.93,47.94 342.33,42.55" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="303.53" y1="67.50" x2="307.97" y2="74.16" stroke="#000000" stroke-width="0.9"/>
+<line x1="306.03" y1="65.84" x2="310.47" y2="72.50" stroke="#000000" stroke-width="0.9"/>
+<text x="278.98" y="76.02" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<line x1="342.00" y1="140.00" x2="425.34" y2="84.44" stroke="#000000" stroke-width="1.6"/>
+<polygon points="432.00,80.00 425.93,87.94 422.33,82.55" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="383.53" y1="107.50" x2="387.97" y2="114.16" stroke="#000000" stroke-width="0.9"/>
+<line x1="386.03" y1="105.84" x2="390.47" y2="112.50" stroke="#000000" stroke-width="0.9"/>
+<text x="358.98" y="116.02" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="274.26" y="176.00" font-family="TH Sarabun New" font-size="14pt">ขนาดเท่ากัน ทิศเดียวกัน จึงเท่ากัน</text>
+</svg>

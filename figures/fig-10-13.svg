@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="452.0pt" height="170.0pt" viewBox="0 0 452.0 170.0">
+<polygon points="24.00,130.00 159.00,130.00 209.00,40.00 74.00,40.00" fill="#D9D9D9" stroke="none" stroke-width="0"/>
+<line x1="159.00" y1="130.00" x2="209.00" y2="40.00" stroke="#000000" stroke-width="0.8"/>
+<line x1="74.00" y1="40.00" x2="209.00" y2="40.00" stroke="#000000" stroke-width="0.8"/>
+<line x1="24.00" y1="130.00" x2="151.00" y2="130.00" stroke="#000000" stroke-width="1.5"/>
+<polygon points="159.00,130.00 149.54,133.24 149.54,126.76" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="24.00" y1="130.00" x2="70.11" y2="46.99" stroke="#000000" stroke-width="1.5"/>
+<polygon points="74.00,40.00 72.24,49.84 66.57,46.70" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="88.14" y="146.00" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="36.90" y="84.14" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<circle cx="24.00" cy="130.00" r="2.2" fill="#000000" stroke="none"/>
+<text x="10.00" y="134.00" font-family="Cambria Math" font-size="12pt" font-style="italic">O</text>
+<text x="105.70" y="91.00" font-family="Cambria Math" font-size="12pt">|u×v|</text>
+<polygon points="250.00,130.00 385.00,130.00 300.00,40.00" fill="#D9D9D9" stroke="none" stroke-width="0"/>
+<line x1="385.00" y1="130.00" x2="300.00" y2="40.00" stroke="#000000" stroke-width="1.0"/>
+<line x1="385.00" y1="130.00" x2="435.00" y2="40.00" stroke="#000000" stroke-width="0.8"/>
+<line x1="300.00" y1="40.00" x2="435.00" y2="40.00" stroke="#000000" stroke-width="0.8"/>
+<line x1="250.00" y1="130.00" x2="377.00" y2="130.00" stroke="#000000" stroke-width="1.5"/>
+<polygon points="385.00,130.00 375.54,133.24 375.54,126.76" fill="#000000" stroke="none" stroke-width="0"/>
+<line x1="250.00" y1="130.00" x2="296.11" y2="46.99" stroke="#000000" stroke-width="1.5"/>
+<polygon points="300.00,40.00 298.24,49.84 292.57,46.70" fill="#000000" stroke="none" stroke-width="0"/>
+<text x="314.14" y="146.00" font-family="Cambria Math" font-size="12pt" font-style="italic">u</text>
+<text x="262.90" y="84.14" font-family="Cambria Math" font-size="12pt" font-style="italic">v</text>
+<circle cx="250.00" cy="130.00" r="2.2" fill="#000000" stroke="none"/>
+<text x="236.00" y="134.00" font-family="Cambria Math" font-size="12pt" font-style="italic">O</text>
+<text x="297.51" y="106.00" font-family="Cambria Math" font-size="12pt">½|u×v|</text>
+</svg>

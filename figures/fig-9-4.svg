@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430.0pt" height="118.0pt" viewBox="0 0 430.0 118.0">
+<text x="14.00" y="44.00" font-family="Cambria Math" font-size="12pt">D</text>
+<text x="36.00" y="44.00" font-family="Cambria Math" font-size="12pt">=</text>
+<text x="66.64" y="33.50" font-family="Cambria Math" font-size="12pt" font-style="italic">a</text>
+<text x="94.64" y="33.50" font-family="Cambria Math" font-size="12pt" font-style="italic">b</text>
+<text x="66.64" y="55.50" font-family="Cambria Math" font-size="12pt" font-style="italic">c</text>
+<text x="94.64" y="55.50" font-family="Cambria Math" font-size="12pt" font-style="italic">d</text>
+<line x1="54.00" y1="16.00" x2="54.00" y2="64.00" stroke="#000000" stroke-width="1.1"/>
+<line x1="114.00" y1="16.00" x2="114.00" y2="64.00" stroke="#000000" stroke-width="1.1"/>
+<text x="156.00" y="44.00" font-family="Cambria Math" font-size="12pt">Dₓ</text>
+<text x="178.00" y="44.00" font-family="Cambria Math" font-size="12pt">=</text>
+<rect x="199.00" y="41.00" width="26.00" height="20.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<rect x="199.00" y="19.00" width="26.00" height="20.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="208.64" y="33.50" font-family="Cambria Math" font-size="12pt" font-style="italic">e</text>
+<text x="236.64" y="33.50" font-family="Cambria Math" font-size="12pt" font-style="italic">b</text>
+<text x="208.64" y="55.50" font-family="Cambria Math" font-size="12pt" font-style="italic">f</text>
+<text x="236.64" y="55.50" font-family="Cambria Math" font-size="12pt" font-style="italic">d</text>
+<line x1="196.00" y1="16.00" x2="196.00" y2="64.00" stroke="#000000" stroke-width="1.1"/>
+<line x1="256.00" y1="16.00" x2="256.00" y2="64.00" stroke="#000000" stroke-width="1.1"/>
+<text x="194.15" y="96.00" font-family="TH Sarabun New" font-size="14pt">แทนหลักของ x</text>
+<text x="298.00" y="44.00" font-family="Cambria Math" font-size="12pt">Dᵧ</text>
+<text x="320.00" y="44.00" font-family="Cambria Math" font-size="12pt">=</text>
+<rect x="369.00" y="19.00" width="26.00" height="20.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<rect x="369.00" y="41.00" width="26.00" height="20.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="350.64" y="33.50" font-family="Cambria Math" font-size="12pt" font-style="italic">a</text>
+<text x="378.64" y="33.50" font-family="Cambria Math" font-size="12pt" font-style="italic">e</text>
+<text x="350.64" y="55.50" font-family="Cambria Math" font-size="12pt" font-style="italic">c</text>
+<text x="378.64" y="55.50" font-family="Cambria Math" font-size="12pt" font-style="italic">f</text>
+<line x1="338.00" y1="16.00" x2="338.00" y2="64.00" stroke="#000000" stroke-width="1.1"/>
+<line x1="398.00" y1="16.00" x2="398.00" y2="64.00" stroke="#000000" stroke-width="1.1"/>
+<text x="336.15" y="96.00" font-family="TH Sarabun New" font-size="14pt">แทนหลักของ y</text>
+<rect x="120.00" y="104.00" width="12.00" height="10.00" fill="#CFE3F3" stroke="none" stroke-width="0"/>
+<text x="136.00" y="114.00" font-family="TH Sarabun New" font-size="14pt">หลักค่าทางขวา e, f</text>
+</svg>
